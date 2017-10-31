@@ -8,8 +8,8 @@ const GameState = {
 
 class GameWindow extends Component {
 
-    constructor(prop) {
-        super(prop);
+    constructor(props) {
+        super(props);
         this.state = {
             gameState: GameState.LOGIN_PAGE
         };
@@ -18,10 +18,6 @@ class GameWindow extends Component {
     setGameState(state) {
         this.setState({gameState: state});
     }
-
-    // componentDidMount() {
-    //     this.setGameState.bind(this);
-    // }
 
     render() {
 
