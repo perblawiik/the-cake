@@ -47,7 +47,7 @@ class GameWindow extends Component {
                     <div style={windowStyle}>
                         <div style={{width: '100%', height: '100%'}}>
                             <img src={require('../../img/right-arrow.png')} alt='x' style={arrowStyle} onClick={this.setGameState.bind(this, GameState.MAIN_PAGE)}/>
-                            <p style={{fontSize: '36px', textAlign: 'center'}}>LOG IN PAGE WOOO!!</p>
+                            <p style={{color: 'white', fontSize: '36px', textAlign: 'center'}}>LOG IN PAGE WOOO!!</p>
                         </div>
                     </div>
                 );
@@ -56,7 +56,7 @@ class GameWindow extends Component {
                     <div style={windowStyle}>
                         <div style={{width: '100%', height: '100%'}}>
                             <img src={require('../../img/left-arrow.png')} alt='x' style={arrowStyle} onClick={this.setGameState.bind(this, GameState.LOGIN_PAGE)}/>
-                            <p style={{fontSize: '36px', textAlign: 'center'}}>MAIN PAGE WOOO!!</p>
+                            <p style={{color: 'white', fontSize: '36px', textAlign: 'center'}}>MAIN PAGE WOOO!!</p>
                         </div>
                     </div>
                 );
