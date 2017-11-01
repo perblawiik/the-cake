@@ -36,8 +36,8 @@ class GameWindow extends Component {
         const arrowStyle = {
 
             position: 'absolute',
-            left: '10px',
-            top: '10px',
+            left: '200px',
+            top: '200px',
             cursor: 'pointer'
         };
 
