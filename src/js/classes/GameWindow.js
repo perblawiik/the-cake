@@ -23,7 +23,7 @@ class GameWindow extends Component {
 
         const windowStyle = {
 
-            backgroundColor: '#3b5998',
+            backgroundColor: 'black',
             position: 'absolute',
             margin: 'auto',
             top: '12.5%',
