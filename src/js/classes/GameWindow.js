@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
+import Post from './Post';
+
 // Import classes
 import LoginPage from './LoginPage.js';
 import BrowserField from './BrowserField';
 
 // Global GameState object. Used for setting return value in GameWindow class
+
 const GameState = {
     LOGIN_PAGE: 0,
     MAIN_PAGE: 1
@@ -58,6 +61,7 @@ class GameWindow extends Component {
             case GameState.LOGIN_PAGE:
 
                 return(
+
                     <div style={windowStyle}>
                         <BrowserField pageInfo={''}/>
                         <LoginPage/>
@@ -68,9 +72,12 @@ class GameWindow extends Component {
                     <div style={windowStyle}>
                         <BrowserField pageInfo={'home'}/>
                         <div style={{width: '100%', height: '100%'}}>
+
                             <img src={require('../../img/left-arrow.png')} alt='x' style={arrowStyle} onClick={this.setGameState.bind(this, GameState.LOGIN_PAGE)}/>
                             <p style={{color: 'white', fontSize: '36px', textAlign: 'center'}}>MAIN PAGE WOOO!!</p>
-                        </div>
+                            </div>
+                             <Post name='Dork Borksson' text='Last christmas I gave you my hearth byt the very next day, you gave it away. This year to save me my tears I will give it to someone special.'/>
+                        
                     </div>
                 );
             default:
