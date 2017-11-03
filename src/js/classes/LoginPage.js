@@ -47,7 +47,7 @@ const topbar = {
 
 
 		return(
-			<div>
+			<div style={{position: 'absolute', width: '100%', height: '90%', top: '10%'}}>
               	<div style={topbar}>
                     Bookface
                	</div>
