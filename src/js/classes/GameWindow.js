@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import BrowserField from './BrowserField';
+
 // Global GameState object. Used for setting return value in GameWindow class
 const GameState = {
     LOGIN_PAGE: 0,
@@ -55,6 +57,7 @@ class GameWindow extends Component {
             case GameState.LOGIN_PAGE:
                 return(
                     <div style={windowStyle}>
+                        <BrowserField pageInfo={''}/>
                         <div style={{width: '100%', height: '100%'}}>
                             <img src={require('../../img/right-arrow.png')} alt='x' style={arrowStyle} onClick={this.setGameState.bind(this, GameState.MAIN_PAGE)}/>
                             <p style={{color: 'white', fontSize: '36px', textAlign: 'center'}}>LOG IN PAGE WOOO!!</p>
@@ -64,6 +67,7 @@ class GameWindow extends Component {
             case GameState.MAIN_PAGE:
                 return (
                     <div style={windowStyle}>
+                        <BrowserField pageInfo={'home'}/>
                         <div style={{width: '100%', height: '100%'}}>
                             <img src={require('../../img/left-arrow.png')} alt='x' style={arrowStyle} onClick={this.setGameState.bind(this, GameState.LOGIN_PAGE)}/>
                             <p style={{color: 'white', fontSize: '36px', textAlign: 'center'}}>MAIN PAGE WOOO!!</p>
