@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-
+// Import classes
 import LoginPage from './LoginPage.js';
 import BrowserField from './BrowserField';
-// Global GameState object. Used for setting return value in GameWindow class
 
+// Global GameState object. Used for setting return value in GameWindow class
 const GameState = {
     LOGIN_PAGE: 0,
     MAIN_PAGE: 1
@@ -57,10 +57,10 @@ class GameWindow extends Component {
         switch(this.state.gameState) {
             case GameState.LOGIN_PAGE:
 
-                return(<div style={windowStyle}>
-                    <BrowserField pageInfo={''}/>
-                    <LoginPage/>
-
+                return(
+                    <div style={windowStyle}>
+                        <BrowserField pageInfo={''}/>
+                        <LoginPage/>
                     </div>
                 );
             case GameState.MAIN_PAGE:
