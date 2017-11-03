@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+
+import Post from './Post';
 // Global GameState object
 const GameState = {
     LOGIN_PAGE: 0,
@@ -44,6 +46,7 @@ class GameWindow extends Component {
         switch(this.state.gameState) {
             case GameState.LOGIN_PAGE:
                 return(
+
                     <div style={windowStyle}>
                         <div style={{width: '100%', height: '100%'}}>
                             <img src={require('../../img/right-arrow.png')} alt='x' style={arrowStyle} onClick={this.setGameState.bind(this, GameState.MAIN_PAGE)}/>
@@ -55,9 +58,12 @@ class GameWindow extends Component {
                 return (
                     <div style={windowStyle}>
                         <div style={{width: '100%', height: '100%'}}>
+
                             <img src={require('../../img/left-arrow.png')} alt='x' style={arrowStyle} onClick={this.setGameState.bind(this, GameState.LOGIN_PAGE)}/>
                             <p style={{color: 'white', fontSize: '36px', textAlign: 'center'}}>MAIN PAGE WOOO!!</p>
-                        </div>
+                            </div>
+                             <Post name='Dork Borksson' text='Last christmas I gave you my hearth byt the very next day, you gave it away. This year to save me my tears I will give it to someone special.'/>
+                        
                     </div>
                 );
             default:
