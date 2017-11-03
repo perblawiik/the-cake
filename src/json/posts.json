@@ -1,0 +1,20 @@
+// Post information
+{
+	"posts": [
+        {
+        	"id": "01",
+        	"userName": "Durka Durka",
+        	"imageFile": "durka.png"
+        },
+        {
+        	"id": "02",
+        	"userName": "Burka Burka",
+        	"imageFile": "Burka.png"
+        },
+        {
+        	"id": "03",
+        	"userName": "Merka Merka",
+        	"imageFile": "merka.png"
+        }
+	]
+}
