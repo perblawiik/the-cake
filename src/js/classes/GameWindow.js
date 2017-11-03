@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import Post from './Post';
 // Global GameState object
 =======
+=======
+import Post from './Post';
+
+>>>>>>> 3b3fafe2f7d574d6673f6dbcede6090fc168695a
 // Import classes
 import LoginPage from './LoginPage.js';
 import BrowserField from './BrowserField';
 
 // Global GameState object. Used for setting return value in GameWindow class
+<<<<<<< HEAD
 >>>>>>> master
+=======
+
+>>>>>>> 3b3fafe2f7d574d6673f6dbcede6090fc168695a
 const GameState = {
     LOGIN_PAGE: 0,
     MAIN_PAGE: 1
