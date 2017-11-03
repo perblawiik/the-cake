@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
-import BrowserField from './BrowserField';
 
+import LoginPage from './LoginPage.js';
+import BrowserField from './BrowserField';
 // Global GameState object. Used for setting return value in GameWindow class
+
 const GameState = {
     LOGIN_PAGE: 0,
     MAIN_PAGE: 1
@@ -32,7 +34,6 @@ class GameWindow extends Component {
 
         // Css style for the game window
         const windowStyle = {
-
             backgroundColor: '#3b5998',
             position: 'absolute',
             margin: 'auto',
@@ -55,13 +56,11 @@ class GameWindow extends Component {
         // Switch statement for game state ( If LOGIN -> return the login page, If MAIN -> return the main page )
         switch(this.state.gameState) {
             case GameState.LOGIN_PAGE:
-                return(
-                    <div style={windowStyle}>
-                        <BrowserField pageInfo={''}/>
-                        <div style={{width: '100%', height: '100%'}}>
-                            <img src={require('../../img/right-arrow.png')} alt='x' style={arrowStyle} onClick={this.setGameState.bind(this, GameState.MAIN_PAGE)}/>
-                            <p style={{color: 'white', fontSize: '36px', textAlign: 'center'}}>LOG IN PAGE WOOO!!</p>
-                        </div>
+
+                return(<div style={windowStyle}>
+                    <BrowserField pageInfo={''}/>
+                    <LoginPage/>
+
                     </div>
                 );
             case GameState.MAIN_PAGE:
