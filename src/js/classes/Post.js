@@ -22,33 +22,47 @@ class Post extends Component {
     render() {
         return(
 
-                <table className='mainWindowPost'>
-                
+            <div className='mainWindowPost'>
+                {/**/}
+                {/* Table 1: Contains information of the post */} 
+                <table >
                     <tr className='userBar'>
-                        <th> 
+                        <td className='userFaceContainer'> 
                             <img className='userFace' src={require('../../img/' + this.props.name + '.png')}/>
-                        </th>
-                        <th className='userName'> 
+                        </td>
+                        <td className='userName'> 
                             {this.props.name}
-                        </th>
+                        </td>
                     </tr>
 
                     <tr className='textBar'>
-                        <th className='postText'>
+                         {/*colspan -> 1 cell spans 2 cells*/}
+                        <td colspan='2' className='postText'>
                             {this.props.text}
-                        </th>
-                    </tr>
-
-                    <tr className='reactionBar'>
-                        <th className='likeButton'>
-                            <p> Like! </p>
-                        </th>
-                        <th className='commentButton'>
-                            <p> Comment! </p>
-                        </th>
+                        </td>
                     </tr>
 
                 </table>
+
+                {/*Table 2: Contains reaction and comment button*/}
+                <table>
+                    <tr className='reactionBar'>
+                        <td className='likeButton'>
+                            <p>
+                                {/*Add like button and other reactions*/}
+                                Like 
+                             </p>
+                        </td>
+                        <td className='commentButton'>
+                            <p> 
+                                {/*Add clickabillity*/}
+                                Comment 
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
             );
     }
 }
