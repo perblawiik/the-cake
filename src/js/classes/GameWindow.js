@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import LoginPage from './LoginPage.js';
 // Global GameState object
 const GameState = {
     LOGIN_PAGE: 0,
@@ -23,7 +24,7 @@ class GameWindow extends Component {
 
         const windowStyle = {
 
-            backgroundColor: 'black',
+            backgroundColor: 'blue',
             position: 'absolute',
             margin: 'auto',
             top: '12.5%',
@@ -43,12 +44,8 @@ class GameWindow extends Component {
 
         switch(this.state.gameState) {
             case GameState.LOGIN_PAGE:
-                return(
-                    <div style={windowStyle}>
-                        <div style={{width: '100%', height: '100%'}}>
-                            <img src={require('../../img/right-arrow.png')} alt='x' style={arrowStyle} onClick={this.setGameState.bind(this, GameState.MAIN_PAGE)}/>
-                            <p style={{color: 'white', fontSize: '36px', textAlign: 'center'}}>LOG IN PAGE WOOO!!</p>
-                        </div>
+                return(<div style={windowStyle}>
+                    <LoginPage/>
                     </div>
                 );
             case GameState.MAIN_PAGE:
