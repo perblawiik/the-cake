@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import GameWindow from './js/classes/GameWindow';
-import Post from './js/classes/Post';
 
 import './css/App.css';
 

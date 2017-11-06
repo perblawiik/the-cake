@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
-import Post from './Post';
-
 // Import classes
 import LoginPage from './LoginPage.js';
 import BrowserField from './BrowserField';
+import MainPage from './MainPage';
 
 // Global GameState object. Used for setting return value in GameWindow class
 const GameState = {
@@ -39,11 +38,12 @@ class GameWindow extends Component {
             backgroundColor: '#3b5998',
             position: 'absolute',
             margin: 'auto',
-            top: '12.5%',
+            top: '10%',
             left: '12.5%',
             right: '12.5%',
             width: '75%',
-            height: '75%'
+            height: '85%',
+            minWidth: '800px',
         };
 
         // Switch statement for game state ( If LOGIN -> return the login page, If MAIN -> return the main page )
@@ -60,10 +60,7 @@ class GameWindow extends Component {
                 return (
                     <div style={windowStyle}>
                         <BrowserField pageInfo={'home'} setGameState={this.setGameState.bind(this)} otherGameState={GameState.LOGIN_PAGE} />
-                        <div style={{width: '100%', height: '100%'}}>
-                            <p style={{color: 'white', fontSize: '36px', textAlign: 'center'}}>MAIN PAGE WOOO!!</p>
-                            <Post name='Dork Borksson' text='Last christmas I gave you my hearth byt the very next day, you gave it away. This year to save me my tears I will give it to someone special.'/>  
-                        </div>
+                        <MainPage/>
                     </div>
                 );
             default:
