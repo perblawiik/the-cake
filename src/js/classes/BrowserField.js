@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 
-// Global GameState object. Used for setting return value in GameWindow class
-const GameState = {
-    LOGIN_PAGE: 0,
-    MAIN_PAGE: 1
-};
-
 class BrowserField extends Component {
 
 	constructor(props) {

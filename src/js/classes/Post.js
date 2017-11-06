@@ -31,7 +31,7 @@ class Post extends Component {
                 <table >
                     <tr className='userBar'>
                         <td className='userFaceContainer'> 
-                            <img className='userFace' src={imageUrl}/>
+                            <img className='userFace' src={imageUrl} alt='x'/>
                         </td>
                         <td className='userName'> 
                             {this.props.name}
