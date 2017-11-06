@@ -15,31 +15,22 @@ class BrowserField extends Component {
 
 		const containerStyle = {
 			position: 'absolute', width: '100%', height: '10%', backgroundColor: '#dddddd'
-		}
+		};
 
 		const textFieldStyle = {
-			position: 'absolute', width: '80%', height: '40%', backgroundColor: 'white', bottom: '15%', left: '5%', paddingLeft: '20px'
-		}
+			position: 'absolute', width: '80%', height: '25px', backgroundColor: 'white', bottom: '15%', left: '5%', paddingLeft: '20px', paddingTop: '5px'
+		};
 
 		const textStyle = {
 			margin: '0'
-		}
+		};
 
 		const imageStyle = {
-			position: 'absolute',
-			width: '10%',
-			height: '35%',
-			right: 0,
-			cursor: 'pointer'
-		}
+			position: 'absolute', width: '10%', height: '35%', right: 0, cursor: 'pointer'
+		};
 
-		// Css style for arrow "button"
         const arrowStyle = {
-            backgroundColor: 'red',
-            position: 'absolute',
-            left: '10px',
-            top: '10px',
-            cursor: 'pointer'
+            position: 'absolute', left: '7px', top: '10px', cursor: 'pointer'
         };
 
 		return (
