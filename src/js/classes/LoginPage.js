@@ -20,7 +20,6 @@ const topbar = {
             bottom: '5%',
             width: '37%',
             height: '80%',
-            cursor: 'pointer'
         };
 
         const rightlogin = {
@@ -30,7 +29,6 @@ const topbar = {
             bottom: '5%',
             width: '37%',
             height: '80%',
-            cursor: 'pointer'
         };
 
         const substyle = {
@@ -45,29 +43,7 @@ const topbar = {
             margin: 'center'
         };
 
-        const dropbtn = {
-            backgroundColor: '#4CAF50',
-            color: 'white',
-            padding: '16px',
-            fontSize: '16px',
-            border: 'none',
-            cursor: 'pointer'
-        };
-
-        const dropdown = {
-            position: 'relative',
-            display: 'inlineBlock'
-        };
-
-        const dropdownContent = {
-            display: 'none',
-            position: 'absolute',
-            backgroundColor: '#f9f9f9',
-            minWidth: '160px',
-            boxShadow: '0px 8px 16px 0px rgba(0,0,0,0.2)',
-            zIndex: '1'
-        }
-
+        
 
 		return(
 			<div style={{position: 'absolute', width: '100%', height: '90%', top: '10%'}}>
@@ -85,13 +61,16 @@ const topbar = {
                             <label>
                                 <input type="text" name="name" style={namestyle}/>
                             </label>
-                            <div class="dropdown">
-                                <button onclick"dropDownFunction()" class="dropbtn">Dropdown</button>
-                                <div id="dropDownID" class="dropDownContent">
-                                    <a>No</a>
-                                    <a>Yes</a>
-                                </div>
+
+                            <div>
+                                <hr/>
+                                Gender:
+                                <br/>
+                                <input type="checkbox"/>YES <br/>
+                                <input type="checkbox"/>NO <br/>
+                                <hr/>
                             </div>
+
 							<input type="submit" value="Submit" style={substyle} />
                         </form>
                     </div>           
