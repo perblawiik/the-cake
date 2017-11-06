@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 
+// Global GameState object. Used for setting return value in GameWindow class
+const GameState = {
+    LOGIN_PAGE: 0,
+    MAIN_PAGE: 1
+};
+
 class BrowserField extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			setGameState: this.props.setGameState
+		}
+	}
 
 	render() {
 
@@ -26,8 +39,18 @@ class BrowserField extends Component {
 			cursor: 'pointer'
 		}
 
+		// Css style for arrow "button"
+        const arrowStyle = {
+            backgroundColor: 'red',
+            position: 'absolute',
+            left: '10px',
+            top: '10px',
+            cursor: 'pointer'
+        };
+
 		return (
 			<div style={containerStyle}>
+				<img src={require('../../img/left-arrow.png')} alt='x' style={arrowStyle} onClick={this.state.setGameState.bind(this, this.props.otherGameState)}/>
 				<img src={require('../../img/browser.png')} alt='x' style={imageStyle}/>
 				<div style={textFieldStyle}>
 					<p style={textStyle}>{browserText}</p>

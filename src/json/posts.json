@@ -1,20 +1,17 @@
-// Post information
+//import postInfo from './json/posts.json'
 {
-	"posts": [
-        {
-        	"id": "01",
-        	"userName": "Durka Durka",
-        	"imageFile": "durka.png"
-        },
-        {
-        	"id": "02",
-        	"userName": "Burka Burka",
-        	"imageFile": "Burka.png"
-        },
-        {
-        	"id": "03",
-        	"userName": "Merka Merka",
-        	"imageFile": "merka.png"
+	"lvl01" : {
+                "01": {
+                	"userName": "Durka Durka",
+                	"imageFile": "durka.png"
+                },
+                "02": {
+                        "userName": "Burka Burka",
+                        "imageFile": "burka.png"
+                },
+                "03": {
+                        "userName": "Merka Merka",
+                        "imageFile": "merka.png"
+                }
         }
-	]
 }

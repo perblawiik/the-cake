@@ -7,7 +7,6 @@ import LoginPage from './LoginPage.js';
 import BrowserField from './BrowserField';
 
 // Global GameState object. Used for setting return value in GameWindow class
-
 const GameState = {
     LOGIN_PAGE: 0,
     MAIN_PAGE: 1
@@ -47,37 +46,24 @@ class GameWindow extends Component {
             height: '75%'
         };
 
-        // Css style for arrow "button"
-        const arrowStyle = {
-            backgroundColor: 'red',
-            position: 'absolute',
-            left: '10px',
-            top: '10px',
-            cursor: 'pointer'
-        };
-
         // Switch statement for game state ( If LOGIN -> return the login page, If MAIN -> return the main page )
         switch(this.state.gameState) {
             case GameState.LOGIN_PAGE:
 
                 return(
-
                     <div style={windowStyle}>
-                        <BrowserField pageInfo={''}/>
+                        <BrowserField pageInfo={''} setGameState={this.setGameState.bind(this)} otherGameState={GameState.MAIN_PAGE} />
                         <LoginPage/>
                     </div>
                 );
             case GameState.MAIN_PAGE:
                 return (
                     <div style={windowStyle}>
-                        <BrowserField pageInfo={'home'}/>
+                        <BrowserField pageInfo={'home'} setGameState={this.setGameState.bind(this)} otherGameState={GameState.LOGIN_PAGE} />
                         <div style={{width: '100%', height: '100%'}}>
-
-                            <img src={require('../../img/left-arrow.png')} alt='x' style={arrowStyle} onClick={this.setGameState.bind(this, GameState.LOGIN_PAGE)}/>
                             <p style={{color: 'white', fontSize: '36px', textAlign: 'center'}}>MAIN PAGE WOOO!!</p>
-                            </div>
-                             <Post name='Dork Borksson' text='Last christmas I gave you my hearth byt the very next day, you gave it away. This year to save me my tears I will give it to someone special.'/>
-                        
+                            <Post name='Dork Borksson' text='Last christmas I gave you my hearth byt the very next day, you gave it away. This year to save me my tears I will give it to someone special.'/>  
+                        </div>
                     </div>
                 );
             default:
