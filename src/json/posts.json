@@ -1,6 +1,6 @@
-//import postInfo from './json/posts.json'
+
 {
-	"lvl01" : {
+        "lvl01" : {
                 "01": {
                 	"userName": "Durka Durka",
                 	"imageFile": "durka.png"
