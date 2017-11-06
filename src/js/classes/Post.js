@@ -20,6 +20,9 @@ class Post extends Component {
     }
 
     render() {
+        
+        const imageUrl = require('../../img/' + this.props.name + '.png');
+
         return(
 
             <div className='mainWindowPost'>
@@ -28,7 +31,7 @@ class Post extends Component {
                 <table >
                     <tr className='userBar'>
                         <td className='userFaceContainer'> 
-                            <img className='userFace' src={require('../../img/' + this.props.name + '.png')}/>
+                            <img className='userFace' src={imageUrl}/>
                         </td>
                         <td className='userName'> 
                             {this.props.name}
