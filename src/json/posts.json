@@ -6,7 +6,7 @@
                         "profilePic": "Dork Borksson.png",
                         "text": "Last christmas I gave you my hearth byt the very next day, you gave it away. This year to save me my tears I will give it to someone special."
                 },
-                "p02": {
+                "02": {
                         "userName": "Burka Burka",
                         "imageFile": "burka.png",
 
@@ -45,7 +45,7 @@
 
                         }
                 },
-                "p03": {
+                "03": {
                         "userName": "Merka Merka",
                         "imageFile": "merka.png"
                 }

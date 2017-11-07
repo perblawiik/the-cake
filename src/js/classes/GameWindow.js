@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import LoginPage from './LoginPage.js';
 import BrowserField from './BrowserField';
 import MainPage from './MainPage';
+import Player from './Player';
 
 // Global GameState object. Used for setting return value in GameWindow class
 const GameState = {
@@ -21,7 +22,7 @@ class GameWindow extends Component {
         this.state = {
             // gameState is set to LOGIN_PAGE by default (always start game on the Login Page)
             gameState: GameState.LOGIN_PAGE,
-            playerName: null
+            player: null
         };
     }
 
@@ -31,9 +32,10 @@ class GameWindow extends Component {
         this.setState({gameState: state});
     }
 
-    setPlayerName(name) {
-        this.setState({playerName: name});
-        console.log('wooow');
+    createPlayer(name) {
+        let newPlayer = new Player(name);
+        this.setState({player: newPlayer});
+        console.log(newPlayer.getName());
     }
 
 
@@ -59,7 +61,7 @@ class GameWindow extends Component {
                 return(
                     <div style={windowStyle}>
                         <BrowserField pageInfo={''} setGameState={this.setGameState.bind(this)} otherGameState={GameState.MAIN_PAGE} />
-                        <LoginPage setPlayerName={this.setPlayerName.bind(this)} setGameState={this.setGameState.bind(this)}/>
+                        <LoginPage createPlayer={this.createPlayer.bind(this)} setGameState={this.setGameState.bind(this)}/>
                     </div>
                 );
             case GameState.MAIN_PAGE:

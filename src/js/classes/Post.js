@@ -2,7 +2,22 @@ import React, { Component } from 'react';
 
 import '../../css/Post.css';
 
+// Global GameState object
+const GameState = {
+    LOGIN_PAGE: 0,
+    MAIN_PAGE: 1
+};
+
 class Post extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            gameState: GameState.MAIN_PAGE
+        };
+
+
+    }
 
     render() {
         
@@ -33,25 +48,24 @@ class Post extends Component {
                 </thead>
 
                 {/*Table 2: Contains reaction and comment button*/}
-                <thead>
-                    <tbody>
-                        <tr className='reactionBar'>
-                            <td className='likeButton'>
-                                <p>
-                                    {/*Add like button and other reactions*/}
-                                    Like
-                                 </p>
-                            </td>
-                            <td className='commentButton'>
-                                <p>
-                                    {/*Add clickabillity*/}
-                                    Comment
-                                </p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </thead>
+                <table>
+                    <tr className='reactionBar'>
+                        <td className='likeButton'>
+                            <p>
+                                {/*Add like button and other reactions*/}
+                                Like 
+                             </p>
+                        </td>
+                        <td className='commentButton'>
+                            <p> 
+                                {/*Add clickabillity*/}
+                                Comment 
+                            </p>
+                        </td>
+                    </tr>
+                </table>
             </div>
+
             );
     }
 }

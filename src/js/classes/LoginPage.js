@@ -13,12 +13,12 @@ readSubmitButton(){
     let name = document.getElementById('playername').value;
 
 
-    if(name == ''){
+    if(name === ''){
         console.log('ERROR');
     }
     else
     {
-        this.props.setPlayerName(name);
+        this.props.createPlayer(name);
         this.props.setGameState(1);
         console.log(name);
     }
