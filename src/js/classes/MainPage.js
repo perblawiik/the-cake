@@ -4,6 +4,8 @@ import Post from './Post';
 
 import postInfo from '../../json/posts.json'
 
+import CommentSection from'./CommentSection';
+
 class MainPage extends Component {
 
 	render () {
@@ -45,17 +47,22 @@ class MainPage extends Component {
 							<tbody style={tableStyle}>
 								<tr>
 									<td style={{border:'1px solid black'}}>
-										<Post name={postInfo.lvl01.p01.userName} text={postInfo.lvl01.p01.text}/>
+										<Post postInfo={postInfo.lvl01.p01}/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<CommentSection postInfo={postInfo.lvl01.p01}/>
 									</td>
 								</tr>
 								<tr>
 									<td style={{border:'1px solid black'}}>
-										<Post name={postInfo.lvl01.p01.userName} text={postInfo.lvl01.p01.text}/>
+										<Post postInfo={postInfo.lvl01.p01}/>
 									</td>
 								</tr>
 								<tr>
 									<td style={{border:'1px solid black'}}>
-										<Post name={postInfo.lvl01.p01.userName} text={postInfo.lvl01.p01.text}/>
+										<Post postInfo={postInfo.lvl01.p01}/>
 									</td>
 								</tr>
 							</tbody>
