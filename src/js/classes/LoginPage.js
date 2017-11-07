@@ -2,7 +2,31 @@ import React, { Component } from 'react';
 
 import '../../css/LoginPage.css';
 
+
 class LoginPage extends Component {
+
+
+
+
+readSubmitButton(){
+
+    let name = document.getElementById('playername').value;
+
+
+    if(name == ''){
+        console.log('ERROR');
+    }
+    else
+    {
+        this.props.setPlayerName(name);
+        this.props.setGameState(1);
+        console.log(name);
+    }
+    
+}
+
+
+
   render() {
 
 /*const topbar = {
@@ -48,6 +72,9 @@ class LoginPage extends Component {
         
 
 		return(
+
+
+            /*Div with title of page*/            
 			<div style={{position: 'absolute', width: '100%', height: '90%', top: '10%'}}>
               	<div className = 'topbar'>
                     Bookface
@@ -57,18 +84,23 @@ class LoginPage extends Component {
                     left
                 </div>*/}
 
+                /*Left div box with information to be added*/ 
+
                 <div style={leftlogin}>
                    	left
                 </div>
+
+
+                /*Right div box with registration for the player*/ 
 
                 {/*<div className='rightlogin'>*/}
 
                 <div style={rightlogin}>
                     right
 					<div style={{padding: '20%'}}>
-                        <form style={{ margin:'0 auto',textalign:'center'}}>
+                        <div style={{ margin:'0 auto',textalign:'center'}}>
                             <label>
-                                <input type="text" name="name" className='namestyle'/>
+                                <input id = 'playername' placeholder='Username' type="text" name="name" className='namestyle'/>
                             </label>
 
                             <div>
@@ -80,8 +112,11 @@ class LoginPage extends Component {
                                 <hr/>
                             </div>
 
-							<input type="submit" value="Submit" className='substyle' />
-                        </form>
+							<button value="Submit" className='substyle' onClick={this.readSubmitButton.bind(this)}>
+
+                            Submit
+                            </button>
+                        </div>
                     </div>           
                 </div>
                 </div>

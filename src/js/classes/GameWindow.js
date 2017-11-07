@@ -20,7 +20,8 @@ class GameWindow extends Component {
         // OBS! You can create any variable that you need in this object.
         this.state = {
             // gameState is set to LOGIN_PAGE by default (always start game on the Login Page)
-            gameState: GameState.LOGIN_PAGE
+            gameState: GameState.LOGIN_PAGE,
+            playerName: null
         };
     }
 
@@ -28,6 +29,11 @@ class GameWindow extends Component {
     setGameState(state) {
         // this.setState() is a function inherited from Component
         this.setState({gameState: state});
+    }
+
+    setPlayerName(name) {
+        this.setState({playerName: name});
+        console.log('wooow');
     }
 
 
@@ -53,7 +59,7 @@ class GameWindow extends Component {
                 return(
                     <div style={windowStyle}>
                         <BrowserField pageInfo={''} setGameState={this.setGameState.bind(this)} otherGameState={GameState.MAIN_PAGE} />
-                        <LoginPage/>
+                        <LoginPage setPlayerName={this.setPlayerName.bind(this)} setGameState={this.setGameState.bind(this)}/>
                     </div>
                 );
             case GameState.MAIN_PAGE:
