@@ -7,3 +7,33 @@
             font-size: 40px;
             text-indent: 10%;
         }
+
+.leftlogin {
+		    background-color: pink;
+		    position: absolute;
+		    left: 10%;
+		    bottom: 5%;
+		    width: 37%;
+		    height:80%;
+		}
+
+.rightlogin {
+		    background-color: cyan;
+		    position: absolute;
+		    right: 10%;
+		    bottom: 5%;
+		    width: 37%;
+		    height: 80%;
+		}
+
+.substyle {
+		    position: absolute;
+		    bottom: 5%;
+		    margin: center;
+		}
+
+.namestyle {
+		    position: absolute;
+		    top: 10%;
+		    margin: center;
+		}
