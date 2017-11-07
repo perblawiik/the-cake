@@ -6,7 +6,7 @@ class Post extends Component {
 
     render() {
         
-        const imageUrl = require('../../img/' + this.props.name + '.png');
+        const imageUrl = require('../../img/' + this.props.postInfo.profilePic);
 
         return(
 
@@ -20,13 +20,13 @@ class Post extends Component {
                                 <img className='userFace' src={imageUrl} alt='x'/>
                             </td>
                             <td className='userName'>
-                                {this.props.name}
+                                {this.props.postInfo.userName}
                             </td>
                         </tr>
                         <tr className='textBar'>
                              {/*colspan -> 1 cell spans 2 cells*/}
                             <td colSpan='2' className='postText'>
-                                {this.props.text}
+                                {this.props.postInfo.text}
                             </td>
                         </tr>
                     </tbody>
