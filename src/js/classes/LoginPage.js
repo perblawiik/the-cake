@@ -28,46 +28,6 @@ readSubmitButton(){
 
   render() {
 
-/*const topbar = {
-            backgroundColor: 'red',
-            position: 'absolute',
-            width: '100%',
-            height: '10%',
-            cursor: 'pointer',
-            fontSize: '40px',
-            textIndent: '10%'
-        };
-*/
-       const leftlogin = {
-            backgroundColor: 'pink',
-            position: 'absolute',
-            left: '10%',
-            bottom: '5%',
-            width: '37%',
-            height: '80%',
-        };
-
-        const rightlogin = {
-            backgroundColor: 'cyan',
-            position: 'absolute',
-            right: '10%',
-            bottom: '5%',
-            width: '37%',
-            height: '80%',
-        };
-/* 
-        const substyle = {
-            position: 'absolute',
-            bottom: '5%',
-            margin: 'center'
-        };
-
-        const namestyle = {
-            position: 'absolute',
-            top: '10%',
-            margin: 'center'
-        };*/
-
         
 
 		return(
@@ -79,26 +39,32 @@ readSubmitButton(){
                     Bookface
                	</div>
 
-               {/* <div className='leftlogin'>
+                <div className='leftlogin'>
                     left
-                </div>*/}
+                </div>
 
                 /*Left div box with information to be added*/ 
 
-                <div style={leftlogin}>
+                {/*<div style={leftlogin}>
                    	left
-                </div>
+                </div>*/}
 
 
                 /*Right div box with registration for the player*/ 
 
-                {/*<div className='rightlogin'>*/}
+                <div className='rightlogin'>
 
-                <div style={rightlogin}>
-                    right
+                {/*<div style={rightlogin}>*/}
+                    
 					<div style={{padding: '20%'}}>
+
+                        
                         <div style={{ margin:'0 auto',textalign:'center'}}>
+
+
+
                             <label>
+
                                 <input id = 'playername' placeholder='Username' type="text" name="name" className='namestyle'/>
                             </label>
 
