@@ -21,13 +21,14 @@ class Post extends Component {
 
     render() {
         
-        const imageUrl = require('../../img/' + this.props.name + '.png');
+        const imageUrl = require('../../img/' + this.props.postInfo.profilePic);
 
         return(
 
             <div className='mainWindowPost'>
                 {/**/}
                 {/* Table 1: Contains information of the post */} 
+<<<<<<< HEAD
                 <table >
                     <tr className='userBar'>
                         <td className='userFaceContainer'> 
@@ -46,6 +47,26 @@ class Post extends Component {
                     </tr>
 
                 </table>
+=======
+                <thead>
+                    <tbody>
+                        <tr className='userBar'>
+                            <td className='userFaceContainer'>
+                                <img className='userFace' src={imageUrl} alt='x'/>
+                            </td>
+                            <td className='userName'>
+                                {this.props.postInfo.userName}
+                            </td>
+                        </tr>
+                        <tr className='textBar'>
+                             {/*colspan -> 1 cell spans 2 cells*/}
+                            <td colSpan='2' className='postText'>
+                                {this.props.postInfo.text}
+                            </td>
+                        </tr>
+                    </tbody>
+                </thead>
+>>>>>>> master
 
                 {/*Table 2: Contains reaction and comment button*/}
                 <table>
