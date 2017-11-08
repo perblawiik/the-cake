@@ -48,22 +48,24 @@ class Post extends Component {
                     </tbody>
                 </thead>
                 {/*Table 2: Contains reaction and comment button*/}
-                <table>
-                    <tr className='reactionBar'>
-                        <td className='likeButton'>
-                            <p>
-                                {/*Add like button and other reactions*/}
-                                Like 
-                             </p>
-                        </td>
-                        <td className='commentButton'>
-                            <p> 
-                                {/*Add clickabillity*/}
-                                Comment 
-                            </p>
-                        </td>
-                    </tr>
-                </table>
+                <thead>
+                    <tbody>
+                        <tr className='reactionBar'>
+                            <td className='likeButton'>
+                                <p>
+                                    {/*Add like button and other reactions*/}
+                                    Like 
+                                 </p>
+                            </td>
+                            <td className='commentButton'>
+                                <p> 
+                                    {/*Add clickabillity*/}
+                                    Comment 
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </thead>
             </div>
 
             );
