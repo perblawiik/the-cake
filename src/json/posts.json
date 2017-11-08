@@ -1,16 +1,10 @@
 
 {
         "lvl01" : {
-<<<<<<< HEAD
-                "01": {
-                	"userName": "Durka Durka",
-                	"imageFile": "durka.png"
-=======
                 "p01": {
                         "userName": "Dork Borksson",
                         "profilePic": "Dork Borksson.png",
                         "text": "Last christmas I gave you my hearth byt the very next day, you gave it away. This year to save me my tears I will give it to someone special."
->>>>>>> master
                 },
                 "02": {
                         "userName": "Burka Burka",

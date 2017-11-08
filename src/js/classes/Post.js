@@ -15,8 +15,6 @@ class Post extends Component {
         this.state = {
             gameState: GameState.MAIN_PAGE
         };
-
-
     }
 
     render() {
@@ -28,26 +26,6 @@ class Post extends Component {
             <div className='mainWindowPost'>
                 {/**/}
                 {/* Table 1: Contains information of the post */} 
-<<<<<<< HEAD
-                <table >
-                    <tr className='userBar'>
-                        <td className='userFaceContainer'> 
-                            <img className='userFace' src={imageUrl} alt='x'/>
-                        </td>
-                        <td className='userName'> 
-                            {this.props.name}
-                        </td>
-                    </tr>
-
-                    <tr className='textBar'>
-                         {/*colspan -> 1 cell spans 2 cells*/}
-                        <td colspan='2' className='postText'>
-                            {this.props.text}
-                        </td>
-                    </tr>
-
-                </table>
-=======
                 <thead>
                     <tbody>
                         <tr className='userBar'>
@@ -66,7 +44,6 @@ class Post extends Component {
                         </tr>
                     </tbody>
                 </thead>
->>>>>>> master
 
                 {/*Table 2: Contains reaction and comment button*/}
                 <table>
