@@ -28,6 +28,7 @@ class Post extends Component {
             <div className='mainWindowPost'>
                 {/**/}
                 {/* Table 1: Contains information of the post */} 
+
                 <thead>
                     <tbody>
                         <tr className='userBar'>
@@ -46,7 +47,6 @@ class Post extends Component {
                         </tr>
                     </tbody>
                 </thead>
-
                 {/*Table 2: Contains reaction and comment button*/}
                 <table>
                     <tr className='reactionBar'>

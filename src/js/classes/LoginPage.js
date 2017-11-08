@@ -20,7 +20,6 @@ readSubmitButton(){
     {
         this.props.createPlayer(name);
         this.props.setGameState(1);
-        console.log(name);
     }
     
 }

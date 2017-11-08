@@ -6,6 +6,8 @@ import postInfo from '../../json/posts.json'
 
 import CommentSection from'./CommentSection';
 
+import PlayerInfo from'./PlayerInfo';
+
 class MainPage extends Component {
 
 	render () {
@@ -41,6 +43,7 @@ class MainPage extends Component {
 
 		return (
 			<div style={{width: '100%', height: '100%'}}>
+				<PlayerInfo player={this.props.player}/>
 				<div style={newsFlowOuter}>
 					<div style={newsFlowInner}>
 						<thead>
