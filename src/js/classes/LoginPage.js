@@ -6,8 +6,6 @@ import '../../css/LoginPage.css';
 class LoginPage extends Component {
 
 
-
-
 readSubmitButton(){
 
     let name = document.getElementById('playername').value;
@@ -39,50 +37,52 @@ readSubmitButton(){
                     Bookface
                	</div>
 
+                /*Left div box with information to be added*/ 
                 <div className='leftlogin'>
                     left
                 </div>
 
-                /*Left div box with information to be added*/ 
-
-                {/*<div style={leftlogin}>
-                   	left
-                </div>*/}
-
-
                 /*Right div box with registration for the player*/ 
-
                 <div className='rightlogin'>
 
-                {/*<div style={rightlogin}>*/}
+                    <div className='Blankspace' style={{order: '0'}}>
+
+                    </div>
+
+                    <div className='Line' style={{order: '1'}}>
+                        <hr/>
+                    </div>
+
+                    <div style={{order: '2'}}>
                     
-					<div style={{padding: '20%'}}>
+                        <label>
 
-                        
-                        <div style={{ margin:'0 auto',textalign:'center'}}>
+                            <input id = 'playername' placeholder='Username' type="text" name="name" className='namestyle'/>
+                        </label>
+                    </div>
 
+                    <div className='Line' style={{order: '3'}}>
+                        <hr/>
+                    </div>
 
+                    <div className='genderBoxes' style={{order: '4'}}>
+                        Gender:
+                        <br/>
+                        <input type="checkbox"/>YES <br/>
+                        <input type="checkbox"/>NO <br/>
+                        <input type="checkbox"/>I DON'T KNOW<br/>
+                        <input type="checkbox"/>CAN YOU REPEAT THE QUESTION?<br/>
+                    </div>
 
-                            <label>
+					<div className='Line' style={{order: '5'}}>
+                        <hr/>
+                    </div>
+               
 
-                                <input id = 'playername' placeholder='Username' type="text" name="name" className='namestyle'/>
-                            </label>
+                    <button value="Submit" className='substyle' onClick={this.readSubmitButton.bind(this)} style={{order: '6'}}>
 
-                            <div>
-                                <hr/>
-                                Gender:
-                                <br/>
-                                <input type="checkbox"/>YES <br/>
-                                <input type="checkbox"/>NO <br/>
-                                <hr/>
-                            </div>
-
-							<button value="Submit" className='substyle' onClick={this.readSubmitButton.bind(this)}>
-
-                            Submit
-                            </button>
-                        </div>
-                    </div>           
+                    Submit
+                    </button>
                 </div>
                 </div>
               );
