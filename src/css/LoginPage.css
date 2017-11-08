@@ -24,16 +24,37 @@
 		    bottom: 5%;
 		    width: 37%;
 		    height: 80%;
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    justify-content: flex-start;
+
+		}
+
+.playerNameTextBox {
+
+
+		}
+
+.genderBoxes {
+
+
 		}
 
 .substyle {
-		    position: absolute;
+
 		    bottom: 5%;
-		    margin: center;
+		}
+
+.Blankspace {
+
+			height: 50px;
+		}
+
+.Line {
+			width: 95%;
 		}
 
 .namestyle {
-		    position: absolute;
-		    top: 10%;
-		    margin: center;
+		    top: 10%;		   
 		}
