@@ -43,9 +43,7 @@ readSubmitButton(){
                 </div>
 
                 /*Right div box with registration for the player*/ 
-
                 <div className='rightlogin'>
-
 
                     <div className='Blankspace' style={{order: '0'}}>
 
@@ -85,11 +83,7 @@ readSubmitButton(){
 
                     Submit
                     </button>
-
                 </div>
-
-
-
                 </div>
               );
 
