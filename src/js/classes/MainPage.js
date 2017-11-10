@@ -19,7 +19,6 @@ class MainPage extends Component {
             top: 0,
 			bottom: '5%',
             width: '450px',
-            overflow: 'hidden',
             overflowY: 'scroll'
         };
 
@@ -30,7 +29,7 @@ class MainPage extends Component {
             bottom: '5%',
             left: '12.5%',
             right: '12.5%',
-            width: '414px',
+            width: '412px',
             overflow: 'hidden'
         };
 
@@ -38,7 +37,6 @@ class MainPage extends Component {
         	margin: 0,
         	padding: 0,
         	display: 'block',
-        	border: '1px solid black'
         };
 
 		return (
