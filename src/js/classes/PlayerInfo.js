@@ -1,30 +1,9 @@
 import React, { Component } from 'react';
 
 class PlayerInfo extends Component {
-	
-	constructor(props) {
-		super(props);
-		this.state = {
-			trollPoints: props.player.getTrollPoints(),
-			comPoints: props.player.getCommunityPoints(),
-			playerLevel: props.player.getLevel()
-		}
-		this.player = props.player;
-	}
 
-	addTrollPoints() {
-		this.player.addPoints(1,0);
-		this.setState({
-			trollPoints: this.player.getTrollPoints(),
-			playerLevel: this.player.getLevel()
-		});
-	}
-
-	addCommPoints() {
-		this.player.addPoints(0,1);
-		this.setState({
-			comPoints: this.player.getCommunityPoints()
-		});
+	addPoints(trollP, commP) {
+		this.props.addPlayerPoints(trollP, commP);
 	}
 
 	render() {
@@ -41,12 +20,12 @@ class PlayerInfo extends Component {
 
 		return(
 			<div style={containerStyle}>
-				<p> Name: {this.player.getName()} </p>
-				<p> Level: {this.state.playerLevel} </p>
-				<p> Troll Points: {this.state.trollPoints} </p>
-				<p> Community Points: {this.state.comPoints} </p>
-				<button onClick={this.addTrollPoints.bind(this)}>Add Troll Points</button>
-				<button onClick={this.addCommPoints.bind(this)}>Add Community Points</button>
+				<p> Name: {this.props.playerStats.name} </p>
+				<p> Level: {this.props.playerStats.level} </p>
+				<p> Troll Points: {this.props.playerStats.trollPoints} </p>
+				<p> Community Points: {this.props.playerStats.comPoints} </p>
+				<button onClick={this.addPoints.bind(this, 1, 0)}>Add Troll Points</button>
+				<button onClick={this.addPoints.bind(this, 0, 1)}>Add Community Points</button>
 			</div>
 		);
 	}
