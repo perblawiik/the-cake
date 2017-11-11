@@ -10,7 +10,37 @@ import PlayerInfo from'./PlayerInfo';
 
 class MainPage extends Component {
 
-	render () {
+	constructor(props) {
+		super(props);
+		this.state ={
+            trollPoints: props.player.getTrollPoints(),
+            comPoints: props.player.getCommunityPoints(),
+            playerLevel: props.player.getLevel()
+		};
+		this.player = props.player;
+	}
+
+	addPlayerPoints(trollP, commP){
+		// Add points to the player
+		this.player.addPoints(trollP, commP);
+
+		// Update player stats
+        this.setState({
+            comPoints: this.player.getCommunityPoints(),
+            trollPoints: this.player.getTrollPoints(),
+            playerLevel: this.player.getLevel()
+        });
+	}
+
+	render() {
+
+		// An object containing all player stats that goes into PlayerInfo class
+		const playerStats = {
+			name: this.player.getName(),
+			trollPoints: this.state.trollPoints,
+            comPoints: this.state.comPoints,
+            level: this.state.playerLevel
+        };
 
 		const newsFlowInner = {
             backgroundColor: 'white',
@@ -19,7 +49,6 @@ class MainPage extends Component {
             top: 0,
 			bottom: '5%',
             width: '450px',
-            overflow: 'hidden',
             overflowY: 'scroll'
         };
 
@@ -30,23 +59,18 @@ class MainPage extends Component {
             bottom: '5%',
             left: '12.5%',
             right: '12.5%',
-            width: '414px',
+            width: '412px',
             overflow: 'hidden'
         };
 
-        const tableStyle = {
-        	margin: 0,
-        	padding: 0,
-        	display: 'block',
-        	border: '1px solid black'
-        };
+        const tableStyle = { margin: 0, padding: 0, display: 'block'};
 
 		return (
 			<div style={{width: '100%', height: '100%'}}>
-				<PlayerInfo player={this.props.player}/>
+				<PlayerInfo playerStats={playerStats} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
 				<div style={newsFlowOuter}>
 					<div style={newsFlowInner}>
-						<thead>
+						<table>
 							<tbody style={tableStyle}>
 								<tr>
 									<td style={{border:'1px solid black'}}>
@@ -55,7 +79,7 @@ class MainPage extends Component {
 								</tr>
 								<tr>
 									<td>
-										<CommentSection postInfo={postInfo.lvl01.p01}/>
+										<CommentSection postInfo={postInfo.lvl01.p01} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
 									</td>
 								</tr>
 								<tr>
@@ -69,7 +93,7 @@ class MainPage extends Component {
 									</td>
 								</tr>
 							</tbody>
-						</thead>
+						</table>
 					</div>
 				</div>
             </div>

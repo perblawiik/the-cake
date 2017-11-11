@@ -6,47 +6,38 @@ import '../../css/LoginPage.css';
 class LoginPage extends Component {
 
 
-readSubmitButton(){
+    readSubmitButton(){
 
-    let name = document.getElementById('playername').value;
+        let name = document.getElementById('playername').value;
 
-
-    if(name === ''){
-        console.log('ERROR');
+        if(name === ''){
+            window.alert('Type a user name');
+        }
+        else
+        {
+            this.props.createPlayer(name);
+            this.props.setGameState(1);
+        }
     }
-    else
-    {
-        this.props.createPlayer(name);
-        this.props.setGameState(1);
-    }
-    
-}
 
+    render() {
 
-
-  render() {
-
-        
-
-		return(
-
-
-            /*Div with title of page*/            
-			<div style={{position: 'absolute', width: '100%', height: '90%', top: '10%'}}>
-              	<div className = 'topbar'>
+        return(
+            /*Div with title of page*/
+            <div style={{position: 'absolute', width: '100%', height: '90%', top: '10%'}}>
+                <div className = 'topbar'>
                     Bookface
-               	</div>
+                </div>
 
-                /*Left div box with information to be added*/ 
+                {/*Left div box with information to be added*/ }
                 <div className='leftlogin'>
                     left
                 </div>
 
-                /*Right div box with registration for the player*/ 
+                {/*Right div box with registration for the player*/ }
                 <div className='rightlogin'>
 
                     <div className='Blankspace' style={{order: '0'}}>
-
                     </div>
 
                     <div className='Line' style={{order: '1'}}>
@@ -54,10 +45,8 @@ readSubmitButton(){
                     </div>
 
                     <div style={{order: '2'}}>
-                    
                         <label>
-
-                            <input id = 'playername' placeholder='Username' type="text" name="name" className='namestyle'/>
+                            <input id = 'playername' placeholder='User name' type="text" name="name" className='namestyle'/>
                         </label>
                     </div>
 
@@ -74,21 +63,18 @@ readSubmitButton(){
                         <input type="checkbox"/>CAN YOU REPEAT THE QUESTION?<br/>
                     </div>
 
-					<div className='Line' style={{order: '5'}}>
+                    <div className='Line' style={{order: '5'}}>
                         <hr/>
                     </div>
-               
+
 
                     <button value="Submit" className='substyle' onClick={this.readSubmitButton.bind(this)} style={{order: '6'}}>
-
-                    Submit
+                        Submit
                     </button>
                 </div>
                 </div>
               );
-
-		}
-
-	}
+        }
+    }
 
 export default LoginPage;
