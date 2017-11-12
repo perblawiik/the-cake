@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Post from './Post';
 
-import postInfo from '../../json/posts.json'
+import postInformation from '../../json/posts.json'
 
 import CommentSection from'./CommentSection';
 
@@ -59,11 +59,32 @@ class MainPage extends Component {
             bottom: '5%',
             left: '12.5%',
             right: '12.5%',
-            width: '412px',
+            width: '420px',
             overflow: 'hidden'
         };
 
         const tableStyle = { margin: 0, padding: 0, display: 'block'};
+
+        // Player level 1
+        let postInfo = postInformation.lvl01;
+
+        // Change postInfo when player level change
+        // switch (this.state.playerLevel) {
+		// 	case 1:
+		// 		postInfo = postInformation.lvl01;
+		// 		break;
+		// 	case 2:
+         //        postInfo = postInformation.lvl02;
+         //        break;
+		// 	case 3:
+		// 		postInfo = postInformation.lvl03;
+		// 		break;
+		// 	case 4:
+		// 		postInfo = postInformation.lvl04;
+		// 		break;
+		// 	default:
+		// 		break;
+		// }
 
 		return (
 			<div style={{width: '100%', height: '100%'}}>
@@ -74,22 +95,22 @@ class MainPage extends Component {
 							<tbody style={tableStyle}>
 								<tr>
 									<td style={{border:'1px solid black'}}>
-										<Post postInfo={postInfo.lvl01.p01}/>
+										<Post postInfo={postInfo.p01}/>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<CommentSection postInfo={postInfo.lvl01.p01} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
+										<CommentSection postInfo={postInfo.p01} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
 									</td>
 								</tr>
 								<tr>
 									<td style={{border:'1px solid black'}}>
-										<Post postInfo={postInfo.lvl01.p01}/>
+										<Post postInfo={postInfo.p01}/>
 									</td>
 								</tr>
 								<tr>
 									<td style={{border:'1px solid black'}}>
-										<Post postInfo={postInfo.lvl01.p01}/>
+										<Post postInfo={postInfo.p01}/>
 									</td>
 								</tr>
 							</tbody>
