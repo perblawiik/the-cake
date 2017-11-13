@@ -30,22 +30,19 @@ class CommentSection extends Component {
 
     render() {
 
-		// Css for the "parent" div when return. Size set to zero by default to hide the comment options.
+		let containerHeight;
+        // Check if comment options should show or not
+        if (this.props.showComments) {
+            containerHeight = '100%';
+        }
+        else {
+            containerHeight = 0;
+        }
+		// Css for the "parent" div when return
 		let containerStyle = {
 			overflow: 'hidden',
-			width: 0,
-			height: 0
+			height: containerHeight
 		};
-
-		// Check if comment options should show or not
-		if (this.props.showComments) {
-            containerStyle.width = '100%';
-            containerStyle.height = '100%';
-		}
-		else {
-            containerStyle.width = 0;
-            containerStyle.height = 0;
-		}
 
 		// Css for active comment options (interactions available)
     	const commentStyle1 = {
