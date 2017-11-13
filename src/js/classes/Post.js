@@ -1,8 +1,28 @@
 import React, { Component } from 'react';
 
+import CommentSection from'./CommentSection';
+
 import '../../css/Post.css';
 
 class Post extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            showComments: false
+        }
+    }
+
+    // Switch between true and false
+    commentSwitch() {
+        // If comments are showing set to false
+        if (this.state.showComments) {
+            this.setState({showComments: false})
+        } // If comments are hidden set to true
+        else {
+            this.setState({showComments: true})
+        }
+    }
 
     render() {
         
@@ -42,14 +62,15 @@ class Post extends Component {
                                  </p>
                             </td>
                             <td className='commentButton'>
-                                <p>
-                                    {/*Add clickabillity*/}
+                                <p style={{cursor: 'pointer'}} onClick={this.commentSwitch.bind(this)}>
                                     Comment
                                 </p>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                {/* Add post information, a function for adding points and boolean for showing and hiding comments */}
+                <CommentSection postInfo={this.props.postInfo} addPlayerPoints={this.props.addPlayerPoints.bind(this)} showComments={this.state.showComments}/>
             </div>
         );
     }
