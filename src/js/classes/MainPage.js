@@ -4,8 +4,6 @@ import Post from './Post';
 
 import postInformation from '../../json/posts.json'
 
-import CommentSection from'./CommentSection';
-
 import PlayerInfo from'./PlayerInfo';
 
 class MainPage extends Component {
@@ -42,6 +40,7 @@ class MainPage extends Component {
             level: this.state.playerLevel
         };
 
+		// Css for inner div containing the posts
 		const newsFlowInner = {
             backgroundColor: 'white',
             position: 'absolute',
@@ -52,6 +51,7 @@ class MainPage extends Component {
             overflowY: 'scroll'
         };
 
+		// Css for outer div (used to hide the scrollbar)
         const newsFlowOuter = {
             position: 'absolute',
             margin: 'auto',
@@ -95,22 +95,20 @@ class MainPage extends Component {
 							<tbody style={tableStyle}>
 								<tr>
 									<td style={{border:'1px solid black'}}>
-										<Post postInfo={postInfo.p01}/>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<CommentSection postInfo={postInfo.p01} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
+										{/* First post (p01) */}
+										<Post postInfo={postInfo.p01} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
 									</td>
 								</tr>
 								<tr>
 									<td style={{border:'1px solid black'}}>
-										<Post postInfo={postInfo.p01}/>
+										{/* This should be post 2 (p02) */}
+										<Post postInfo={postInfo.p01} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
 									</td>
 								</tr>
 								<tr>
 									<td style={{border:'1px solid black'}}>
-										<Post postInfo={postInfo.p01}/>
+                                        {/* This should be post 3 (p03) */}
+										<Post postInfo={postInfo.p01} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
 									</td>
 								</tr>
 							</tbody>
