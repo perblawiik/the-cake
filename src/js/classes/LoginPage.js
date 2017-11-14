@@ -29,12 +29,12 @@ class LoginPage extends Component {
                     Bookface
                 </div>
 
-                {/*Left div box with information to be added*/ }
+                {/*Left div box with information to be added */}
                 <div className='leftlogin'>
                     left
                 </div>
 
-                {/*Right div box with registration for the player*/ }
+                {/*Right div box with registration for the player*/}
                 <div className='rightlogin'>
 
                     <div className='Blankspace' style={{order: '0'}}>

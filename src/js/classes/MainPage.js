@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import Post from './Post';
 
+import PostWindow from './PostWindow';
+
 import postInformation from '../../json/posts.json'
 
 import PlayerInfo from'./PlayerInfo';
@@ -13,7 +15,9 @@ class MainPage extends Component {
 		this.state ={
             trollPoints: props.player.getTrollPoints(),
             comPoints: props.player.getCommunityPoints(),
-            playerLevel: props.player.getLevel()
+            playerLevel: props.player.getLevel(),
+            currentPost: null,
+            showPostWindow: false
 		};
 		this.player = props.player;
 	}
@@ -28,6 +32,18 @@ class MainPage extends Component {
             trollPoints: this.player.getTrollPoints(),
             playerLevel: this.player.getLevel()
         });
+	}
+
+	setCurrentPost(post) {
+
+		this.setState({
+			currentPost: post,
+			showPostWindow: true
+		});
+	}
+
+	closePostWindow() {
+		this.setState({showPostWindow: false});
 	}
 
 	render() {
@@ -94,19 +110,19 @@ class MainPage extends Component {
 						<table>
 							<tbody style={tableStyle}>
 								<tr>
-									<td style={{border:'1px solid black'}}>
+									<td style={{border:'1px solid black', cursor: 'pointer'}} onClick={this.setCurrentPost.bind(this, postInfo.p01)}>
 										{/* First post (p01) */}
 										<Post postInfo={postInfo.p01} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
 									</td>
 								</tr>
 								<tr>
-									<td style={{border:'1px solid black'}}>
+									<td style={{border:'1px solid black', cursor: 'pointer'}} onClick={this.setCurrentPost.bind(this, postInfo.p01)}>
 										{/* This should be post 2 (p02) */}
 										<Post postInfo={postInfo.p01} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
 									</td>
 								</tr>
 								<tr>
-									<td style={{border:'1px solid black'}}>
+									<td style={{border:'1px solid black', cursor: 'pointer'}} onClick={this.setCurrentPost.bind(this, postInfo.p01)}>
                                         {/* This should be post 3 (p03) */}
 										<Post postInfo={postInfo.p01} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
 									</td>
@@ -115,6 +131,7 @@ class MainPage extends Component {
 						</table>
 					</div>
 				</div>
+				<PostWindow postInfo={this.state.currentPost} addPlayerPoints={this.addPlayerPoints.bind(this)} showPostWindow={this.state.showPostWindow}/>
             </div>
 		);
 	}

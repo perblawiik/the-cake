@@ -70,7 +70,9 @@ class Post extends Component {
                     </tbody>
                 </table>
                 {/* Add post information, a function for adding points and boolean for showing and hiding comments */}
-                <CommentSection postInfo={this.props.postInfo} addPlayerPoints={this.props.addPlayerPoints.bind(this)} showComments={this.state.showComments}/>
+                {/* <div style={{width: '400px', position: 'absolute', backgroundColor: 'white'}}> */}
+                    <CommentSection postInfo={this.props.postInfo} addPlayerPoints={this.props.addPlayerPoints.bind(this)} showComments={this.state.showComments}/>
+                {/* </div> */}
             </div>
         );
     }
