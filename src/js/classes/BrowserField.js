@@ -18,7 +18,7 @@ class BrowserField extends Component {
 		}
 
 		const textFieldStyle = {
-			position: 'absolute', width: '80%', height: '40%', backgroundColor: 'white', bottom: '15%', left: '5%', paddingLeft: '20px'
+			position: 'absolute', width: '80%', height: '24px', backgroundColor: 'white', bottom: '15%', left: '5%', paddingLeft: '20px'
 		}
 
 		const textStyle = {

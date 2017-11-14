@@ -30,20 +30,6 @@ class CommentSection extends Component {
 
     render() {
 
-		let containerHeight;
-        // Check if comment options should show or not
-        if (this.props.showComments) {
-            containerHeight = '100%';
-        }
-        else {
-            containerHeight = 0;
-        }
-		// Css for the "parent" div when return
-		let containerStyle = {
-			overflow: 'hidden',
-			height: containerHeight
-		};
-
 		// Css for active comment options (interactions available)
     	const commentStyle1 = {
     		margin: '4px', float: 'left', backgroundColor: 'green', width: "125px", height: '100px', cursor: 'pointer'
@@ -62,77 +48,83 @@ class CommentSection extends Component {
         const tree2 = this.props.postInfo.tree2;
         const tree3 = this.props.postInfo.tree3;
 
-    	switch(this.state.commentTree) {
-            // By default this.state.commentTree is null since no comment tree has been chosen by player
-    		case null:
-	    		return(
-		            <div style={containerStyle}>
-						{/* Div for comment option 1 (comment tree 1) */}
-		            	<div style={commentStyle1} onClick={this.setCommentTree.bind(this, CommentTree.TREE1, tree1.trollPoints, tree1.communityPoints)}>
-		            		<p style={pStyle}>
-								Comment 1:<br/>
-								{tree1.comment1}
-							</p>
-		            	</div>
-                        {/* Div for comment option 2 (comment tree 2) */}
-		            	<div style={commentStyle1} onClick={this.setCommentTree.bind(this, CommentTree.TREE2, tree2.trollPoints, tree2.communityPoints)}>
-		            		<p style={pStyle}>
-								Comment 2:<br/>
-								{tree2.comment1}
-							</p>
-		            	</div>
-                        {/* Div for comment option 3 (comment tree 3)*/}
-		            	<div style={commentStyle1} onClick={this.setCommentTree.bind(this, CommentTree.TREE3, tree3.trollPoints, tree3.communityPoints)}>
-		            		<p style={pStyle}>
-								Comment 3:<br/>
-								{tree3.comment1}
-							</p>
-		            	</div>
-		            </div>
-	        	);
-            // Return comment tree 1
-	        case CommentTree.TREE1:
-	        	return(
-					<div style={containerStyle}>
-						{/* Div for the first comment chosen */}
-	        			<div style={commentStyle2}>
-		            		<p style={pStyle}>
-								Comment 1:<br/>
-								{tree1.comment1}
-							</p>
-		            		<p>Reply 1: {tree1.reply1}</p>
-		            	</div>
-						<br/>
-						{/* Comment option 2.1 */}
-		            	<div style={commentStyle1} onClick={this.setCommentTree.bind(this, 1, tree1.tree1_1.trollPoints, tree1.tree1_1.communityPoints)}>
-							<p style={pStyle}>
-								Comment 2.1:<br/>
-								{tree1.tree1_1.comment2_1}
-							</p>
-		            	</div>
-                        {/* Comment option 2.2 */}
-		            	<div style={commentStyle1} onClick={this.setCommentTree.bind(this, 1, tree1.tree1_2.trollPoints, tree1.tree1_2.communityPoints)}>
-		            		<p style={pStyle}>
-								Comment 2.2:<br/>
-								{tree1.tree1_2.comment2_2}
-							</p>
-		            	</div>
-	        		</div>
-	        	);
-            // Return comment tree 2
-	        case CommentTree.TREE2:
-	        	return(
-					<div style={containerStyle}>
-	        		</div>
-	        	);
-            // Return comment tree 3
-	        case CommentTree.TREE3:
-	        	return(
-					<div style={containerStyle}>
-	        		</div>
-	        	);
-	        default:
-	        	break;
+        // Only return comments if showComments == true
+        if (this.props.showComments) {
+	    	switch(this.state.commentTree) {
+	            // By default this.state.commentTree is null since no comment tree has been chosen by player
+	    		case null:
+		    		return(
+			            <div>
+							{/* Div for comment option 1 (comment tree 1) */}
+			            	<div style={commentStyle1} onClick={this.setCommentTree.bind(this, CommentTree.TREE1, tree1.trollPoints, tree1.communityPoints)}>
+			            		<p style={pStyle}>
+									Comment 1:<br/>
+									{tree1.comment1}
+								</p>
+			            	</div>
+	                        {/* Div for comment option 2 (comment tree 2) */}
+			            	<div style={commentStyle1} onClick={this.setCommentTree.bind(this, CommentTree.TREE2, tree2.trollPoints, tree2.communityPoints)}>
+			            		<p style={pStyle}>
+									Comment 2:<br/>
+									{tree2.comment1}
+								</p>
+			            	</div>
+	                        {/* Div for comment option 3 (comment tree 3)*/}
+			            	<div style={commentStyle1} onClick={this.setCommentTree.bind(this, CommentTree.TREE3, tree3.trollPoints, tree3.communityPoints)}>
+			            		<p style={pStyle}>
+									Comment 3:<br/>
+									{tree3.comment1}
+								</p>
+			            	</div>
+			            </div>
+		        	);
+	            // Return comment tree 1
+		        case CommentTree.TREE1:
+		        	return(
+						<div>
+							{/* Div for the first comment chosen */}
+		        			<div style={commentStyle2}>
+			            		<p style={pStyle}>
+									Comment 1:<br/>
+									{tree1.comment1}
+								</p>
+			            		<p>Reply 1: {tree1.reply1}</p>
+			            	</div>
+							<br/>
+							{/* Comment option 2.1 */}
+			            	<div style={commentStyle1} onClick={this.setCommentTree.bind(this, 1, tree1.tree1_1.trollPoints, tree1.tree1_1.communityPoints)}>
+								<p style={pStyle}>
+									Comment 2.1:<br/>
+									{tree1.tree1_1.comment2_1}
+								</p>
+			            	</div>
+	                        {/* Comment option 2.2 */}
+			            	<div style={commentStyle1} onClick={this.setCommentTree.bind(this, 1, tree1.tree1_2.trollPoints, tree1.tree1_2.communityPoints)}>
+			            		<p style={pStyle}>
+									Comment 2.2:<br/>
+									{tree1.tree1_2.comment2_2}
+								</p>
+			            	</div>
+		        		</div>
+		        	);
+	            // Return comment tree 2
+		        case CommentTree.TREE2:
+		        	return(
+						<div>
+		        		</div>
+		        	);
+	            // Return comment tree 3
+		        case CommentTree.TREE3:
+		        	return(
+						<div>
+		        		</div>
+		        	);
+		        default:
+		        	break;
+	    	}
+    	}
+    	else {
+    		return (<div></div>);
     	}        
     }
 }
