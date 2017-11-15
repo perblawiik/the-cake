@@ -1,20 +1,48 @@
-// Post information
+
 {
-	"posts": [
-        {
-        	"id": "01",
-        	"userName": "Durka Durka",
-        	"imageFile": "durka.png"
-        },
-        {
-        	"id": "02",
-        	"userName": "Burka Burka",
-        	"imageFile": "Burka.png"
-        },
-        {
-        	"id": "03",
-        	"userName": "Merka Merka",
-        	"imageFile": "merka.png"
+        "lvl01" : {
+                "p01": {
+                        "userName": "Dork Borksson",
+                        "profilePic": "Dork Borksson.png",
+                        "text": "Last christmas I gave you my hearth byt the very next day, you gave it away. This year to save me my tears I will give it to someone special.",
+                        "tree1": {
+                                "comment1": "Monkey!",
+                                "reply1": "You call me a monkey???",
+                                "trollPoints": 3,
+                                "communityPoints": 0,
+                                "tree1_1": {
+                                        "comment2_1": "What nnnoooooo absolutely noooot",
+                                        "reply2_1": "I'm confused :(",
+                                        "trollPoints": 2,
+                                        "communityPoints": 0
+                                },
+                                "tree1_2": {
+                                        "comment2_2": "Fuck you!",
+                                        "reply2_2": "I reprot you admins!",
+                                        "trollPoints": 0,
+                                        "communityPoints": -5
+                                }
+                        },
+
+                        "tree2": {
+                                "comment1": "Super cute!",
+                                "trollPoints": 0,
+                                "communityPoints": 3
+                        },
+
+                        "tree3": {
+                                "comment1": "h3h3",
+                                "trollPoints": 1,
+                                "communityPoints": -2
+                        }
+                },
+                "p02": {
+                        "userName": "Burka Burka",
+                        "imageFile": "burka.png"
+                },
+                "p03": {
+                        "userName": "Merka Merka",
+                        "imageFile": "merka.png"
+                }
         }
-	]
 }

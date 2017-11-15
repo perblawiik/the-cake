@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 
 class BrowserField extends Component {
 
+	constructor(props) {
+		super(props);
+		this.state = {
+			setGameState: this.props.setGameState
+		}
+	}
+
 	render() {
 
 		const browserText = "https://www.bookface.com/" + this.props.pageInfo;
@@ -11,7 +18,7 @@ class BrowserField extends Component {
 		}
 
 		const textFieldStyle = {
-			position: 'absolute', width: '80%', height: '40%', backgroundColor: 'white', bottom: '15%', left: '5%', paddingLeft: '20px'
+			position: 'absolute', width: '80%', height: '24px', backgroundColor: 'white', bottom: '15%', left: '5%', paddingLeft: '20px'
 		}
 
 		const textStyle = {
@@ -26,8 +33,18 @@ class BrowserField extends Component {
 			cursor: 'pointer'
 		}
 
+		// Css style for arrow "button"
+        const arrowStyle = {
+            backgroundColor: 'red',
+            position: 'absolute',
+            left: '10px',
+            top: '10px',
+            cursor: 'pointer'
+        };
+
 		return (
 			<div style={containerStyle}>
+				<img src={require('../../img/left-arrow.png')} alt='x' style={arrowStyle} onClick={this.state.setGameState.bind(this, this.props.otherGameState)}/>
 				<img src={require('../../img/browser.png')} alt='x' style={imageStyle}/>
 				<div style={textFieldStyle}>
 					<p style={textStyle}>{browserText}</p>

@@ -1,69 +1,80 @@
 import React, { Component } from 'react';
 
-import '../../css/Post.css';
+import CommentSection from'./CommentSection';
 
-// Global GameState object
-const GameState = {
-    LOGIN_PAGE: 0,
-    MAIN_PAGE: 1
-};
+import '../../css/Post.css';
 
 class Post extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            gameState: GameState.MAIN_PAGE
-        };
+            showComments: false
+        }
+    }
 
-
+    // Switch between true and false
+    commentSwitch() {
+        // If comments are showing set to false
+        if (this.state.showComments) {
+            this.setState({showComments: false})
+        } // If comments are hidden set to true
+        else {
+            this.setState({showComments: true})
+        }
     }
 
     render() {
+        
+        const imageUrl = require('../../img/' + this.props.postInfo.profilePic);
+
         return(
 
             <div className='mainWindowPost'>
                 {/**/}
                 {/* Table 1: Contains information of the post */} 
-                <table >
-                    <tr className='userBar'>
-                        <td className='userFaceContainer'> 
-                            <img className='userFace' src={require('../../img/' + this.props.name + '.png')}/>
-                        </td>
-                        <td className='userName'> 
-                            {this.props.name}
-                        </td>
-                    </tr>
-
-                    <tr className='textBar'>
-                         {/*colspan -> 1 cell spans 2 cells*/}
-                        <td colspan='2' className='postText'>
-                            {this.props.text}
-                        </td>
-                    </tr>
-
+                <table>
+                    <tbody>
+                        <tr className='userBar'>
+                            <td className='userFaceContainer'>
+                                <img className='userFace' src={imageUrl} alt='x'/>
+                            </td>
+                            <td className='userName'>
+                                {this.props.postInfo.userName}
+                            </td>
+                        </tr>
+                        <tr className='textBar'>
+                             {/*colspan -> 1 cell spans 2 cells*/}
+                            <td colSpan='2' className='postText'>
+                                {this.props.postInfo.text}
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
-
                 {/*Table 2: Contains reaction and comment button*/}
                 <table>
-                    <tr className='reactionBar'>
-                        <td className='likeButton'>
-                            <p>
-                                {/*Add like button and other reactions*/}
-                                Like 
-                             </p>
-                        </td>
-                        <td className='commentButton'>
-                            <p> 
-                                {/*Add clickabillity*/}
-                                Comment 
-                            </p>
-                        </td>
-                    </tr>
+                    <tbody>
+                        <tr className='reactionBar'>
+                            <td className='likeButton'>
+                                <p>
+                                    {/*Add like button and other reactions*/}
+                                    Like
+                                 </p>
+                            </td>
+                            <td className='commentButton'>
+                                <p style={{cursor: 'pointer'}} onClick={this.commentSwitch.bind(this)}>
+                                    Comment
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
+                {/* Add post information, a function for adding points and boolean for showing and hiding comments */}
+                {/* <div style={{width: '400px', position: 'absolute', backgroundColor: 'white'}}> */}
+                    <CommentSection postInfo={this.props.postInfo} addPlayerPoints={this.props.addPlayerPoints.bind(this)} showComments={this.state.showComments}/>
+                {/* </div> */}
             </div>
-
-            );
+        );
     }
 }
 
