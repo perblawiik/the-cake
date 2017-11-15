@@ -6,6 +6,8 @@ import PostWindow from './PostWindow';
 
 import postInformation from '../../json/posts.json'
 
+import postsdata from '../../json/postsdata.json'
+
 import PlayerInfo from'./PlayerInfo';
 
 class MainPage extends Component {
@@ -17,7 +19,9 @@ class MainPage extends Component {
             comPoints: props.player.getCommunityPoints(),
             playerLevel: props.player.getLevel(),
             currentPost: null,
-            showPostWindow: false
+            showPostWindow: false,
+            postNew: [],
+            postOld: []
 		};
 		this.player = props.player;
 	}
@@ -44,6 +48,13 @@ class MainPage extends Component {
 
 	closePostWindow() {
 		this.setState({showPostWindow: false});
+	}
+
+	componentDidMount() {
+		
+		this.setState({
+			postNew: postsdata.posts
+		});
 	}
 
 	render() {
@@ -109,24 +120,21 @@ class MainPage extends Component {
 					<div style={newsFlowInner}>
 						<table>
 							<tbody style={tableStyle}>
-								<tr>
-									<td style={{border:'1px solid black', cursor: 'pointer'}} onClick={this.setCurrentPost.bind(this, postInfo.p01)}>
-										{/* First post (p01) */}
-										<Post postInfo={postInfo.p01} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
-									</td>
-								</tr>
-								<tr>
-									<td style={{border:'1px solid black', cursor: 'pointer'}} onClick={this.setCurrentPost.bind(this, postInfo.p01)}>
-										{/* This should be post 2 (p02) */}
-										<Post postInfo={postInfo.p01} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
-									</td>
-								</tr>
-								<tr>
-									<td style={{border:'1px solid black', cursor: 'pointer'}} onClick={this.setCurrentPost.bind(this, postInfo.p01)}>
-                                        {/* This should be post 3 (p03) */}
-										<Post postInfo={postInfo.p01} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
-									</td>
-								</tr>
+
+
+								{
+					              this.state.postNew.map((f) => {
+					                  return (
+					                  	<div>
+					                  		<tr>
+												<td style={{border:'1px solid black', cursor: 'pointer'}} onClick={this.setCurrentPost.bind(this, f)}>
+														{/* First post (p01) */}
+													<Post postInfo={f} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
+												</td>
+											</tr>
+										</div>);
+					              })
+					            }
 							</tbody>
 						</table>
 					</div>
