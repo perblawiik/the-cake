@@ -2,6 +2,11 @@
 {
         "posts" : [
                  {
+                        "completed": false,
+                        "treeStates": {
+                            "first": null, 
+                            "second": null
+                        },
                         "userName": "Dork Borksson",
                         "profilePic": "Dork Borksson.png",
                         "text": "Last christmas I gave you my hearth byt the very next day, you gave it away. This year to save me my tears I will give it to someone special.",
@@ -37,7 +42,8 @@
                         }
                 },
                 {
-                        "userName": "Dork Borksson",
+                        "completed": false,
+                        "userName": "Bork Borksson",
                         "profilePic": "Dork Borksson.png",
                         "text": "Last christmas I gave you my hearth byt the very next day, you gave it away. This year to save me my tears I will give it to someone special.",
                         "tree1": {
@@ -72,7 +78,8 @@
                         }
                 },
                 {
-                        "userName": "Dork Borksson",
+                        "completed": false,
+                        "userName": "Fork Forksson",
                         "profilePic": "Dork Borksson.png",
                         "text": "Last christmas I gave you my hearth byt the very next day, you gave it away. This year to save me my tears I will give it to someone special.",
                         "tree1": {
