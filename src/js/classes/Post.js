@@ -22,6 +22,13 @@ class Post extends Component {
         else {
             this.setState({showComments: true})
         }
+
+        let treeStates = {
+            first: 0,
+            second: 0
+        };
+
+        this.props.processPlayerChoice(0, treeStates);
     }
 
     render() {
@@ -70,9 +77,7 @@ class Post extends Component {
                     </tbody>
                 </table>
                 {/* Add post information, a function for adding points and boolean for showing and hiding comments */}
-                {/* <div style={{width: '400px', position: 'absolute', backgroundColor: 'white'}}> */}
                     <CommentSection postInfo={this.props.postInfo} addPlayerPoints={this.props.addPlayerPoints.bind(this)} showComments={this.state.showComments}/>
-                {/* </div> */}
             </div>
         );
     }

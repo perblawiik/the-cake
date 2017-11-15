@@ -13,7 +13,8 @@ class CommentSection extends Component {
 		super(props);
 		this.state = {
 		    // Initialize commentTree as null as default (no comment has yet been chosen by player)
-			commentTree: null
+			commentTree: null,
+			completed: false
 		};
 	}
 

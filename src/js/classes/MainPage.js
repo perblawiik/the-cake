@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 
 import Post from './Post';
 
-import PostWindow from './PostWindow';
-
-import postInformation from '../../json/posts.json'
+//import PostWindow from './PostWindow';
 
 import postsdata from '../../json/postsdata.json'
 
@@ -20,8 +18,8 @@ class MainPage extends Component {
             playerLevel: props.player.getLevel(),
             currentPost: null,
             showPostWindow: false,
-            postNew: [],
-            postOld: []
+            posts: postsdata.posts,
+            indexCounter: 0
 		};
 		this.player = props.player;
 	}
@@ -50,11 +48,18 @@ class MainPage extends Component {
 		this.setState({showPostWindow: false});
 	}
 
-	componentDidMount() {
-		
+	processPlayerChoice(index, treeStates) {
+
+		// Copy the list of posts and change completed for given index to true
+		let newPosts = this.state.posts;
+		newPosts[index].completed = true;
+		newPosts[index].treeStates = treeStates;
+
+		// Update the list of posts
 		this.setState({
-			postNew: postsdata.posts
+			posts: newPosts
 		});
+		console.log(this.state.posts[0]);
 	}
 
 	render() {
@@ -92,26 +97,7 @@ class MainPage extends Component {
 
         const tableStyle = { margin: 0, padding: 0, display: 'block'};
 
-        // Player level 1
-        let postInfo = postInformation.lvl01;
-
-        // Change postInfo when player level change
-        // switch (this.state.playerLevel) {
-		// 	case 1:
-		// 		postInfo = postInformation.lvl01;
-		// 		break;
-		// 	case 2:
-         //        postInfo = postInformation.lvl02;
-         //        break;
-		// 	case 3:
-		// 		postInfo = postInformation.lvl03;
-		// 		break;
-		// 	case 4:
-		// 		postInfo = postInformation.lvl04;
-		// 		break;
-		// 	default:
-		// 		break;
-		// }
+        let counter = 0;
 
 		return (
 			<div style={{width: '100%', height: '100%'}}>
@@ -120,26 +106,54 @@ class MainPage extends Component {
 					<div style={newsFlowInner}>
 						<table>
 							<tbody style={tableStyle}>
-
-
-								{
-					              this.state.postNew.map((f) => {
-					                  return (
-					                  	<div>
-					                  		<tr>
-												<td style={{border:'1px solid black', cursor: 'pointer'}} onClick={this.setCurrentPost.bind(this, f)}>
-														{/* First post (p01) */}
-													<Post postInfo={f} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
-												</td>
-											</tr>
-										</div>);
-					              })
+								{	
+					            	this.state.posts.map((f) => {
+					            		// Only return three uncompleted posts
+					            		if (!f.completed && (counter < 3) ) {
+					            			++counter;
+						                	return (
+						                  		<tr key={f.userName}>
+													<td style={{border:'1px solid black', cursor: 'pointer'}} onClick={this.setCurrentPost.bind(this, f)}>
+															{/* First post (p01) */}
+														<Post postInfo={f} addPlayerPoints={this.addPlayerPoints.bind(this)} processPlayerChoice={this.processPlayerChoice.bind(this)}/>
+													</td>
+												</tr>
+											);
+					                	}
+					                	/*
+					                	else {
+					                		return(<div></div>);
+					                	}
+					                	*/
+					                })
+					            }
+					            {
+					                this.state.posts.map((f) => {
+					                	// Only return completed posts
+					                	if (f.completed) {
+						                	return (
+						                  		<tr key={f.userName}>
+													<td style={{border:'1px solid black', cursor: 'pointer'}} onClick={this.setCurrentPost.bind(this, f)}>
+															{/* First post (p01) */}
+														<Post postInfo={f} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
+													</td>
+												</tr>
+											);
+					                	}
+					                	/*
+					                	else {
+					                		return(<div></div>);
+					                	}
+					                	*/
+					                })
 					            }
 							</tbody>
 						</table>
 					</div>
 				</div>
+				{/*
 				<PostWindow postInfo={this.state.currentPost} addPlayerPoints={this.addPlayerPoints.bind(this)} showPostWindow={this.state.showPostWindow}/>
+				*/}
             </div>
 		);
 	}
