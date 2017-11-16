@@ -42,6 +42,9 @@ class LoginPage extends Component {
                 <div className='rightlogin'>
 
                     <div className='Blankspace' style={{order: '0'}}>
+                        <h2>
+                            Create an account
+                        </h2>
                     </div>
 
                     <div className='Line' style={{order: '1'}}>
