@@ -1,60 +1,73 @@
 .topbar {
-            background-color: red;
-            position: absolute;
-            width: 100%;
-            height: 10%;
-            cursor: pointer;
-            font-size: 40px;
-            text-indent: 10%;
-        }
+	background-color: blue;
+	position: absolute; 
+	width: 100%;
+	height: 10%;
+    cursor: pointer;
+    font-size: 40px;
+    text-indent: 10%;
+}
+
+.bookfaceTitle{
+	color: white;
+	margin: 0;
+	float: left;
+}
+.bookfaceLogo{
+	width: 70px;
+	height: 70px;
+	padding: 0;
+	margin: 0;
+	transform: translateX(-325px);
+}		
+
+.mainWindowContainer{
+	position: relative;
+	width: 100%;
+	height: 90%;
+	top: 10%;
+}
 
 .leftlogin {
-		    background-color: black;
-		    position: absolute;
-		    left: 10%;
-		    bottom: 5%;
-		    width: 37%;
-		    height:80%;
-		}
+    background-color: white;
+    position: absolute;
+    left:   10%;
+    bottom:  5%;
+    width:  37%;
+    height: 80%;
+}
 
 .rightlogin {
-		    background-color: cyan;
-		    position: absolute;
-		    right: 10%;
-		    bottom: 5%;
-		    width: 37%;
-		    height: 80%;
-		    display: flex;
-		    flex-direction: column;
-		    align-items: center;
-		    justify-content: flex-start;
-
-		}
+    background-color: white;
+    position: absolute;
+    right:  10%;
+    bottom:  5%;
+    width:  37%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
 
 .playerNameTextBox {
-
-
-		}
+}
 
 .genderBoxes {
-
-
-		}
+}
 
 .substyle {
-
-		    bottom: 5%;
-		}
+    bottom: 5%;
+}
 
 .Blankspace {
-
-			height: 50px;
-		}
+	height: 50px;
+}
 
 .Line {
-			width: 95%;
-		}
+	width: 95%;
+}
 
 .namestyle {
-		    top: 10%;		   
-		}
+    top: 10%;		   
+}

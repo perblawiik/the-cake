@@ -6,6 +6,7 @@ import BrowserField from './BrowserField';
 import MainPage from './MainPage';
 import Player from './Player';
 
+
 // Global GameState object. Used for setting return value in GameWindow class
 const GameState = {
     LOGIN_PAGE: 0,
@@ -44,7 +45,7 @@ class GameWindow extends Component {
 
         // Css style for the game window
         const windowStyle = {
-            backgroundColor: '#3b5998',
+            backgroundColor: '#EEEEEE',
             position: 'absolute',
             margin: 'auto',
             top: '10%',

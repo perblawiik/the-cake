@@ -24,9 +24,14 @@ class LoginPage extends Component {
 
         return(
             /*Div with title of page*/
-            <div style={{position: 'absolute', width: '100%', height: '90%', top: '10%'}}>
+            <div className='mainWindowContainer'>
                 <div className = 'topbar'>
-                    Bookface
+                    
+                    <img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/>
+                    <p className= 'bookfaceTitle'>
+                        Bookface
+                    </p>    
+                    
                 </div>
 
                 {/*Left div box with information to be added */}
