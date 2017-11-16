@@ -1,0 +1,13 @@
+
+.windowStyle {
+    background-color: #EEEEEE;
+    position: absolute;
+    margin: auto;
+    top: 10%;
+    left: 12.5%;
+    right: 12.5%;
+    width: 75%;
+    height: 85%;
+    min-width: 1024px;
+    min-height: 512px;
+}

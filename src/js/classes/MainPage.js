@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
 
+// Javascript Classes
 import Post from './Post';
-
 import PostWindow from './PostWindow';
-
-import postsdata from '../../json/postsdata.json'
-
 import PlayerInfo from'./PlayerInfo';
+
+// Css
+import '../../css/MainPage.css';
+
+// Json data
+import postData from '../../json/postsdata.json'
 
 class MainPage extends Component {
 
 	constructor(props) {
 		super(props);
+
 		this.state ={
             trollPoints: props.player.getTrollPoints(),
             comPoints: props.player.getCommunityPoints(),
             playerLevel: props.player.getLevel(),
             currentPost: null,
             showPostWindow: false,
-            posts: postsdata.posts
+            posts: postData.posts // Contains all post data
 		};
+
+		// Instance of player
 		this.player = props.player;
 	}
 
@@ -45,6 +51,7 @@ class MainPage extends Component {
 	}
 
 	closePostWindow() {
+
 		this.setState({showPostWindow: false});
 	}
 
@@ -71,49 +78,24 @@ class MainPage extends Component {
             level: this.state.playerLevel
         };
 
-		// Css for inner div containing the posts
-		const newsFlowInner = {
-            backgroundColor: 'white',
-            position: 'absolute',
-            margin: 'auto',
-            top: 0,
-			bottom: '5%',
-            width: '450px',
-            overflowY: 'scroll'
-        };
-
-		// Css for outer div (used to hide the scrollbar)
-        const newsFlowOuter = {
-            position: 'absolute',
-            margin: 'auto',
-            top: '12.5%',
-            bottom: '5%',
-            left: '12.5%',
-            right: '12.5%',
-            width: '420px',
-            overflow: 'hidden'
-        };
-
-        const tableStyle = { margin: 0, padding: 0, display: 'block'};
-
-        let counter = 0;
+		// Counter for limited posts
+        let postCounter = 0;
 
 		return (
 			<div style={{width: '100%', height: '100%'}}>
 				<PlayerInfo playerStats={playerStats} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
-				<div style={newsFlowOuter}>
-					<div style={newsFlowInner}>
+				<div className='newsFlowOuter'>
+					<div className='newsFlowInner'>
 						<table>
-							<tbody style={tableStyle}>
+							<tbody className='tableStyle'>
 								{	// All posts available for a comment
 					            	this.state.posts.map((f) => {
 					            		// Only return three uncompleted posts
-					            		if (!f.completed && (counter < 3) ) {
-					            			++counter;
+					            		if (!f.completed && (postCounter < 3) ) {
+					            			++postCounter;
 						                	return (
 						                  		<tr key={f.userName}>
-													<td style={{border:'1px solid black'}} onClick={this.selectPost.bind(this, f)}>
-															{/* First post (p01) */}
+													<td className='postBorder' onClick={this.selectPost.bind(this, f)}>
 														<Post postInfo={f}
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}/>
@@ -134,8 +116,7 @@ class MainPage extends Component {
 					                	if (f.completed) {
 						                	return (
 						                  		<tr key={f.userName}>
-													<td style={{border:'1px solid black'}} onClick={this.selectPost.bind(this, f)}>
-															{/* First post (p01) */}
+													<td className='postBorder' onClick={this.selectPost.bind(this, f)}>
 														<Post postInfo={f}
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}/>
@@ -154,6 +135,7 @@ class MainPage extends Component {
 						</table>
 					</div>
 				</div>
+				{/* Pop out window for selected post */}
 				<PostWindow postInfo={this.state.currentPost}
 							addPlayerPoints={this.addPlayerPoints.bind(this)}
 							processPlayerChoice={this.processPlayerChoice.bind(this)}

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
-// Import classes
+// Javascript classes
 import LoginPage from './LoginPage.js';
 import BrowserField from './BrowserField';
 import MainPage from './MainPage';
 import Player from './Player';
 
+// Css
+import '../../css/GameWindow.css';
 
 // Global GameState object. Used for setting return value in GameWindow class
 const GameState = {
@@ -42,33 +44,18 @@ class GameWindow extends Component {
     }
 
     render() {
-
-        // Css style for the game window
-        const windowStyle = {
-            backgroundColor: '#EEEEEE',
-            position: 'absolute',
-            margin: 'auto',
-            top: '10%',
-            left: '12.5%',
-            right: '12.5%',
-            width: '75%',
-            height: '85%',
-            minWidth: '800px',
-        };
-
         // Switch statement for game state ( If LOGIN -> return the login page, If MAIN -> return the main page )
         switch(this.state.gameState) {
             case GameState.LOGIN_PAGE:
-
                 return(
-                    <div style={windowStyle}>
+                    <div className='windowStyle'>
                         <BrowserField pageInfo={''} setGameState={this.setGameState.bind(this)} otherGameState={GameState.MAIN_PAGE} />
                         <LoginPage createPlayer={this.createPlayer.bind(this)} setGameState={this.setGameState.bind(this)}/>
                     </div>
                 );
             case GameState.MAIN_PAGE:
                 return (
-                    <div style={windowStyle}>
+                    <div className='windowStyle'>
                         <BrowserField pageInfo={'home'} setGameState={this.setGameState.bind(this)} otherGameState={GameState.LOGIN_PAGE} />
                         <MainPage player={this.player}/>
                     </div>
@@ -77,7 +64,6 @@ class GameWindow extends Component {
                 break;
         }
     }
-
 }
 
 export default GameWindow;

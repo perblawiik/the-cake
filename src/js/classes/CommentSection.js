@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// Css
 import '../../css/CommentSection.css';
 
 // Constants representing different "tree states"
@@ -14,15 +15,16 @@ const CommentTree = {
 class CommentSection extends Component {
 
 	setCommentTree (treeFirst, treeSecond, trollPoints, comPoints, isCompleted) {
-
 	    // Add player points
         this.props.addPlayerPoints(trollPoints, comPoints);
 
+        // For updating the treeState for selected post
         let treeStates = {
             first: treeFirst,
             second: treeSecond
         };
 
+        // Send comment options to update post data list
         this.props.processPlayerChoice(this.props.postInfo.index, treeStates, isCompleted);
 	}
 
@@ -82,8 +84,10 @@ class CommentSection extends Component {
 
     render() {
 
+		// Array of comment trees (1-3)
         const trees = [this.props.postInfo.tree1, this.props.postInfo.tree2, this.props.postInfo.tree3];
 
+        // treeState determine the player's completion progress of the post
     	switch(this.props.postInfo.treeStates.first) {
             // By default this.state.commentTree is null since no comment tree has been chosen by player
     		case null:

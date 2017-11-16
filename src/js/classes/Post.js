@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
+// Javascript classes
 import CommentSection from'./CommentSection';
 
+// Css
 import '../../css/Post.css';
 
 class Post extends Component {

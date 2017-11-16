@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+// Css
+import '../../css/PlayerInfo.css';
+
 class PlayerInfo extends Component {
 
 	addPoints(trollP, commP) {
