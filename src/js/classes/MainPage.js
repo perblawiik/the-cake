@@ -95,7 +95,7 @@ class MainPage extends Component {
 					            			++postCounter;
 						                	return (
 						                  		<tr key={f.userName}>
-													<td className='postBorder' onClick={this.selectPost.bind(this, f)}>
+													<td className='postContainer' onClick={this.selectPost.bind(this, f)}>
 														<Post postInfo={f}
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}/>
@@ -116,7 +116,7 @@ class MainPage extends Component {
 					                	if (f.completed) {
 						                	return (
 						                  		<tr key={f.userName}>
-													<td className='postBorder' onClick={this.selectPost.bind(this, f)}>
+													<td className='postContainer' onClick={this.selectPost.bind(this, f)}>
 														<Post postInfo={f}
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}/>

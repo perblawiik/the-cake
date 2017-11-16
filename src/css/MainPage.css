@@ -26,6 +26,12 @@
     overflow-y: scroll;
 }
 
-.postBorder {
+.postContainer {
     border: 1px solid black;
+    border-radius: 3px;
+}
+
+.postContainer:hover {
+    border: 2px solid blue;
+    border-radius: 3px;
 }
