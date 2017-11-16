@@ -1,5 +1,5 @@
 .topbar {
-	background-color: blue;
+	background-color: #0000FF;
 	position: absolute; 
 	width: 100%;
 	height: 10%;
@@ -58,6 +58,16 @@
 
 .substyle {
     bottom: 5%;
+    height: 80px;
+    width: 80%;
+    color: white;
+    background-color: #0000FF;
+    font-family: Kalam;
+    font-size: 30px;
+}
+.substyle:hover {
+	background-color: #4444FF;
+
 }
 
 .Blankspace {
