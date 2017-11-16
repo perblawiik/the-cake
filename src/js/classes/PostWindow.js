@@ -4,19 +4,6 @@ import Post from './Post';
 
 class PostWindow extends Component {
 
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			showPostWindow: true
-		};
-	}
-
-	closePostWindow() {
-
-		this.setState({showPostWindow: false});
-	}
-
 	render() {
 
 		const containerStyle = {
@@ -28,19 +15,17 @@ class PostWindow extends Component {
 		    alignItems: 'center',
 		    justifyContent: 'center'
 		};
-		
-		if (!this.state.showPostWindow) {
-			return (<div></div>);
-		}
 
-		if (this.props.postInfo){
+		if (this.props.showWindow){
 			return (
 				<div style={containerStyle} >
 					<div style={{position: 'absolute', width: '100%', height: '100%'}} >
 					</div>
-					<div style={{zIndex: 1}}>
-						<button onClick={this.closePostWindow.bind(this)}>X</button>
-						<Post postInfo={this.props.postInfo} addPlayerPoints={this.props.addPlayerPoints.bind(this)}/>
+					<div style={{zIndex: 1, backgroundColor: 'white'}}>
+						<button onClick={this.props.closeWindow}>X</button>
+						<Post postInfo={this.props.postInfo}
+							  addPlayerPoints={this.props.addPlayerPoints.bind(this)}
+							  processPlayerChoice={this.props.processPlayerChoice.bind(this)}/>
 					</div>
 				</div>
 			);

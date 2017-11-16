@@ -1,24 +1,17 @@
 import React, { Component } from 'react';
 
+import '../../css/CommentSection.css';
+
 // Constants representing different "tree states"
 const CommentTree = {
-	TREE1: 0,
-	TREE2: 1,
-	TREE3: 2,
+	TREE1: 1,
+	TREE2: 2,
+	TREE3: 3,
 	CHOICE1: 1,
 	CHOICE2: 2
 };
 
 class CommentSection extends Component {
-
-	constructor (props) {
-		super(props);
-		this.state = {
-		    // Initialize commentTree as null as default (no comment has yet been chosen by player)
-			commentTree: null,
-			completed: false
-		};
-	}
 
 	setCommentTree (treeFirst, treeSecond, trollPoints, comPoints, isCompleted) {
 
@@ -33,75 +26,63 @@ class CommentSection extends Component {
         this.props.processPlayerChoice(this.props.postInfo.index, treeStates, isCompleted);
 	}
 
-	checkChoices (trees,commentStyle1,commentStyle2,pStyle) {
+	checkChoices (tree) {
 
-		const choices = [trees[0].choice1, trees[0].choice2];
+		const choices = [tree.choice1, tree.choice2];
 
-		if (!this.props.postInfo.treeStates.second) {
-			return (
-				<div>
-				{
-					choices.map((f) => {
-					return (
-						<div style={commentStyle1} onClick={this.setCommentTree.bind(this, trees[0].TREE_NUMBER, f.CHOICE_NUMBER, f.trollPoints, f.communityPoints, true)}>
-							<p style={pStyle}>
-								Comment:<br/>
-								{f.comment}
-							</p>
-	        			</div>
-				);
-				})
-				}
-				</div>
-			);
-		}
-		else if (this.props.postInfo.treeStates.second === CommentTree.CHOICE1) {
-			return (
-					<div style={commentStyle2}>
-						<p style={pStyle}>
+		switch(this.props.postInfo.treeStates.second) {
+			case null:
+                return (
+					<div>
+                        {
+                            choices.map((f) => {
+                                return (
+									<div key={f.comment} className='activeComments' onClick={this.setCommentTree.bind(this, tree.TREE_NUMBER, f.CHOICE_NUMBER, f.trollPoints, f.communityPoints, true)}>
+										<p className='pStyle'>
+											Comment:<br/>
+                                            {f.comment}
+										</p>
+									</div>
+                                );
+                            })
+                        }
+					</div>
+                );
+			case CommentTree.CHOICE1:
+                return (
+					<div className='inActiveComments'>
+						<p className='pStyle'>
 							Comment:<br/>
-							{trees[0].choice1.comment}
-							Reply:<br/>
-							{trees[0].choice1.reply}
+                            {tree.choice1.comment}
 						</p>
-        			</div>
-			);
-		}
-		else if (this.props.postInfo.treeStates.second === CommentTree.CHOICE2) {
-			return (
-					<div style={commentStyle2}>
-						<p style={pStyle}>
+						<p>
+							Reply:<br/>
+                            {tree.choice1.reply}
+						</p>
+
+					</div>
+                );
+			case CommentTree.CHOICE2:
+                return (
+					<div className='inActiveComments'>
+						<p className='pStyle'>
 							Comment:<br/>
-							{trees[0].choice2.comment}
-							Reply:<br/>
-							{trees[0].choice2.reply}
+                            {tree.choice2.comment}
 						</p>
-        			</div>
-			);
+						<p>
+							Reply:<br/>
+                            {tree.choice2.reply}
+						</p>
+					</div>
+                );
+			default:
+                return(<div>FAILED</div>);
 		}
 	}
 
     render() {
 
-		// Css for active comment options (interactions available)
-    	const commentStyle1 = {
-    		margin: '4px', float: 'left', backgroundColor: 'green', width: "125px", height: '100px', cursor: 'pointer'
-    	};
-
-        // Css for inactive comments (interactions unavailable)
-    	const commentStyle2 = {
-            margin: 'auto', backgroundColor: 'grey', width: "125px", height: '100px'
-		};
-
-    	const pStyle = {
-            margin: 0, padding: 0
-    	};
-
-    	const tree1 = this.props.postInfo.tree1;
-        const tree2 = this.props.postInfo.tree2;
-        const tree3 = this.props.postInfo.tree3;
-
-        const trees = [this.props.postInfo.tree1, this.props.postInfo.tree2, this.props.postInfo.tree3]
+        const trees = [this.props.postInfo.tree1, this.props.postInfo.tree2, this.props.postInfo.tree3];
 
     	switch(this.props.postInfo.treeStates.first) {
             // By default this.state.commentTree is null since no comment tree has been chosen by player
@@ -111,8 +92,8 @@ class CommentSection extends Component {
     				{
     					trees.map((f) => {
 	            			return (
-		            			<div style={commentStyle1} onClick={this.setCommentTree.bind(this, f.TREE_NUMBER, null, f.trollPoints, f.communityPoints, false)}>
-				            		<p style={pStyle}>
+		            			<div key={f.comment} className='activeComments' onClick={this.setCommentTree.bind(this, f.TREE_NUMBER, null, f.trollPoints, f.communityPoints, false)}>
+				            		<p className='pStyle'>
 										Comment :<br/>
 										{f.comment}
 									</p>
@@ -124,36 +105,60 @@ class CommentSection extends Component {
     			);
             // Return comment tree 1
 	        case CommentTree.TREE1:
-
-	        	
-
 	        	return(
 					<div>
 						{/* Div for the first comment chosen */}
-	        			<div style={commentStyle2}>
-		            		<p style={pStyle}>
-								Comment 1:<br/>
-								{tree1.comment}
+	        			<div className='inActiveComments'>
+							<p className='pStyle'>
+								Comment :<br/>
+								{trees[0].comment}
 							</p>
-		            		<p>Reply 1: {tree1.reply}</p>
+		            		<p>
+								Reply :<br/>
+								{trees[0].reply}
+							</p>
 		            	</div>
 						<br/>
-						{
-							this.checkChoices(trees, commentStyle1, commentStyle2, pStyle)
-						}
+						{ this.checkChoices(trees[0]) }
 	        		</div>
 	        	);
             // Return comment tree 2
 	        case CommentTree.TREE2:
 	        	return(
 					<div>
-	        		</div>
+                        {/* Div for the first comment chosen */}
+						<div className='inActiveComments'>
+							<p className='pStyle'>
+								Comment :<br/>
+                                {trees[1].comment}
+							</p>
+							<p>
+								Reply :<br/>
+                                {trees[1].reply}
+							</p>
+						</div>
+						<br/>
+                        { this.checkChoices(trees[1]) }
+					</div>
 	        	);
             // Return comment tree 3
 	        case CommentTree.TREE3:
 	        	return(
 					<div>
-	        		</div>
+                        {/* Div for the first comment chosen */}
+						<div className='inActiveComments'>
+							<p className='pStyle'>
+								Comment :<br/>
+                                {trees[2].comment}
+							</p>
+							<p>
+								Reply :<br/>
+                                {trees[2].reply}
+							</p>
+						</div>
+						<br/>
+                        { this.checkChoices(trees[2]) }
+					</div>
 	        	);
 	        default:
 	        	return(<div>FAILED</div>);

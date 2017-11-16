@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Post from './Post';
 
-//import PostWindow from './PostWindow';
+import PostWindow from './PostWindow';
 
 import postsdata from '../../json/postsdata.json'
 
@@ -18,13 +18,13 @@ class MainPage extends Component {
             playerLevel: props.player.getLevel(),
             currentPost: null,
             showPostWindow: false,
-            posts: postsdata.posts,
-            indexCounter: 0
+            posts: postsdata.posts
 		};
 		this.player = props.player;
 	}
 
 	addPlayerPoints(trollP, commP){
+
 		// Add points to the player
 		this.player.addPoints(trollP, commP);
 
@@ -36,7 +36,7 @@ class MainPage extends Component {
         });
 	}
 
-	setCurrentPost(post) {
+	selectPost(post) {
 
 		this.setState({
 			currentPost: post,
@@ -105,16 +105,18 @@ class MainPage extends Component {
 					<div style={newsFlowInner}>
 						<table>
 							<tbody style={tableStyle}>
-								{	
+								{	// All posts available for a comment
 					            	this.state.posts.map((f) => {
 					            		// Only return three uncompleted posts
 					            		if (!f.completed && (counter < 3) ) {
 					            			++counter;
 						                	return (
 						                  		<tr key={f.userName}>
-													<td style={{border:'1px solid black'}} onClick={this.setCurrentPost.bind(this, f)}>
+													<td style={{border:'1px solid black'}} onClick={this.selectPost.bind(this, f)}>
 															{/* First post (p01) */}
-														<Post postInfo={f} addPlayerPoints={this.addPlayerPoints.bind(this)} processPlayerChoice={this.processPlayerChoice.bind(this)}/>
+														<Post postInfo={f}
+															  addPlayerPoints={this.addPlayerPoints.bind(this)}
+															  processPlayerChoice={this.processPlayerChoice.bind(this)}/>
 													</td>
 												</tr>
 											);
@@ -126,15 +128,17 @@ class MainPage extends Component {
 					                	*/
 					                })
 					            }
-					            {
+					            {	// All posts unavailable for a comment (completed posts)
 					                this.state.posts.map((f) => {
 					                	// Only return completed posts
 					                	if (f.completed) {
 						                	return (
 						                  		<tr key={f.userName}>
-													<td style={{border:'1px solid black'}} onClick={this.setCurrentPost.bind(this, f)}>
+													<td style={{border:'1px solid black'}} onClick={this.selectPost.bind(this, f)}>
 															{/* First post (p01) */}
-														<Post postInfo={f} addPlayerPoints={this.addPlayerPoints.bind(this)} processPlayerChoice={this.processPlayerChoice.bind(this)}/>
+														<Post postInfo={f}
+															  addPlayerPoints={this.addPlayerPoints.bind(this)}
+															  processPlayerChoice={this.processPlayerChoice.bind(this)}/>
 													</td>
 												</tr>
 											);
@@ -150,9 +154,11 @@ class MainPage extends Component {
 						</table>
 					</div>
 				</div>
-				{/*
-				<PostWindow postInfo={this.state.currentPost} addPlayerPoints={this.addPlayerPoints.bind(this)} showPostWindow={this.state.showPostWindow}/>
-				*/}
+				<PostWindow postInfo={this.state.currentPost}
+							addPlayerPoints={this.addPlayerPoints.bind(this)}
+							processPlayerChoice={this.processPlayerChoice.bind(this)}
+							showWindow={this.state.showPostWindow}
+							closeWindow={this.closePostWindow.bind(this)}/>
             </div>
 		);
 	}
