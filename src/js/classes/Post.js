@@ -22,13 +22,16 @@ class Post extends Component {
         else {
             this.setState({showComments: true})
         }
+    }
 
-        let treeStates = {
-            first: 0,
-            second: 0
-        };
-
-        this.props.processPlayerChoice(0, treeStates);
+    showCommentSection () {
+        if (this.state.showComments) {
+            return (
+                <div>
+                    <CommentSection processPlayerChoice={this.props.processPlayerChoice.bind(this)} postInfo={this.props.postInfo} addPlayerPoints={this.props.addPlayerPoints.bind(this)}/>
+                </div>
+            );
+        }
     }
 
     render() {
@@ -36,7 +39,6 @@ class Post extends Component {
         const imageUrl = require('../../img/' + this.props.postInfo.profilePic);
 
         return(
-
             <div className='mainWindowPost'>
                 {/**/}
                 {/* Table 1: Contains information of the post */} 
@@ -77,7 +79,9 @@ class Post extends Component {
                     </tbody>
                 </table>
                 {/* Add post information, a function for adding points and boolean for showing and hiding comments */}
-                    <CommentSection postInfo={this.props.postInfo} addPlayerPoints={this.props.addPlayerPoints.bind(this)} showComments={this.state.showComments}/>
+                {   
+                    this.showCommentSection()
+                }
             </div>
         );
     }

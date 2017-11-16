@@ -48,18 +48,17 @@ class MainPage extends Component {
 		this.setState({showPostWindow: false});
 	}
 
-	processPlayerChoice(index, treeStates) {
+	processPlayerChoice(index, treeStates, isCompleted) {
 
 		// Copy the list of posts and change completed for given index to true
 		let newPosts = this.state.posts;
-		newPosts[index].completed = true;
+		newPosts[index].completed = isCompleted;
 		newPosts[index].treeStates = treeStates;
 
 		// Update the list of posts
 		this.setState({
 			posts: newPosts
 		});
-		console.log(this.state.posts[0]);
 	}
 
 	render() {
@@ -113,7 +112,7 @@ class MainPage extends Component {
 					            			++counter;
 						                	return (
 						                  		<tr key={f.userName}>
-													<td style={{border:'1px solid black', cursor: 'pointer'}} onClick={this.setCurrentPost.bind(this, f)}>
+													<td style={{border:'1px solid black'}} onClick={this.setCurrentPost.bind(this, f)}>
 															{/* First post (p01) */}
 														<Post postInfo={f} addPlayerPoints={this.addPlayerPoints.bind(this)} processPlayerChoice={this.processPlayerChoice.bind(this)}/>
 													</td>
@@ -133,9 +132,9 @@ class MainPage extends Component {
 					                	if (f.completed) {
 						                	return (
 						                  		<tr key={f.userName}>
-													<td style={{border:'1px solid black', cursor: 'pointer'}} onClick={this.setCurrentPost.bind(this, f)}>
+													<td style={{border:'1px solid black'}} onClick={this.setCurrentPost.bind(this, f)}>
 															{/* First post (p01) */}
-														<Post postInfo={f} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
+														<Post postInfo={f} addPlayerPoints={this.addPlayerPoints.bind(this)} processPlayerChoice={this.processPlayerChoice.bind(this)}/>
 													</td>
 												</tr>
 											);
