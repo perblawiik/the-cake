@@ -10,4 +10,5 @@
     height: 85%;
     min-width: 1024px;
     min-height: 512px;
+    border: 1px solid black;
 }
