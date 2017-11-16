@@ -26,8 +26,7 @@ class PostWindow extends Component {
 			width: '100%',
 			display: 'flex',
 		    alignItems: 'center',
-		    justifyContent: 'center',
-		    cursor: 'pointer'
+		    justifyContent: 'center'
 		};
 		
 		if (!this.state.showPostWindow) {
@@ -36,9 +35,13 @@ class PostWindow extends Component {
 
 		if (this.props.postInfo){
 			return (
-				<div style={containerStyle}>
-					<button onClick={this.closePostWindow.bind(this)}>X</button>
-					<Post postInfo={this.props.postInfo} addPlayerPoints={this.props.addPlayerPoints.bind(this)}/>
+				<div style={containerStyle} >
+					<div style={{position: 'absolute', width: '100%', height: '100%'}} >
+					</div>
+					<div style={{zIndex: 1}}>
+						<button onClick={this.closePostWindow.bind(this)}>X</button>
+						<Post postInfo={this.props.postInfo} addPlayerPoints={this.props.addPlayerPoints.bind(this)}/>
+					</div>
 				</div>
 			);
 		}

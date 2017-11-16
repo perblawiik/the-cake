@@ -24,12 +24,21 @@ class Post extends Component {
         }
     }
 
+    showCommentSection () {
+        if (this.state.showComments) {
+            return (
+                <div>
+                    <CommentSection processPlayerChoice={this.props.processPlayerChoice.bind(this)} postInfo={this.props.postInfo} addPlayerPoints={this.props.addPlayerPoints.bind(this)}/>
+                </div>
+            );
+        }
+    }
+
     render() {
         
         const imageUrl = require('../../img/' + this.props.postInfo.profilePic);
 
         return(
-
             <div className='mainWindowPost'>
                 {/**/}
                 {/* Table 1: Contains information of the post */} 
@@ -70,9 +79,9 @@ class Post extends Component {
                     </tbody>
                 </table>
                 {/* Add post information, a function for adding points and boolean for showing and hiding comments */}
-                {/* <div style={{width: '400px', position: 'absolute', backgroundColor: 'white'}}> */}
-                    <CommentSection postInfo={this.props.postInfo} addPlayerPoints={this.props.addPlayerPoints.bind(this)} showComments={this.state.showComments}/>
-                {/* </div> */}
+                {   
+                    this.showCommentSection()
+                }
             </div>
         );
     }
