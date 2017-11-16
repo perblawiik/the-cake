@@ -1,0 +1,29 @@
+
+.textFieldStyle {
+    position: absolute;
+    width: 80%;
+    height: 24px;
+    background-color: white;
+    bottom: 15%;
+    left: 5%;
+    padding-left: 20px;
+}
+
+.arrowStyle {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.imageStyle {
+    position: absolute;
+    width: 10%;
+    height: 35%;
+    right: 0;
+    cursor: pointer;
+}
+
+p {
+    margin: 0;
+}

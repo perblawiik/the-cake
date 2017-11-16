@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
+// Css
 import '../../css/LoginPage.css';
 
-
 class LoginPage extends Component {
-
 
     readSubmitButton(){
 
@@ -26,12 +25,12 @@ class LoginPage extends Component {
             /*Div with title of page*/
             <div className='mainWindowContainer'>
                 <div className = 'topbar'>
-                    
+
                     <img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/>
                     <p className= 'bookfaceTitle'>
                         Bookface
-                    </p>    
-                    
+                    </p>
+
                 </div>
 
                 {/*Left div box with information to be added */}
