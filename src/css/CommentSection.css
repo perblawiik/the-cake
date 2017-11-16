@@ -1,0 +1,21 @@
+
+.activeComments {
+    margin: 4px;
+    float: left;
+    background-color: green;
+    width: 125px;
+    height: 100px;
+    cursor: pointer
+}
+
+.inActiveComments {
+    margin: auto;
+    background-color: grey;
+    width: 150px;
+    height: 125px;
+}
+
+.pStyle {
+    margin: 0;
+    padding: 0;
+}

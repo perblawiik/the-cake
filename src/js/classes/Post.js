@@ -28,7 +28,9 @@ class Post extends Component {
         if (this.state.showComments) {
             return (
                 <div>
-                    <CommentSection processPlayerChoice={this.props.processPlayerChoice.bind(this)} postInfo={this.props.postInfo} addPlayerPoints={this.props.addPlayerPoints.bind(this)}/>
+                    <CommentSection processPlayerChoice={this.props.processPlayerChoice.bind(this)}
+                                    postInfo={this.props.postInfo}
+                                    addPlayerPoints={this.props.addPlayerPoints.bind(this)}/>
                 </div>
             );
         }
