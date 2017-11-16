@@ -1,88 +1,73 @@
 .topbar {
-            background-color: blue;
-            position: absolute; 
-            width: 100%;
-            height: 10%;
-            cursor: pointer;
-            font-size: 40px;
-            text-indent: 10%;
-        }
+	background-color: blue;
+	position: absolute; 
+	width: 100%;
+	height: 10%;
+    cursor: pointer;
+    font-size: 40px;
+    text-indent: 10%;
+}
 
 .bookfaceTitle{
 	color: white;
+	margin: 0;
+	float: left;
 }
-
-.leftlogin {
-		    background-color: white;
-		    position: absolute;
-		    left:   10%;
-		    bottom:  5%;
-		    width:  37%;
-		    height: 80%;
-		}
-
-.rightlogin {
-		    background-color: white;
-		    position: absolute;
-		    right:  10%;
-		    bottom:  5%;
-		    width:  37%;
-		    height: 80%;
-		    display: flex;
-		    flex-direction: column;
-		    align-items: center;
-		    justify-content: flex-start;
-
-		}
-
-		table, th, td {
-    border: 1px solid black;
-}
-
-.playerNameTextBox {
-
-
-		}
-
-.genderBoxes {
-
-
-		}
-
-.substyle {
-
-		    bottom: 5%;
-		}
-
-.Blankspace {
-
-			height: 50px;
-		}
-
-.Line {
-			width: 95%;
-		}
-
-.namestyle {
-		    top: 10%;		   
-		}
 .bookfaceLogo{
 	width: 70px;
 	height: 70px;
 	padding: 0;
 	margin: 0;
+	transform: translateX(-425%);
 }		
 
-.theTable {
-
-	height: auto;
-
+.mainWindowContainer{
+	position: relative;
+	width: 100%;
+	height: 90%;
+	top: 10%;
 }
 
-td {
+.leftlogin {
+    background-color: white;
+    position: absolute;
+    left:   10%;
+    bottom:  5%;
+    width:  37%;
+    height: 80%;
+}
 
+.rightlogin {
+    background-color: white;
+    position: absolute;
+    right:  10%;
+    bottom:  5%;
+    width:  37%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
 
-	padding: 0;
-	margin: 0;
+.playerNameTextBox {
+}
 
+.genderBoxes {
+}
+
+.substyle {
+    bottom: 5%;
+}
+
+.Blankspace {
+	height: 50px;
+}
+
+.Line {
+	width: 95%;
+}
+
+.namestyle {
+    top: 10%;		   
 }
