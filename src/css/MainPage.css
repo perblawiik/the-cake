@@ -12,7 +12,7 @@
     bottom: 5%;
     left: 12.5%;
     right: 12.5%;
-    width: 420px;
+    width: 410px;
     overflow: hidden;
 }
 
@@ -36,5 +36,5 @@
 }
 
 table {
-    border-spacing: 2px 0;
+    border-collapse: collapse;
 }
