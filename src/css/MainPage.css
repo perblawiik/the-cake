@@ -27,11 +27,14 @@
 }
 
 .postContainer {
-    border: 1px solid black;
-    border-radius: 3px;
+    border-bottom: 1px solid grey;
 }
 
 .postContainer:hover {
-    border: 2px solid blue;
-    border-radius: 3px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+table {
+    border-spacing: 2px 0;
 }
