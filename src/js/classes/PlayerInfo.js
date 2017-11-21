@@ -5,39 +5,53 @@ import '../../css/PlayerInfo.css';
 
 class PlayerInfo extends Component {
 
-	addPoints(trollP, commP) {
-		this.props.addPlayerPoints(trollP, commP);
-	}
+    addPoints(trollP, commP) {
+        this.props.addPlayerPoints(trollP, commP);
+    }
 
-	render() {
+    render() {
 
+        // Set bar length based on troll points and community points
+        const trollBarLength = this.props.playerStats.trollPoints * 10 + '%';
+        const communityBarLength = this.props.playerStats.comPoints + '%';
 
-		return(
-			<div className='containerStyle'>
-				<table>
-					<tr>
-						<td>
-						</td>
-						<td>
-							<img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/>
-						</td>
-						<td>
-						</td>
-					</tr>
-				</table>
-				<p className='playerName'> {this.props.playerStats.name} </p>
-				<p> Level: {this.props.playerStats.level} </p>
-				<p> Troll Points: {this.props.playerStats.trollPoints} </p>
-				<div className = 'container'>
-					<div className = 'trollBar'>
-					</div>
-				</div>
-				<p> Community Points: {this.props.playerStats.comPoints} </p>
-				<button onClick={this.addPoints.bind(this, 1, 0)}>Add Troll Points</button>
-				<button onClick={this.addPoints.bind(this, 0, 1)}>Add Community Points</button>
-			</div>
-		);
-	}
+        // Lower the color code value based on community points
+        const colorValue = Math.round( 235 * (this.props.playerStats.comPoints / 100) );
+        const communityBarColor = 'rgb(255,' + colorValue + ',' + colorValue + ')';
+
+        return(
+            <div className='containerStyle'>
+                <table>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+                <p className='playerName'> {this.props.playerStats.name} </p>
+                <p> Level: {this.props.playerStats.level} </p>
+                <p> Troll Points: {this.props.playerStats.trollPoints} </p>
+                <div className = 'barContainer'>
+                    <div className = 'trollBar' style={{width: trollBarLength}}>
+                    </div>
+                </div>
+                <p> Community Status: {this.props.playerStats.comPoints} </p>
+                <div className = 'barContainer'>
+                    <div className = 'communityStatus' style={{width: communityBarLength, backgroundColor: communityBarColor}}>
+                    </div>
+                </div>
+                <button onClick={this.addPoints.bind(this, 1, 0)}>Add Troll Points</button>
+                <br/>
+                <button onClick={this.addPoints.bind(this, 0, 5)}>Add Community Points</button>
+                <br/>
+                <button onClick={this.addPoints.bind(this, 0, -5)}>Subtract Community Points</button>
+            </div>
+        );
+    }
 }
 
 export default PlayerInfo;
