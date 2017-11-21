@@ -14,6 +14,7 @@
     right: 12.5%;
     width: 410px;
     overflow: hidden;
+    border-radius: 4px;
 }
 
 .newsFlowInner {
@@ -38,4 +39,8 @@
 
 table {
     border-collapse: collapse;
+}
+
+img {
+    border-radius: 6px;
 }
