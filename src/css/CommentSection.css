@@ -8,10 +8,12 @@
     cursor: pointer
 }
 
-.inActiveComments {
+.sectionContainer {
     background-color: lightgrey;
+    position: relative;
+    float: left;
     width: 100%;
-    min-height: 100%;
+    height: 100%;
 }
 
 .pStyle {
@@ -22,8 +24,15 @@
 
 .pName {
     display: inline;
-    font-size: 20px;
+    font-size: 18px;
     color: darkblue;
+}
+
+.profilePicture {
+    float: left;
+    margin: 5px;
+    width: 40px;
+    height: 40px;
 }
 
 hr {

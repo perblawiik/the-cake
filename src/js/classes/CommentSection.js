@@ -29,8 +29,11 @@ class CommentSection extends Component {
 	}
 
 	checkChoices (tree) {
-
+	    // Array for choices
 		const choices = [tree.choice1, tree.choice2];
+        // Image source for profile picture
+        const imageUrl = require('../../img/' + this.props.postInfo.profilePic);
+        const playerImageUrl = require('../../img/troll.png');
 
 		switch(this.props.postInfo.treeStates.second) {
 			case null:
@@ -52,38 +55,52 @@ class CommentSection extends Component {
                 );
 			case CommentTree.CHOICE1:
                 return (
-					<div className='inActiveComments'>
-						<p className='pName'>
-							<b>{this.props.playerName}</b>
-						</p>
-						<p className='pStyle'>
-							{tree.choice1.comment}
-						</p>
+					<div>
+                        <div className='sectionContainer'>
+                            <img className='profilePicture' src={playerImageUrl} alt='x'/>
+                            <p className='pName'>
+                                <b>{this.props.playerName}</b>
+                            </p>
+                            <p className='pStyle'>
+                                {tree.choice1.comment}
+                            </p>
+                        </div>
+                        <br/>
 						<hr/>
-						<p className='pName'>
-							<b>{this.props.postInfo.userName}</b>
-						</p>
-						<p className='pStyle'>
-							{tree.choice1.reply}
-						</p>
+                        <div className='sectionContainer'>
+                            <img className='profilePicture' src={imageUrl} alt='x'/>
+                            <p className='pName'>
+                                <b>{this.props.postInfo.userName}</b>
+                            </p>
+                            <p className='pStyle'>
+                                {tree.choice1.reply}
+                            </p>
+                        </div>
 					</div>
                 );
 			case CommentTree.CHOICE2:
                 return (
-					<div className='inActiveComments'>
-						<p className='pName'>
-							<b>{this.props.playerName}</b>
-						</p>
-						<p className='pStyle'>
-							{tree.choice2.comment}
-						</p>
+					<div>
+                        <div className='sectionContainer'>
+                            <img className='profilePicture' src={playerImageUrl} alt='x'/>
+                            <p className='pName'>
+                                <b>{this.props.playerName}</b>
+                            </p>
+                            <p className='pStyle'>
+                                {tree.choice2.comment}
+                            </p>
+                        </div>
+                        <br/>
 						<hr/>
-						<p className='pName'>
-							<b>{this.props.postInfo.userName}</b>
-						</p>
-						<p className='pStyle'>
-							{tree.choice2.reply}
-						</p>
+                        <div className='sectionContainer'>
+                            <img className='profilePicture' src={imageUrl} alt='x'/>
+                            <p className='pName'>
+                                <b>{this.props.postInfo.userName}</b>
+                            </p>
+                            <p className='pStyle'>
+                                {tree.choice2.reply}
+                            </p>
+                        </div>
 					</div>
                 );
 			default:
@@ -95,6 +112,10 @@ class CommentSection extends Component {
 
 		// Array of comment trees (1-3)
         const trees = [this.props.postInfo.tree1, this.props.postInfo.tree2, this.props.postInfo.tree3];
+
+        // Image source for profile picture
+        const imageUrl = require('../../img/' + this.props.postInfo.profilePic);
+        const playerImageUrl = require('../../img/troll.png');
 
         // treeState determine the player's completion progress of the post
     	switch(this.props.postInfo.treeStates.first) {
@@ -120,22 +141,26 @@ class CommentSection extends Component {
 	        case CommentTree.TREE1:
 	        	return(
 					<div>
-						{/* Div for the first comment chosen */}
-	        			<div className='inActiveComments'>
-							<p className='pName'>
-								<b>{this.props.playerName}</b>
-							</p>
-							<p className='pStyle'>
-								{trees[0].comment}
-							</p>
-							<hr/>
-		            		<p className='pName'>
-								<b>{this.props.postInfo.userName}</b>
-							</p>
-							<p className='pStyle'>
-								{trees[0].reply}
-							</p>
-		            	</div>
+                        <div className='sectionContainer'>
+                            <img className='profilePicture' src={playerImageUrl} alt='x'/>
+                            <p className='pName'>
+                                <b>{this.props.playerName}</b>
+                            </p>
+                            <p className='pStyle'>
+                                {trees[0].comment}
+                            </p>
+                        </div>
+                        <br/>
+                        <hr/>
+                        <div className='sectionContainer'>
+                            <img className='profilePicture' src={imageUrl} alt='x'/>
+                            <p className='pName'>
+                                <b>{this.props.postInfo.userName}</b>
+                            </p>
+                            <p className='pStyle'>
+                                {trees[0].reply}
+                            </p>
+                        </div>
 		            	<hr/>
 						{ this.checkChoices(trees[0]) }
 	        		</div>
@@ -143,23 +168,27 @@ class CommentSection extends Component {
             // Return comment tree 2
 	        case CommentTree.TREE2:
 	        	return(
-					<div>
-                        {/* Div for the first comment chosen */}
-						<div className='inActiveComments'>
-							<p className='pName'>
-								<b>{this.props.playerName}</b>
-							</p>
-							<p className='pStyle'>
-								{trees[1].comment}
-							</p>
-							<hr/>
-		            		<p className='pName'>
-								<b>{this.props.postInfo.userName}</b>
-							</p>
-							<p className='pStyle'>
-								{trees[1].reply}
-							</p>
-						</div>
+                    <div>
+                        <div className='sectionContainer'>
+                            <img className='profilePicture' src={playerImageUrl} alt='x'/>
+                            <p className='pName'>
+                                <b>{this.props.playerName}</b>
+                            </p>
+                            <p className='pStyle'>
+                                {trees[1].comment}
+                            </p>
+                        </div>
+                        <br/>
+                        <hr/>
+                        <div className='sectionContainer'>
+                            <img className='profilePicture' src={imageUrl} alt='x'/>
+                            <p className='pName'>
+                                <b>{this.props.postInfo.userName}</b>
+                            </p>
+                            <p className='pStyle'>
+                                {trees[1].reply}
+                            </p>
+                        </div>
 						<hr/>
                         { this.checkChoices(trees[1]) }
 					</div>
@@ -167,23 +196,27 @@ class CommentSection extends Component {
             // Return comment tree 3
 	        case CommentTree.TREE3:
 	        	return(
-					<div>
-                        {/* Div for the first comment chosen */}
-						<div className='inActiveComments'>
-							<p className='pName'>
-								<b>{this.props.playerName}</b>
-							</p>
-							<p className='pStyle'>
-								{trees[2].comment}
-							</p>
-							<hr/>
-		            		<p className='pName'>
-								<b>{this.props.postInfo.userName}</b>
-							</p>
-							<p className='pStyle'>
-								{trees[2].reply}
-							</p>
-						</div>
+                    <div>
+                        <div className='sectionContainer'>
+                            <img className='profilePicture' src={playerImageUrl} alt='x'/>
+                            <p className='pName'>
+                                <b>{this.props.playerName}</b>
+                            </p>
+                            <p className='pStyle'>
+                                {trees[2].comment}
+                            </p>
+                        </div>
+                        <br/>
+                        <hr/>
+                        <div className='sectionContainer'>
+                            <img className='profilePicture' src={imageUrl} alt='x'/>
+                            <p className='pName'>
+                                <b>{this.props.postInfo.userName}</b>
+                            </p>
+                            <p className='pStyle'>
+                                {trees[2].reply}
+                            </p>
+                        </div>
 						<hr/>
                         { this.checkChoices(trees[2]) }
 					</div>
