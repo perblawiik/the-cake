@@ -27,7 +27,8 @@ class Post extends Component {
     }
 
     showCommentSection () {
-        if (this.state.showComments) {
+
+        if (this.props.showPostWindow && this.state.showComments) {
             return (
                 <div>
                     <CommentSection processPlayerChoice={this.props.processPlayerChoice.bind(this)}
@@ -43,7 +44,7 @@ class Post extends Component {
         const imageUrl = require('../../img/' + this.props.postInfo.profilePic);
 
         return(
-            <div className='mainWindowPost'>
+            <div className='mainWindowPost' style={{backgroundColor: this.props.backgroundColor}}>
                 {/**/}
                 {/* Table 1: Contains information of the post */} 
                 <table>
