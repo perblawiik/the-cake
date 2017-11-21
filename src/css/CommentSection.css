@@ -9,13 +9,24 @@
 }
 
 .inActiveComments {
-    margin: auto;
-    background-color: grey;
-    width: 150px;
-    min-height: 125px;
+    background-color: lightgrey;
+    width: 100%;
+    min-height: 100%;
 }
 
 .pStyle {
+    display: inline;
+    margin: 8px;
+    padding: 0;
+}
+
+.pName {
+    display: inline;
+    font-size: 20px;
+    color: darkblue;
+}
+
+hr {
     margin: 0;
     padding: 0;
 }

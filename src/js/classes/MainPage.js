@@ -143,7 +143,8 @@ class MainPage extends Component {
 							addPlayerPoints={this.addPlayerPoints.bind(this)}
 							processPlayerChoice={this.processPlayerChoice.bind(this)}
 							showWindow={this.state.showPostWindow}
-							closeWindow={this.closePostWindow.bind(this)}/>
+							closeWindow={this.closePostWindow.bind(this)}
+							playerName={this.player.getName()}/>
             </div>
 		);
 	}

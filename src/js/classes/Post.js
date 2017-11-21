@@ -33,7 +33,8 @@ class Post extends Component {
                 <div>
                     <CommentSection processPlayerChoice={this.props.processPlayerChoice.bind(this)}
                                     postInfo={this.props.postInfo}
-                                    addPlayerPoints={this.props.addPlayerPoints.bind(this)}/>
+                                    addPlayerPoints={this.props.addPlayerPoints.bind(this)}
+                                    playerName={this.props.playerName}/>
                 </div>
             );
         }
