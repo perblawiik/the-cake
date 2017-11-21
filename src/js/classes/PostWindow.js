@@ -18,7 +18,8 @@ class PostWindow extends Component {
 						<Post postInfo={this.props.postInfo}
 							  addPlayerPoints={this.props.addPlayerPoints.bind(this)}
 							  processPlayerChoice={this.props.processPlayerChoice.bind(this)}
-							  showPostWindow={this.props.showWindow}/>
+							  showPostWindow={this.props.showWindow}
+							  playerName={this.props.playerName}/>
 					</div>
 				</div>
 			);
