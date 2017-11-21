@@ -18,7 +18,7 @@
     text-align: center;
 }
 
-.container
+.barContainer
 {
     position: relative;
     width: 100%;
@@ -26,11 +26,25 @@
     top: 0;
     bottom: 0;
     height: 20px;
-    background-color: #dd82ab;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
 }
 
 .trollBar
 {
-
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background-color: lightblue;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
 }
 
+.communityStatus {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background-color: lightpink;
+    border-radius: 2px;
+}

@@ -1,37 +1,44 @@
 class Player {
 
-	constructor(name) {
-		this.name = name;
-		this.level = 1;
-		this.trollPoints = 0;
-		this.communityPoints = 0;
-	}
+    constructor(name) {
+        this.name = name;
+        this.level = 1;
+        this.trollPoints = 0;
+        this.communityPoints = 100;
+    }
 
-	addPoints(trollPoints, commPoints) {
-		this.trollPoints = this.trollPoints + trollPoints;
-		this.communityPoints = this.communityPoints + commPoints;
+    addPoints(trollPoints, commPoints) {
+        this.trollPoints = this.trollPoints + trollPoints;
+        this.communityPoints = this.communityPoints + commPoints;
 
-		if(this.trollPoints >= 10) {
-			this.trollPoints = this.trollPoints - 10;
-			++this.level;
-		}
-	}
+        if(this.trollPoints >= 10) {
+            this.trollPoints = this.trollPoints - 10;
+            ++this.level;
+        }
 
-	getTrollPoints() {
-		return this.trollPoints;
-	}
+        if (this.communityPoints > 100) {
+            this.communityPoints = 100;
+        }
+        else if (this.communityPoints < 0) {
+            this.communityPoints = 0;
+        }
+    }
 
-	getCommunityPoints() {
-		return this.communityPoints;
-	}
+    getTrollPoints() {
+        return this.trollPoints;
+    }
 
-	getName() {
-		return this.name;
-	}
+    getCommunityPoints() {
+        return this.communityPoints;
+    }
 
-	getLevel() {
-		return this.level;
-	}
+    getName() {
+        return this.name;
+    }
+
+    getLevel() {
+        return this.level;
+    }
 }
 
 export default Player;
