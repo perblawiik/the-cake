@@ -1,0 +1,36 @@
+
+.containerStyle
+{
+    position: absolute;
+    background-color: white;
+    width: 20%;
+    left: 5%;
+    top: 12.5%;
+    bottom: 25%;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.playerName
+{
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+
+.container
+{
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 20px;
+    background-color: #dd82ab;
+}
+
+.trollBar
+{
+
+}
+

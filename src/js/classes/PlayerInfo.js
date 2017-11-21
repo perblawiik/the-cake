@@ -11,21 +11,27 @@ class PlayerInfo extends Component {
 
 	render() {
 
-		const containerStyle = {
-			position: 'absolute',
-			backgroundColor: 'white',
-			width: '20%',
-			left: '5%',
-			top: '12.5%',
-            bottom: '25%',
-            border: '1px solid black'
-		};
 
 		return(
-			<div style={containerStyle}>
-				<p> Name: {this.props.playerStats.name} </p>
+			<div className='containerStyle'>
+				<table>
+					<tr>
+						<td>
+						</td>
+						<td>
+							<img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/>
+						</td>
+						<td>
+						</td>
+					</tr>
+				</table>
+				<p className='playerName'> {this.props.playerStats.name} </p>
 				<p> Level: {this.props.playerStats.level} </p>
 				<p> Troll Points: {this.props.playerStats.trollPoints} </p>
+				<div className = 'container'>
+					<div className = 'trollBar'>
+					</div>
+				</div>
 				<p> Community Points: {this.props.playerStats.comPoints} </p>
 				<button onClick={this.addPoints.bind(this, 1, 0)}>Add Troll Points</button>
 				<button onClick={this.addPoints.bind(this, 0, 1)}>Add Community Points</button>
