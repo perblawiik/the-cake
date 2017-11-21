@@ -14,7 +14,7 @@ class PostWindow extends Component {
 					<div className='tintedBackground' onClick={this.props.closeWindow} >
 					</div>
 					<div className='postDiv'>
-						<button onClick={this.props.closeWindow}>X</button>
+						<button className='closeButton' onClick={this.props.closeWindow}>✖</button>
 						<Post postInfo={this.props.postInfo}
 							  addPlayerPoints={this.props.addPlayerPoints.bind(this)}
 							  processPlayerChoice={this.props.processPlayerChoice.bind(this)}
