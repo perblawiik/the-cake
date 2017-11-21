@@ -98,7 +98,8 @@ class MainPage extends Component {
 													<td className='postContainer' onClick={this.selectPost.bind(this, f)}>
 														<Post postInfo={f}
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
-															  processPlayerChoice={this.processPlayerChoice.bind(this)}/>
+															  processPlayerChoice={this.processPlayerChoice.bind(this)}
+															  showPostWindow={false}/>
 													</td>
 												</tr>
 											);
@@ -115,11 +116,13 @@ class MainPage extends Component {
 					                	// Only return completed posts
 					                	if (f.completed) {
 						                	return (
-						                  		<tr key={f.userName}>
+						                  		<tr key={f.userName} style={{backgroundColor: 'lightgrey'}}>
 													<td className='postContainer' onClick={this.selectPost.bind(this, f)}>
 														<Post postInfo={f}
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
-															  processPlayerChoice={this.processPlayerChoice.bind(this)}/>
+															  processPlayerChoice={this.processPlayerChoice.bind(this)}
+															  showPostWindow={false}
+															  backgroundColor={'lightgrey'}/>
 													</td>
 												</tr>
 											);
