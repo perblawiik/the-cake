@@ -17,7 +17,28 @@
 }
 
 .postDiv {
+    position: relative;
     z-index: 1;
     background-color: white;
     padding: 8px;
+}
+
+.closeButton {
+    font: 14px/100% arial, sans-serif;
+    position: absolute;
+    right: -30px;
+    top: -27px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 26px;
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    text-shadow: 0 1px 0 lightgrey;
+}
+
+.closeButton:hover {
+    color: white;
+    background-color: red;
 }
