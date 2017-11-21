@@ -57,7 +57,9 @@ class CommentSection extends Component {
                 return (
 					<div>
                         <div className='sectionContainer'>
-                            <img className='profilePicture' src={playerImageUrl} alt='x'/>
+                            <div className='pictureContainer'>
+                                <img className='profilePicture' src={playerImageUrl} alt='x'/>
+                            </div>
                             <p className='pName'>
                                 <b>{this.props.playerName}</b>
                             </p>
@@ -68,7 +70,9 @@ class CommentSection extends Component {
                         <br/>
 						<hr/>
                         <div className='sectionContainer'>
-                            <img className='profilePicture' src={imageUrl} alt='x'/>
+                            <div className='pictureContainer'>
+                                <img className='profilePicture' src={imageUrl} alt='x'/>
+                            </div>
                             <p className='pName'>
                                 <b>{this.props.postInfo.userName}</b>
                             </p>
@@ -82,7 +86,9 @@ class CommentSection extends Component {
                 return (
 					<div>
                         <div className='sectionContainer'>
-                            <img className='profilePicture' src={playerImageUrl} alt='x'/>
+                            <div className='pictureContainer'>
+                                <img className='profilePicture' src={playerImageUrl} alt='x'/>
+                            </div>
                             <p className='pName'>
                                 <b>{this.props.playerName}</b>
                             </p>
@@ -93,7 +99,9 @@ class CommentSection extends Component {
                         <br/>
 						<hr/>
                         <div className='sectionContainer'>
-                            <img className='profilePicture' src={imageUrl} alt='x'/>
+                            <div className='pictureContainer'>
+                                <img className='profilePicture' src={imageUrl} alt='x'/>
+                            </div>
                             <p className='pName'>
                                 <b>{this.props.postInfo.userName}</b>
                             </p>
@@ -142,7 +150,9 @@ class CommentSection extends Component {
 	        	return(
 					<div>
                         <div className='sectionContainer'>
-                            <img className='profilePicture' src={playerImageUrl} alt='x'/>
+                            <div className='pictureContainer'>
+                                <img className='profilePicture' src={playerImageUrl} alt='x'/>
+                            </div>
                             <p className='pName'>
                                 <b>{this.props.playerName}</b>
                             </p>
@@ -153,7 +163,9 @@ class CommentSection extends Component {
                         <br/>
                         <hr/>
                         <div className='sectionContainer'>
-                            <img className='profilePicture' src={imageUrl} alt='x'/>
+                            <div className='pictureContainer'>
+                                <img className='profilePicture' src={imageUrl} alt='x'/>
+                            </div>
                             <p className='pName'>
                                 <b>{this.props.postInfo.userName}</b>
                             </p>
@@ -170,7 +182,9 @@ class CommentSection extends Component {
 	        	return(
                     <div>
                         <div className='sectionContainer'>
-                            <img className='profilePicture' src={playerImageUrl} alt='x'/>
+                            <div className='pictureContainer'>
+                                <img className='profilePicture' src={playerImageUrl} alt='x'/>
+                            </div>
                             <p className='pName'>
                                 <b>{this.props.playerName}</b>
                             </p>
@@ -181,7 +195,9 @@ class CommentSection extends Component {
                         <br/>
                         <hr/>
                         <div className='sectionContainer'>
-                            <img className='profilePicture' src={imageUrl} alt='x'/>
+                            <div className='pictureContainer'>
+                                <img className='profilePicture' src={imageUrl} alt='x'/>
+                            </div>
                             <p className='pName'>
                                 <b>{this.props.postInfo.userName}</b>
                             </p>
@@ -198,7 +214,9 @@ class CommentSection extends Component {
 	        	return(
                     <div>
                         <div className='sectionContainer'>
-                            <img className='profilePicture' src={playerImageUrl} alt='x'/>
+                            <div className='pictureContainer'>
+                                <img className='profilePicture' src={playerImageUrl} alt='x'/>
+                            </div>
                             <p className='pName'>
                                 <b>{this.props.playerName}</b>
                             </p>
@@ -209,7 +227,9 @@ class CommentSection extends Component {
                         <br/>
                         <hr/>
                         <div className='sectionContainer'>
-                            <img className='profilePicture' src={imageUrl} alt='x'/>
+                            <div className='pictureContainer'>
+                                <img className='profilePicture' src={imageUrl} alt='x'/>
+                            </div>
                             <p className='pName'>
                                 <b>{this.props.postInfo.userName}</b>
                             </p>
