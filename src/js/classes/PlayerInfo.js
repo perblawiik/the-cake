@@ -67,7 +67,7 @@ class PlayerInfo extends Component {
                                 <div className = 'blank'></div>
                             </td>
                             <td>
-                                <img className = 'profilePic' src={playerImageUrl} alt='logo'/>
+                                <img className = 'profilePic' src={playerImageUrl} alt='logo' onClick={this.props.selectImage.bind(this, playerImageUrl)}/>
                             </td>
                             <td>
                             </td>

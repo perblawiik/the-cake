@@ -53,7 +53,7 @@ class Post extends Component {
                     <tbody>
                         <tr className='userBar'>
                             <td className='userFaceContainer'>
-                                <img className='userFace' src={imageUrl} alt='x'/>
+                                <img className='userFace' src={imageUrl} alt='x' onClick={this.props.selectImage.bind(this, imageUrl)}/>
                             </td>
                             <td className='userName'>
                                 {this.props.postInfo.userName}
