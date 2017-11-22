@@ -1,6 +1,6 @@
 
 .windowStyle {
-    background-color: #EEEEEE;
+    background: linear-gradient(to top,  #999999, #EEEEEE);
     position: absolute;
     margin: auto;
     top: 10%;
