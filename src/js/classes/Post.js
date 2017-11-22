@@ -24,8 +24,6 @@ class Post extends Component {
             this.setState({showComments: false})
         } // If comments are hidden set to true
         else {
-            var msg = new SpeechSynthesisUtterance(this.props.postInfo.text);
-            window.speechSynthesis.speak(msg);
             this.setState({showComments: true})
         }
     }

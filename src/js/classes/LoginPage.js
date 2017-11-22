@@ -11,17 +11,12 @@ class LoginPage extends Component {
         let name = document.getElementById('playername').value;
 
         if(name === ''){
-            var msg = new SpeechSynthesisUtterance("EEEEEEE. You need a user name!");
-            window.speechSynthesis.speak(msg);
             
             window.alert('Type a user name');
 
         }
         else
         {
-            //EXPERIMENTAL: Read out the users username.s
-            var msg = new SpeechSynthesisUtterance(name  + " has logged in.");
-            window.speechSynthesis.speak(msg);
 
             this.props.createPlayer(name);
             this.props.setGameState(1);
