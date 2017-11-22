@@ -17,12 +17,6 @@ class Post extends Component {
         }
     }
 
-    readPost(ms)
-    {
-         var msg = new SpeechSynthesisUtterance(ms);
-         window.speechSynthesis.speak(msg);
-    }
-
     // Switch between true and false
     commentSwitch() {
         // If comments are showing set to false
@@ -30,6 +24,8 @@ class Post extends Component {
             this.setState({showComments: false})
         } // If comments are hidden set to true
         else {
+            var msg = new SpeechSynthesisUtterance(this.props.postInfo.text);
+            window.speechSynthesis.speak(msg);
             this.setState({showComments: true})
         }
     }
@@ -37,6 +33,7 @@ class Post extends Component {
     showCommentSection () {
 
         if (this.props.showPostWindow && this.state.showComments) {
+           
             return (
                 <div>
                     <CommentSection processPlayerChoice={this.props.processPlayerChoice.bind(this)}

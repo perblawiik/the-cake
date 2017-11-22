@@ -11,7 +11,11 @@ class LoginPage extends Component {
         let name = document.getElementById('playername').value;
 
         if(name === ''){
+            var msg = new SpeechSynthesisUtterance("EEEEEEE. You need a user name!");
+            window.speechSynthesis.speak(msg);
+            
             window.alert('Type a user name');
+
         }
         else
         {
