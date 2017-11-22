@@ -24,6 +24,13 @@
     border-radius: 6px;
 }
 
+.selectedImage {
+    min-width: 250px;
+    min-height: 250px;
+    max-width: 400px;
+    max-height: 400px;
+}
+
 .closeButton {
     font: 14px/100% arial, sans-serif;
     position: absolute;
