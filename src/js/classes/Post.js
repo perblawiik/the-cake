@@ -8,11 +8,19 @@ import '../../css/Post.css';
 
 class Post extends Component {
 
+    
+   
     constructor(props) {
         super(props);
         this.state = {
             showComments: false
         }
+    }
+
+    readPost(ms)
+    {
+         var msg = new SpeechSynthesisUtterance(ms);
+         window.speechSynthesis.speak(msg);
     }
 
     // Switch between true and false
@@ -78,6 +86,7 @@ class Post extends Component {
                             </td>
                             <td className='commentButton'>
                                 <p style={{cursor: 'pointer'}} onClick={this.commentSwitch.bind(this)}>
+
                                     Comment
                                 </p>
                             </td>
