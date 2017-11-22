@@ -20,6 +20,15 @@ class LoginPage extends Component {
     }
 
     render() {
+        var submitClasses;
+        if (document.getElementById('playername') === null || document.getElementById('playername').value === '')
+        {
+            submitClasses = 'substyle, noName';
+        }
+        else
+        {
+            submitClasses = 'substyle';
+        }
 
         return(
             /*Div with title of page*/
@@ -35,47 +44,28 @@ class LoginPage extends Component {
 
                 {/*Left div box with information to be added */}
                 <div className='leftlogin'>
-                    left
+                    <img className='welcomePic' src={require('../../img/ms Mom.png')} alt='x'/>
+                    <p>
+                        Hello and welcome to Bookface! And you love us. We own you.
+                    </p>
                 </div>
 
                 {/*Right div box with registration for the player*/}
                 <div className='rightlogin'>
 
-                    <div className='Blankspace' style={{order: '0'}}>
-                        <h2>
-                            Create an account
-                        </h2>
-                    </div>
+                    <h2 >
+                        Create an account
+                    </h2>
+                
 
-                    <div className='Line' style={{order: '1'}}>
-                        <hr/>
-                    </div>
 
-                    <div style={{order: '2'}}>
+                    <div className = 'inputBox' style={{order: '2'}}>
                         <label>
                             <input id = 'playername' placeholder='User name' type="text" name="name" className='namestyle'/>
                         </label>
                     </div>
 
-                    <div className='Line' style={{order: '3'}}>
-                        <hr/>
-                    </div>
-
-                    <div className='genderBoxes' style={{order: '4'}}>
-                        Gender:
-                        <br/>
-                        <input type="checkbox"/>YES <br/>
-                        <input type="checkbox"/>NO <br/>
-                        <input type="checkbox"/>I DON'T KNOW<br/>
-                        <input type="checkbox"/>CAN YOU REPEAT THE QUESTION?<br/>
-                    </div>
-
-                    <div className='Line' style={{order: '5'}}>
-                        <hr/>
-                    </div>
-
-
-                    <button value="Submit" className='substyle' onClick={this.readSubmitButton.bind(this)} style={{order: '6'}}>
+                    <button value="Submit" className={'substyle'} onClick={this.readSubmitButton.bind(this)} style={{order: '6'}}>
                         Join Bookface!
                     </button>
                 </div>
