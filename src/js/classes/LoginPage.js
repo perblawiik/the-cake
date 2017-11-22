@@ -34,11 +34,12 @@ class LoginPage extends Component {
             /*Div with title of page*/
             <div className='mainWindowContainer'>
                 <div className = 'topbar'>
-
-                    <img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/>
-                    <p className= 'bookfaceTitle'>
-                        Bookface
-                    </p>
+                    <table className = 'bookfaceTable'>
+                        <tr className = 'bookfaceTable'>
+                            <td className = 'bookfaceTable'> <p className= 'bookfaceTitle'>Bookface</p> </td>
+                            <td className = 'bookfaceTable'> <img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/> </td>
+                        </tr>
+                    </table>
 
                 </div>
 
