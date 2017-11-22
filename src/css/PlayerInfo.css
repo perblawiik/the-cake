@@ -1,5 +1,5 @@
 
-.containerStyle
+.playerInfoContainer
 {
     position: absolute;
     background-color: white;
@@ -29,6 +29,25 @@
     background-color: white;
     border: 1px solid black;
     border-radius: 2px;
+}
+
+.blank
+{
+    position: relative;
+    width: 3.5vw;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.profilePic
+{
+    border: 5px solid black;
+    border-radius: 5px;
+    position: relative;
+    left: 0;
+    top: 0;
+    bottom: 0;
 }
 
 .trollBar
