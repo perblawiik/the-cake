@@ -6,18 +6,14 @@ import '../../css/LoginPage.css';
 class LoginPage extends Component {
 
     readSubmitButton(){
-        
 
         let name = document.getElementById('playername').value;
 
         if(name === ''){
-            
             window.alert('Type a user name');
-
         }
         else
         {
-
             this.props.createPlayer(name);
             this.props.setGameState(1);
         }
@@ -61,11 +57,9 @@ class LoginPage extends Component {
                 {/*Right div box with registration for the player*/}
                 <div className='rightlogin'>
 
-                    <h2 >
+                    <h2>
                         Create an account
                     </h2>
-                
-
 
                     <div className = 'inputBox' style={{order: '2'}}>
                         <label>
