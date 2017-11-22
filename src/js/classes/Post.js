@@ -63,8 +63,10 @@ class Post extends Component {
                         </tr>
                         <tr className='textBar'>
                              {/*colspan -> 1 cell spans 2 cells*/}
-                            <td colSpan='2' className='postText'>
-                                {this.props.postInfo.text}
+                            <td colSpan='2'>
+                                <p className='postText'>
+                                    {this.props.postInfo.text}
+                                </p>
                             </td>
                         </tr>
                     </tbody>
@@ -81,7 +83,6 @@ class Post extends Component {
                             </td>
                             <td className='commentButton'>
                                 <p style={{cursor: 'pointer'}} onClick={this.commentSwitch.bind(this)}>
-
                                     Comment
                                 </p>
                             </td>
