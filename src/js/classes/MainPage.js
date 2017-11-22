@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 // Javascript Classes
 import Post from './Post';
 import PostWindow from './PostWindow';
-import PlayerInfo from'./PlayerInfo';
+import PlayerInfo from './PlayerInfo';
+import ImageWindow from './ImageWindow';
 
 // Css
 import '../../css/MainPage.css';
@@ -22,6 +23,8 @@ class MainPage extends Component {
             playerLevel: props.player.getLevel(),
             currentPost: null,
             showPostWindow: false,
+			showImageWindow: false,
+			currentImage: null,
             posts: postData.posts // Contains all post data
 		};
 
@@ -50,10 +53,23 @@ class MainPage extends Component {
 		});
 	}
 
+	selectImage(srcFile) {
+
+        this.setState({
+            showImageWindow: true,
+            currentImage: srcFile
+        });
+	}
+
 	closePostWindow() {
 
 		this.setState({showPostWindow: false});
 	}
+
+    closeImageWindow() {
+
+        this.setState({showImageWindow: false});
+    }
 
 	processPlayerChoice(index, treeStates, isCompleted) {
 
@@ -83,7 +99,10 @@ class MainPage extends Component {
 
 		return (
 			<div style={{width: '100%', height: '100%'}}>
-				<PlayerInfo playerStats={playerStats} addPlayerPoints={this.addPlayerPoints.bind(this)}/>
+				<PlayerInfo playerStats={playerStats}
+							addPlayerPoints={this.addPlayerPoints.bind(this)}
+							selectImage={this.selectImage.bind(this)}/>
+
 				<div className='newsFlowOuter'>
 					<div className='newsFlowInner'>
 						<table>
@@ -100,7 +119,8 @@ class MainPage extends Component {
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}
 															  showPostWindow={true}
-                                                              playerName={this.player.getName()}/>
+                                                              playerName={this.player.getName()}
+															  selectImage={this.selectImage.bind(this)}/>
 													</td>
 												</tr>
 											);
@@ -124,7 +144,8 @@ class MainPage extends Component {
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}
 															  showPostWindow={true}
 															  backgroundColor={'#F0F0F0'}
-                                                              playerName={this.player.getName()}/>
+                                                              playerName={this.player.getName()}
+															  selectImage={this.selectImage.bind(this)}/>/>
 													</td>
 												</tr>
 											);
@@ -140,13 +161,6 @@ class MainPage extends Component {
 						</table>
 					</div>
 				</div>
-				{/* Pop out window for selected post */}
-				<PostWindow postInfo={this.state.currentPost}
-							addPlayerPoints={this.addPlayerPoints.bind(this)}
-							processPlayerChoice={this.processPlayerChoice.bind(this)}
-							showWindow={this.state.showPostWindow}
-							closeWindow={this.closePostWindow.bind(this)}
-							playerName={this.player.getName()}/>
 				<div className="ruleBox" >
 					<p>
 					<b>Welcome fellow troll to the Bookface.</b>
@@ -164,6 +178,17 @@ class MainPage extends Component {
 					I writing text
 					</p>
 				</div>
+                {/* Pop out window for selected post */}
+				<PostWindow postInfo={this.state.currentPost}
+							addPlayerPoints={this.addPlayerPoints.bind(this)}
+							processPlayerChoice={this.processPlayerChoice.bind(this)}
+							showWindow={this.state.showPostWindow}
+							closeWindow={this.closePostWindow.bind(this)}
+							playerName={this.player.getName()}/>
+
+				<ImageWindow showWindow={this.state.showImageWindow}
+							 srcFile={this.state.currentImage}
+							 closeWindow={this.closeImageWindow.bind(this)}/>
             </div>
 		);
 	}
