@@ -13,7 +13,7 @@ class ImageWindow extends Component {
                     </div>
                     <div className='imgDiv'>
                         <button className='closeButton' onClick={this.props.closeWindow}>✖</button>
-                        <img style={{width: '250px', height: '250px'}} src={this.props.srcFile} alt='logo'/>
+                        <img className='selectedImage' src={this.props.srcFile} alt='logo'/>
                     </div>
                 </div>
             );
