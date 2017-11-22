@@ -20,7 +20,7 @@ class PlayerInfo extends Component {
         const communityBarColor = 'rgb(255,' + colorValue + ',' + colorValue + ')';
 
         return(
-            <div className='containerStyle'>
+            <div className='playerInfoContainer'>
                 <table>
                     <tr>
                         <td>
