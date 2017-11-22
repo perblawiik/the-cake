@@ -99,7 +99,8 @@ class MainPage extends Component {
 														<Post postInfo={f}
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}
-															  showPostWindow={true}/>
+															  showPostWindow={true}
+                                                              playerName={this.player.getName()}/>
 													</td>
 												</tr>
 											);
@@ -122,7 +123,8 @@ class MainPage extends Component {
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}
 															  showPostWindow={true}
-															  backgroundColor={'lightgrey'}/>
+															  backgroundColor={'lightgrey'}
+                                                              playerName={this.player.getName()}/>
 													</td>
 												</tr>
 											);

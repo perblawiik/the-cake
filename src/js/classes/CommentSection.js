@@ -39,12 +39,12 @@ class CommentSection extends Component {
 			case null:
                 return (
 					<div>
+                        <p className='pHeading'>Pick a comment!</p>
                         {
                             choices.map((f) => {
                                 return (
 									<div key={f.comment} className='activeComments' onClick={this.setCommentTree.bind(this, tree.TREE_NUMBER, f.CHOICE_NUMBER, f.trollPoints, f.communityPoints, true)}>
-										<p className='pStyle'>
-											Comment:<br/>
+										<p className='pActiveComment'>
                                             {f.comment}
 										</p>
 									</div>
@@ -63,7 +63,7 @@ class CommentSection extends Component {
                             <p className='pName'>
                                 <b>{this.props.playerName}</b>
                             </p>
-                            <p className='pStyle'>
+                            <p className='pComment'>
                                 {tree.choice1.comment}
                             </p>
                         </div>
@@ -76,7 +76,7 @@ class CommentSection extends Component {
                             <p className='pName'>
                                 <b>{this.props.postInfo.userName}</b>
                             </p>
-                            <p className='pStyle'>
+                            <p className='pComment'>
                                 {tree.choice1.reply}
                             </p>
                         </div>
@@ -92,7 +92,7 @@ class CommentSection extends Component {
                             <p className='pName'>
                                 <b>{this.props.playerName}</b>
                             </p>
-                            <p className='pStyle'>
+                            <p className='pComment'>
                                 {tree.choice2.comment}
                             </p>
                         </div>
@@ -105,7 +105,7 @@ class CommentSection extends Component {
                             <p className='pName'>
                                 <b>{this.props.postInfo.userName}</b>
                             </p>
-                            <p className='pStyle'>
+                            <p className='pComment'>
                                 {tree.choice2.reply}
                             </p>
                         </div>
@@ -131,12 +131,13 @@ class CommentSection extends Component {
     		case null:
     			return( 
     				<div>
+                        <br/><hr/>
+                        <p className='pHeading'>Pick a comment!</p>
     				{
     					trees.map((f) => {
 	            			return (
 		            			<div key={f.comment} className='activeComments' onClick={this.setCommentTree.bind(this, f.TREE_NUMBER, null, f.trollPoints, f.communityPoints, false)}>
-				            		<p className='pStyle'>
-										Comment :<br/>
+				            		<p className='pActiveComment'>
 										{f.comment}
 									</p>
 				            	</div>
@@ -149,14 +150,15 @@ class CommentSection extends Component {
 	        case CommentTree.TREE1:
 	        	return(
 					<div>
+                        <br/><hr/>
                         <div className='sectionContainer'>
                             <div className='pictureContainer'>
                                 <img className='profilePicture' src={playerImageUrl} alt='x'/>
                             </div>
                             <p className='pName'>
-                                <b>{this.props.playerName}</b>
+                                {this.props.playerName}
                             </p>
-                            <p className='pStyle'>
+                            <p className='pComment'>
                                 {trees[0].comment}
                             </p>
                         </div>
@@ -167,13 +169,13 @@ class CommentSection extends Component {
                                 <img className='profilePicture' src={imageUrl} alt='x'/>
                             </div>
                             <p className='pName'>
-                                <b>{this.props.postInfo.userName}</b>
+                                {this.props.postInfo.userName}
                             </p>
-                            <p className='pStyle'>
+                            <p className='pComment'>
                                 {trees[0].reply}
                             </p>
                         </div>
-		            	<hr/>
+		            	<br/><hr/>
 						{ this.checkChoices(trees[0]) }
 	        		</div>
 	        	);
@@ -181,14 +183,15 @@ class CommentSection extends Component {
 	        case CommentTree.TREE2:
 	        	return(
                     <div>
+                        <br/><hr/>
                         <div className='sectionContainer'>
                             <div className='pictureContainer'>
                                 <img className='profilePicture' src={playerImageUrl} alt='x'/>
                             </div>
                             <p className='pName'>
-                                <b>{this.props.playerName}</b>
+                                {this.props.playerName}
                             </p>
-                            <p className='pStyle'>
+                            <p className='pComment'>
                                 {trees[1].comment}
                             </p>
                         </div>
@@ -199,13 +202,13 @@ class CommentSection extends Component {
                                 <img className='profilePicture' src={imageUrl} alt='x'/>
                             </div>
                             <p className='pName'>
-                                <b>{this.props.postInfo.userName}</b>
+                                {this.props.postInfo.userName}
                             </p>
-                            <p className='pStyle'>
+                            <p className='pComment'>
                                 {trees[1].reply}
                             </p>
                         </div>
-						<hr/>
+                        <br/><hr/>
                         { this.checkChoices(trees[1]) }
 					</div>
 	        	);
@@ -213,14 +216,15 @@ class CommentSection extends Component {
 	        case CommentTree.TREE3:
 	        	return(
                     <div>
+                        <br/><hr/>
                         <div className='sectionContainer'>
                             <div className='pictureContainer'>
                                 <img className='profilePicture' src={playerImageUrl} alt='x'/>
                             </div>
                             <p className='pName'>
-                                <b>{this.props.playerName}</b>
+                                {this.props.playerName}
                             </p>
-                            <p className='pStyle'>
+                            <p className='pComment'>
                                 {trees[2].comment}
                             </p>
                         </div>
@@ -231,13 +235,13 @@ class CommentSection extends Component {
                                 <img className='profilePicture' src={imageUrl} alt='x'/>
                             </div>
                             <p className='pName'>
-                                <b>{this.props.postInfo.userName}</b>
+                                {this.props.postInfo.userName}
                             </p>
-                            <p className='pStyle'>
+                            <p className='pComment'>
                                 {trees[2].reply}
                             </p>
                         </div>
-						<hr/>
+                        <br/><hr/>
                         { this.checkChoices(trees[2]) }
 					</div>
 	        	);
