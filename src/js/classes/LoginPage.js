@@ -65,7 +65,7 @@ class LoginPage extends Component {
                         </label>
                     </div>
 
-                    <button value="Submit" className={submitClasses} onClick={this.readSubmitButton.bind(this)} style={{order: '6'}}>
+                    <button value="Submit" className={'substyle'} onClick={this.readSubmitButton.bind(this)} style={{order: '6'}}>
                         Join Bookface!
                     </button>
                 </div>
