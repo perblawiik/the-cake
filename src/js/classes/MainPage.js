@@ -145,6 +145,23 @@ class MainPage extends Component {
 							showWindow={this.state.showPostWindow}
 							closeWindow={this.closePostWindow.bind(this)}
 							playerName={this.player.getName()}/>
+				<div className="ruleBox" >
+					<p>
+					<b>Welcome fellow troll to the Bookface.</b>
+					</p>
+					<p>
+					We are an coalition of trolls bent on trolling the normie residens of the world wide webb for our amusment and we have recruteted you to be a part of this glorious endevour.
+					</p>
+					<p>
+					Your task as a troll is to look at the post of the normies here and comment in a 'trolle' way but be carfull not to me to obvious in your atempts to wreak havoc. 
+					</p>
+					<p>
+					We have modified your Bookface page to keep track of how succeful of a troll you are and how the normies view your action.
+					</p>
+					<p>
+					I writing text
+					</p>
+				</div>
             </div>
 		);
 	}
