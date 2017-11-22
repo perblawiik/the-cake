@@ -44,10 +44,13 @@ class LoginPage extends Component {
 
                 {/*Left div box with information to be added */}
                 <div className='leftlogin'>
-                    <img className='welcomePic' src={require('../../img/ms Mom.png')} alt='x'/>
-                    <p>
-                        Hello and welcome to Bookface! And you love us. We own you.
-                    </p>
+                    <h2>
+                        Hello and welcome to Bookface!
+                    </h2>
+                    <img className='welcomePic' src={require('../../img/WelcomePicture.png')} alt='x'/>
+                    <h2>
+                         You love us. We own you.
+                    </h2>
                 </div>
 
                 {/*Right div box with registration for the player*/}

@@ -46,7 +46,7 @@ class MainPage extends Component {
 
 		this.setState({
 			currentPost: post,
-			showPostWindow: true
+			showPostWindow: false
 		});
 	}
 
@@ -99,7 +99,7 @@ class MainPage extends Component {
 														<Post postInfo={f}
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}
-															  showPostWindow={false}/>
+															  showPostWindow={true}/>
 													</td>
 												</tr>
 											);
@@ -121,7 +121,7 @@ class MainPage extends Component {
 														<Post postInfo={f}
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}
-															  showPostWindow={false}
+															  showPostWindow={true}
 															  backgroundColor={'lightgrey'}/>
 													</td>
 												</tr>
