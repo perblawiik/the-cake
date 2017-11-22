@@ -37,6 +37,10 @@ td {
 	font-weight: bold;
 }
 
+.commentButton:hover {
+	text-decoration: underline;
+}
+
 .postText {
 	margin: 10px;
 }
