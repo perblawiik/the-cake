@@ -11,6 +11,8 @@ class PlayerInfo extends Component {
 
     render() {
 
+        const playerImageUrl = require('../../img/troll.png');
+
         // Set bar length based on troll points and community points
         const trollBarLength = this.props.playerStats.trollPoints * 10 + '%';
         const communityBarLength = this.props.playerStats.comPoints + '%';
@@ -24,9 +26,10 @@ class PlayerInfo extends Component {
                 <table>
                     <tr>
                         <td>
+                            <div className = 'blank'></div>
                         </td>
                         <td>
-                            <img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/>
+                            <img className = 'profilePic' src={playerImageUrl} alt='logo'/>
                         </td>
                         <td>
                         </td>
