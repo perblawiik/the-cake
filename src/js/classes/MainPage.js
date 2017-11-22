@@ -123,7 +123,7 @@ class MainPage extends Component {
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}
 															  showPostWindow={true}
-															  backgroundColor={'lightgrey'}
+															  backgroundColor={'#F0F0F0'}
                                                               playerName={this.player.getName()}/>
 													</td>
 												</tr>

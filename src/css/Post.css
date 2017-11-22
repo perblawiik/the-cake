@@ -36,6 +36,10 @@ td {
 	font-weight: bold;
 }
 
+.postText {
+	margin: 10px;
+}
+
 /* On all p? should we make specific?*/
 p{
 }
