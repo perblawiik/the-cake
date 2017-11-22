@@ -8,8 +8,6 @@ import '../../css/Post.css';
 
 class Post extends Component {
 
-    
-   
     constructor(props) {
         super(props);
         this.state = {
@@ -31,7 +29,7 @@ class Post extends Component {
     showCommentSection () {
 
         if (this.props.showPostWindow && this.state.showComments) {
-           
+
             return (
                 <div>
                     <CommentSection processPlayerChoice={this.props.processPlayerChoice.bind(this)}
