@@ -145,7 +145,7 @@ class MainPage extends Component {
 															  showPostWindow={true}
 															  backgroundColor={'#F0F0F0'}
                                                               playerName={this.player.getName()}
-															  selectImage={this.selectImage.bind(this)}/>/>
+															  selectImage={this.selectImage.bind(this)}/>
 													</td>
 												</tr>
 											);
