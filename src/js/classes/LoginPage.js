@@ -57,11 +57,9 @@ class LoginPage extends Component {
                 {/*Right div box with registration for the player*/}
                 <div className='rightlogin'>
 
-                    <h2 >
+                    <h2>
                         Create an account
                     </h2>
-                
-
 
                     <div className = 'inputBox' style={{order: '2'}}>
                         <label>
