@@ -18,6 +18,11 @@ class LoginPage extends Component {
             this.props.setGameState(1);
         }
     }
+    _handleKeyPress(target) {
+        if (target.charCode === 13) {
+            document.getElementById('theButton').click();
+        }
+    }
 
     render() {
         var submitClasses;
@@ -65,17 +70,20 @@ class LoginPage extends Component {
 
                     <div className = 'inputBox' style={{order: '2'}}>
                         <label>
-                            <input id = 'playername' placeholder='User name' type="text" name="name" className='namestyle'/>
+                            <input id = 'playername' placeholder='User name' type="text" name="name" className='namestyle' onKeyPress={this._handleKeyPress}/>
                         </label>
                     </div>
 
-                    <button value="Submit" className={'substyle'} onClick={this.readSubmitButton.bind(this)} style={{order: '6'}}>
+                    <button id= 'theButton'value="Submit" className={'substyle'} onClick={this.readSubmitButton.bind(this)} style={{order: '6'}}>
                         Join Bookface!
                     </button>
                 </div>
                 </div>
               );
         }
-    }
+     
+  }
+
+    
 
 export default LoginPage;
