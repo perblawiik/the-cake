@@ -31,6 +31,10 @@ td {
 	font-weight: bold;
 }
 
+.likeButton:hover{
+	text-decoration: underline;
+}
+
 .commentButton {
 	/*display: inline;*/
 	float: center;
@@ -44,6 +48,13 @@ td {
 .postText {
 	margin: 10px;
 }
+
+.likeSymbole{
+	padding-left: 10px;
+	width: 25px;
+	overflow: hidden;
+}
+
 
 /* On all p? should we make specific?*/
 p{

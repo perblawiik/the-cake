@@ -4,6 +4,7 @@
             {
                 "index": 0,
                 "completed": false,
+                "likeActive": 0,
                 "treeStates": {
                     "first": null,
                     "second": null
@@ -78,6 +79,7 @@
             {
                 "index": 1,
                 "completed": false,
+                "likeActive": 0,
                 "treeStates": {
                     "first": null,
                     "second": null
@@ -152,6 +154,7 @@
             {
                 "index": 2,
                 "completed": false,
+                "likeActive": 0,
                 "treeStates": {
                     "first": null,
                     "second": null
@@ -226,6 +229,7 @@
             {
                 "index": 3,  
                 "completed": false,
+                "likeActive": 0,
                 "treeStates": {
                     "first": null,
                     "second": null
