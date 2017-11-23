@@ -8,7 +8,7 @@
 .newsFlowOuter {
     position: absolute;
     margin: auto;
-    top: 12.5%;
+    top: 22.5%;
     bottom: 5%;
     left: 12.5%;
     right: 12.5%;
@@ -37,7 +37,7 @@
     position: absolute;
     margin: auto;
     background-color: white;
-    top: 12.5%;
+    top: 22.5%;
     bottom: 9%;
     left: 70%;
     right: 5%;
@@ -52,4 +52,14 @@ table {
 
 img {
     border-radius: 6px;
+}
+
+.blueBar
+{
+    background-color: #0000FF;
+    position: absolute;
+    width: 100%;
+    top: 10%;
+    height: 9%;
+    font-size: 40px;
 }
