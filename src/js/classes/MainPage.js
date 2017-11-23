@@ -84,6 +84,21 @@ class MainPage extends Component {
 		});
 	}
 
+	setLikeActive(index,likeActive) {
+
+		let newPosts = this.state.posts;
+
+     	if (likeActive == 0) {
+            newPosts[index].likeActive = '100%';
+        } else {
+            newPosts[index].likeActive = 0;
+        }
+
+        this.setState({
+			posts: newPosts
+		});
+    }
+
 	render() {
 
 		// An object containing all player stats that goes into PlayerInfo class
@@ -120,7 +135,9 @@ class MainPage extends Component {
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}
 															  showPostWindow={true}
                                                               playerName={this.player.getName()}
-															  selectImage={this.selectImage.bind(this)}/>
+															  selectImage={this.selectImage.bind(this)}
+															  setLikeActive={this.setLikeActive.bind(this)}/>
+
 													</td>
 												</tr>
 											);
@@ -145,7 +162,8 @@ class MainPage extends Component {
 															  showPostWindow={true}
 															  backgroundColor={'#F0F0F0'}
                                                               playerName={this.player.getName()}
-															  selectImage={this.selectImage.bind(this)}/>
+															  selectImage={this.selectImage.bind(this)}
+															  setLikeActive={this.setLikeActive.bind(this)}/>
 													</td>
 												</tr>
 											);

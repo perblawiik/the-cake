@@ -11,7 +11,7 @@ class Post extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showComments: false
+            showComments: false,
         }
     }
 
@@ -25,6 +25,7 @@ class Post extends Component {
             this.setState({showComments: true})
         }
     }
+
 
     showCommentSection () {
 
@@ -74,10 +75,14 @@ class Post extends Component {
                     <tbody>
                         <tr className='reactionBar'>
                             <td className='likeButton'>
-                                <p>
+                                <p style={{cursor: 'pointer'}} onClick={this.props.setLikeActive.bind(this,this.props.postInfo.index,this.props.postInfo.likeActive)}>
                                     {/*Add like button and other reactions*/}
                                     Like
+                                    
+                                        <img style={{height: this.props.postInfo.likeActive}} className='likeSymbole' src={require('../../img/like.png')} alt='x'/>
+                                    
                                  </p>
+
                             </td>
                             <td className='commentButton'>
                                 <p style={{cursor: 'pointer'}} onClick={this.commentSwitch.bind(this)}>
