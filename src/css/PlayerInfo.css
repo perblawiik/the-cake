@@ -4,11 +4,12 @@
     position: absolute;
     background-color: white;
     width: 20%;
+    min-width: 235px;
     left: 5%;
     top: 12.5%;
     bottom: 25%;
     padding: 10px;
-    border: 1px solid black;
+    border-radius: 4px;
 }
 
 .playerName
@@ -48,6 +49,7 @@
     left: 0;
     top: 0;
     bottom: 0;
+    cursor: pointer;
 }
 
 .trollBar
@@ -67,5 +69,5 @@
     height: 100%;
     background-color: lightpink;
     border-radius: 2px;
-    transition: width .5s linear;
+    transition: width .5s linear, background-color 1s;
 }

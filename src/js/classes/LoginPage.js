@@ -35,10 +35,12 @@ class LoginPage extends Component {
             <div className='mainWindowContainer'>
                 <div className = 'topbar'>
                     <table className = 'bookfaceTable'>
-                        <tr className = 'bookfaceTable'>
-                            <td className = 'bookfaceTable'> <p className= 'bookfaceTitle'>Bookface</p> </td>
-                            <td className = 'bookfaceTable'> <img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/> </td>
-                        </tr>
+                        <tbody>
+                            <tr className = 'bookfaceTable'>
+                                <td className = 'bookfaceTable'> <p className= 'bookfaceTitle'>Bookface</p> </td>
+                                <td className = 'bookfaceTable'> <img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/> </td>
+                            </tr>
+                        </tbody>
                     </table>
 
                 </div>
@@ -57,11 +59,9 @@ class LoginPage extends Component {
                 {/*Right div box with registration for the player*/}
                 <div className='rightlogin'>
 
-                    <h2 >
+                    <h2>
                         Create an account
                     </h2>
-                
-
 
                     <div className = 'inputBox' style={{order: '2'}}>
                         <label>

@@ -29,6 +29,7 @@ class Post extends Component {
     showCommentSection () {
 
         if (this.props.showPostWindow && this.state.showComments) {
+
             return (
                 <div>
                     <CommentSection processPlayerChoice={this.props.processPlayerChoice.bind(this)}
@@ -52,7 +53,7 @@ class Post extends Component {
                     <tbody>
                         <tr className='userBar'>
                             <td className='userFaceContainer'>
-                                <img className='userFace' src={imageUrl} alt='x'/>
+                                <img className='userFace' src={imageUrl} alt='x' onClick={this.props.selectImage.bind(this, imageUrl)}/>
                             </td>
                             <td className='userName'>
                                 {this.props.postInfo.userName}
@@ -60,8 +61,10 @@ class Post extends Component {
                         </tr>
                         <tr className='textBar'>
                              {/*colspan -> 1 cell spans 2 cells*/}
-                            <td colSpan='2' className='postText'>
-                                {this.props.postInfo.text}
+                            <td colSpan='2'>
+                                <p className='postText'>
+                                    {this.props.postInfo.text}
+                                </p>
                             </td>
                         </tr>
                     </tbody>

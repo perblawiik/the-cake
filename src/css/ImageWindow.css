@@ -1,0 +1,56 @@
+
+.container {
+    position: absolute;
+    height: 90%;
+    width: 100%;
+    top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tintedBackground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.imgDiv {
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.selectedImage {
+    min-width: 250px;
+    min-height: 250px;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.closeButton {
+    font: 14px/100% arial, sans-serif;
+    position: absolute;
+    right: -30px;
+    top: -27px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 26px;
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    text-shadow: 0 1px 0 lightgrey;
+}
+
+.closeButton:focus {
+    outline: 0;
+}
+
+.closeButton:hover {
+    color: white;
+    background-color: red;
+}
