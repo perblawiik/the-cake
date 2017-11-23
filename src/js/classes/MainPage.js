@@ -117,6 +117,17 @@ class MainPage extends Component {
 				<PlayerInfo playerStats={playerStats}
 							addPlayerPoints={this.addPlayerPoints.bind(this)}
 							selectImage={this.selectImage.bind(this)}/>
+				<div className = 'blueBar'>
+					<table className = 'bookfaceTable'>
+						<tbody>
+						<tr className = 'bookfaceTable'>
+							<td className = 'bookfaceTable'> <p className= 'bookfaceTitle'>Bookface</p> </td>
+							<td className = 'bookfaceTable'> <img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/> </td>
+						</tr>
+						</tbody>
+					</table>
+
+				</div>
 
 				<div className='newsFlowOuter'>
 					<div className='newsFlowInner'>
