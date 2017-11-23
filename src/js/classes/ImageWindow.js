@@ -8,7 +8,7 @@ class ImageWindow extends Component {
 
         if (this.props.showWindow){
             return (
-                <div className='container'>
+                <div className='imageWindowContainer'>
                     <div className='tintedBackground' onClick={this.props.closeWindow} >
                     </div>
                     <div className='imgDiv'>

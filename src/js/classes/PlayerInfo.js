@@ -6,6 +6,9 @@ import '../../css/PlayerInfo.css';
 // Constant for setting blinking community status bar
 const WARNING_TRIGGER = 20;
 
+// Milliseconds per tick
+const TICK_MS = 500;
+
 class PlayerInfo extends Component {
 
     constructor(props) {
@@ -36,7 +39,7 @@ class PlayerInfo extends Component {
     componentDidMount () {
 
         // Call the tick function every 500 ms
-        this.intervalId = setInterval(this.tick.bind(this), 500);
+        this.intervalId = setInterval(this.tick.bind(this), TICK_MS);
     }
 
     render() {
@@ -67,7 +70,7 @@ class PlayerInfo extends Component {
                                 <div className = 'blank'></div>
                             </td>
                             <td>
-                                <img className = 'profilePic' src={playerImageUrl} alt='logo' onClick={this.props.selectImage.bind(this, playerImageUrl)}/>
+                                <img className = 'profilePic' src={playerImageUrl} alt='logo'/>
                             </td>
                             <td>
                             </td>

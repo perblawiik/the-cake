@@ -28,6 +28,44 @@ class CommentSection extends Component {
         this.props.processPlayerChoice(this.props.postInfo.index, treeStates, isCompleted);
 	}
 
+	displayFixedComments (comment, reply) {
+
+		// Image source for profile picture
+        const imageUrl = require('../../img/' + this.props.postInfo.profilePic);
+        const playerImageUrl = require('../../img/troll.png');
+
+        // Contains info of the player and the poster
+        const temp = [ {srcFile: playerImageUrl, name: this.props.playerName, text: comment},
+        			{srcFile: imageUrl, name: this.props.postInfo.userName, text: reply}
+        	];
+
+		return (
+			<div>
+				{
+					temp.map((f) => {
+						return (
+							<div>
+								<div className='sectionContainer'>
+					                <div className='pictureContainer'>
+					                    <img className='profilePicture' src={f.srcFile} alt='x'/>
+					                </div>
+					                <p className='pName'>
+					                    <b>{f.name}</b>
+					                </p>
+					                <p className='pComment'>
+					                    {f.text}
+					                </p>
+				            	</div>
+				            	<br/>
+								<hr/>
+							</div>
+						);
+					})
+				}
+			</div>
+		);
+	}
+
 	checkChoices (tree) {
 	    // Array for choices
 		const choices = [tree.choice1, tree.choice2];
@@ -54,63 +92,21 @@ class CommentSection extends Component {
 					</div>
                 );
 			case CommentTree.CHOICE1:
-                return (
+
+				return (
 					<div>
-                        <div className='sectionContainer'>
-                            <div className='pictureContainer'>
-                                <img className='profilePicture' src={playerImageUrl} alt='x'/>
-                            </div>
-                            <p className='pName'>
-                                <b>{this.props.playerName}</b>
-                            </p>
-                            <p className='pComment'>
-                                {tree.choice1.comment}
-                            </p>
-                        </div>
-                        <br/>
-						<hr/>
-                        <div className='sectionContainer'>
-                            <div className='pictureContainer'>
-                                <img className='profilePicture' src={imageUrl} alt='x'/>
-                            </div>
-                            <p className='pName'>
-                                <b>{this.props.postInfo.userName}</b>
-                            </p>
-                            <p className='pComment'>
-                                {tree.choice1.reply}
-                            </p>
-                        </div>
+						{this.displayFixedComments(tree.choice1.comment, tree.choice1.reply)}
 					</div>
-                );
+				);
+
 			case CommentTree.CHOICE2:
+
                 return (
 					<div>
-                        <div className='sectionContainer'>
-                            <div className='pictureContainer'>
-                                <img className='profilePicture' src={playerImageUrl} alt='x'/>
-                            </div>
-                            <p className='pName'>
-                                <b>{this.props.playerName}</b>
-                            </p>
-                            <p className='pComment'>
-                                {tree.choice2.comment}
-                            </p>
-                        </div>
-                        <br/>
-						<hr/>
-                        <div className='sectionContainer'>
-                            <div className='pictureContainer'>
-                                <img className='profilePicture' src={imageUrl} alt='x'/>
-                            </div>
-                            <p className='pName'>
-                                <b>{this.props.postInfo.userName}</b>
-                            </p>
-                            <p className='pComment'>
-                                {tree.choice2.reply}
-                            </p>
-                        </div>
+						{this.displayFixedComments(tree.choice1.comment, tree.choice1.reply)}
 					</div>
-                );
+				);
+
 			default:
                 return(<div>FAILED</div>);
 		}
@@ -150,32 +146,7 @@ class CommentSection extends Component {
 	        case CommentTree.TREE1:
 	        	return(
 					<div>
-                        <br/><hr/>
-                        <div className='sectionContainer'>
-                            <div className='pictureContainer'>
-                                <img className='profilePicture' src={playerImageUrl} alt='x'/>
-                            </div>
-                            <p className='pName'>
-                                {this.props.playerName}
-                            </p>
-                            <p className='pComment'>
-                                {trees[0].comment}
-                            </p>
-                        </div>
-                        <br/>
-                        <hr/>
-                        <div className='sectionContainer'>
-                            <div className='pictureContainer'>
-                                <img className='profilePicture' src={imageUrl} alt='x'/>
-                            </div>
-                            <p className='pName'>
-                                {this.props.postInfo.userName}
-                            </p>
-                            <p className='pComment'>
-                                {trees[0].reply}
-                            </p>
-                        </div>
-		            	<br/><hr/>
+						{ this.displayFixedComments(trees[0].comment, trees[0].reply) }
 						{ this.checkChoices(trees[0]) }
 	        		</div>
 	        	);
@@ -183,32 +154,7 @@ class CommentSection extends Component {
 	        case CommentTree.TREE2:
 	        	return(
                     <div>
-                        <br/><hr/>
-                        <div className='sectionContainer'>
-                            <div className='pictureContainer'>
-                                <img className='profilePicture' src={playerImageUrl} alt='x'/>
-                            </div>
-                            <p className='pName'>
-                                {this.props.playerName}
-                            </p>
-                            <p className='pComment'>
-                                {trees[1].comment}
-                            </p>
-                        </div>
-                        <br/>
-                        <hr/>
-                        <div className='sectionContainer'>
-                            <div className='pictureContainer'>
-                                <img className='profilePicture' src={imageUrl} alt='x'/>
-                            </div>
-                            <p className='pName'>
-                                {this.props.postInfo.userName}
-                            </p>
-                            <p className='pComment'>
-                                {trees[1].reply}
-                            </p>
-                        </div>
-                        <br/><hr/>
+                        { this.displayFixedComments(trees[1].comment, trees[1].reply) }
                         { this.checkChoices(trees[1]) }
 					</div>
 	        	);
@@ -216,32 +162,7 @@ class CommentSection extends Component {
 	        case CommentTree.TREE3:
 	        	return(
                     <div>
-                        <br/><hr/>
-                        <div className='sectionContainer'>
-                            <div className='pictureContainer'>
-                                <img className='profilePicture' src={playerImageUrl} alt='x'/>
-                            </div>
-                            <p className='pName'>
-                                {this.props.playerName}
-                            </p>
-                            <p className='pComment'>
-                                {trees[2].comment}
-                            </p>
-                        </div>
-                        <br/>
-                        <hr/>
-                        <div className='sectionContainer'>
-                            <div className='pictureContainer'>
-                                <img className='profilePicture' src={imageUrl} alt='x'/>
-                            </div>
-                            <p className='pName'>
-                                {this.props.postInfo.userName}
-                            </p>
-                            <p className='pComment'>
-                                {trees[2].reply}
-                            </p>
-                        </div>
-                        <br/><hr/>
+                        { this.displayFixedComments(trees[2].comment, trees[2].reply) }
                         { this.checkChoices(trees[2]) }
 					</div>
 	        	);
