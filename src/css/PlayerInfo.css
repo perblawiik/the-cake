@@ -3,11 +3,10 @@
 {
     position: absolute;
     background-color: white;
-    width: 20%;
-    min-width: 235px;
-    left: 5%;
+    left: 7.5%;
+    right: 72.5%;
     top: 22.5%;
-    bottom: 15%;
+    bottom: 16%;
     padding: 10px;
     border-radius: 4px;
 }
