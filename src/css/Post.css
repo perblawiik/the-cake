@@ -25,12 +25,16 @@ td {
 
 .likeButton {
 	/*display: inline;*/
-	width: 250px;
 	float: center;
 	font-weight: bold;
 }
 
-.likeButton:hover{
+.likeText {
+	cursor: pointer; 
+	margin-right: 200px;
+}
+
+.likeText:hover {
 	text-decoration: underline;
 }
 
