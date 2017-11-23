@@ -17,7 +17,7 @@ class CommentSection extends Component {
 	setCommentTree (treeFirst, treeSecond, trollPoints, comPoints, isCompleted) {
 	    // Add player points
         this.props.addPlayerPoints(trollPoints, comPoints);
-
+		
         // For updating the treeState for selected post
         let treeStates = {
             first: treeFirst,
@@ -100,7 +100,7 @@ class CommentSection extends Component {
 
                 return (
 					<div>
-						{this.displayFixedComments(tree.choice1.comment, tree.choice1.reply)}
+						{this.displayFixedComments(tree.choice2.comment, tree.choice2.reply)}
 					</div>
 				);
 
