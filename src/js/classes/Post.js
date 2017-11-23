@@ -75,12 +75,10 @@ class Post extends Component {
                     <tbody>
                         <tr className='reactionBar'>
                             <td className='likeButton'>
-                                <p style={{cursor: 'pointer'}} onClick={this.props.setLikeActive.bind(this,this.props.postInfo.index,this.props.postInfo.likeActive)}>
+                                <p className='likeText' onClick={this.props.setLikeActive.bind(this,this.props.postInfo.index,this.props.postInfo.likeActive)}>
                                     {/*Add like button and other reactions*/}
                                     Like
-                                    
                                         <img style={{height: this.props.postInfo.likeActive}} className='likeSymbole' src={require('../../img/like.png')} alt='x'/>
-                                    
                                  </p>
 
                             </td>
