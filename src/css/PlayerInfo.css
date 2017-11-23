@@ -34,7 +34,7 @@
 .blank
 {
     position: relative;
-    width: 3.5vw;
+    width: 3vw;
     left: 0;
     top: 0;
     bottom: 0;
@@ -48,6 +48,8 @@
     left: 0;
     top: 0;
     bottom: 0;
+    width: 125px;
+    height: 125px;
 }
 
 .trollBar

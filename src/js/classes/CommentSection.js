@@ -32,10 +32,9 @@ class CommentSection extends Component {
 
 		// Image source for profile picture
         const imageUrl = require('../../img/' + this.props.postInfo.profilePic);
-        const playerImageUrl = require('../../img/troll.png');
 
         // Contains info of the player and the poster
-        const temp = [ {srcFile: playerImageUrl, name: this.props.playerName, text: comment},
+        const temp = [ {srcFile: this.props.playerImgUrl, name: this.props.playerName, text: comment},
         			{srcFile: imageUrl, name: this.props.postInfo.userName, text: reply}
         	];
 
@@ -44,7 +43,7 @@ class CommentSection extends Component {
 				{
 					temp.map((f) => {
 						return (
-							<div>
+							<div key={f.text}>
 								<div className='sectionContainer'>
 					                <div className='pictureContainer'>
 					                    <img className='profilePicture' src={f.srcFile} alt='x'/>
@@ -70,7 +69,6 @@ class CommentSection extends Component {
 	    // Array for choices
 		const choices = [tree.choice1, tree.choice2];
         // Image source for profile picture
-        
 
 		switch(this.props.postInfo.treeStates.second) {
 			case null:
@@ -115,7 +113,6 @@ class CommentSection extends Component {
 
 		// Array of comment trees (1-3)
         const trees = [this.props.postInfo.tree1, this.props.postInfo.tree2, this.props.postInfo.tree3];
-    
 
         // treeState determine the player's completion progress of the post
     	switch(this.props.postInfo.treeStates.first) {

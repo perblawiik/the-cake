@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // Javascript Classes
 import Post from './Post';
-import PostWindow from './PostWindow';
+//import PostWindow from './PostWindow';
 import PlayerInfo from './PlayerInfo';
 import ImageWindow from './ImageWindow';
 
@@ -12,7 +12,7 @@ import '../../css/MainPage.css';
 // Json data
 import postData from '../../json/postsdata.json'
 
-const NUMBEROFPOSTS = 1;
+const NUMBER_OF_POSTS = 1;
 
 class MainPage extends Component {
 
@@ -23,8 +23,7 @@ class MainPage extends Component {
             trollPoints: props.player.getTrollPoints(),
             comPoints: props.player.getCommunityPoints(),
             playerLevel: props.player.getLevel(),
-            currentPost: null,
-            showPostWindow: false,
+            playerImgUrl: props.player.getImgUrl(),
 			showImageWindow: false,
 			currentImage: null,
             posts: postData.posts // Contains all post data
@@ -43,16 +42,9 @@ class MainPage extends Component {
         this.setState({
             comPoints: this.player.getCommunityPoints(),
             trollPoints: this.player.getTrollPoints(),
-            playerLevel: this.player.getLevel()
+            playerLevel: this.player.getLevel(),
+            playerImgUrl: this.player.getImgUrl()
         });
-	}
-
-	selectPost(post) {
-
-		this.setState({
-			currentPost: post,
-			showPostWindow: false
-		});
 	}
 
 	selectImage(srcFile) {
@@ -61,11 +53,6 @@ class MainPage extends Component {
             showImageWindow: true,
             currentImage: srcFile
         });
-	}
-
-	closePostWindow() {
-
-		this.setState({showPostWindow: false});
 	}
 
     closeImageWindow() {
@@ -108,7 +95,8 @@ class MainPage extends Component {
 			name: this.player.getName(),
 			trollPoints: this.state.trollPoints,
             comPoints: this.state.comPoints,
-            level: this.state.playerLevel
+            level: this.state.playerLevel,
+            imgUrl: this.state.playerImgUrl
         };
 
 		// Counter for limited posts
@@ -122,10 +110,10 @@ class MainPage extends Component {
 				<div className = 'blueBar'>
 					<table className = 'bookfaceTable'>
 						<tbody>
-						<tr className = 'bookfaceTable'>
-							<td className = 'bookfaceTable'> <p className= 'bookfaceTitle'>Bookface</p> </td>
-							<td className = 'bookfaceTable'> <img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/> </td>
-						</tr>
+                            <tr className = 'bookfaceTable'>
+                                <td className = 'bookfaceTable'> <p className= 'bookfaceTitle'>Bookface</p> </td>
+                                <td className = 'bookfaceTable'> <img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/> </td>
+                            </tr>
 						</tbody>
 					</table>
 
@@ -138,28 +126,25 @@ class MainPage extends Component {
 								{	// All posts available for a comment
 					            	this.state.posts.map((f) => {
 					            		// Only return three uncompleted posts
-					            		if (!f.completed && (postCounter < NUMBEROFPOSTS) ) {
+					            		if (!f.completed && (postCounter < NUMBER_OF_POSTS) ) {
 					            			++postCounter;
 						                	return (
 						                  		<tr key={f.userName}>
-													<td className='postContainer' onClick={this.selectPost.bind(this, f)}>
+													<td className='postContainer'>
 														<Post postInfo={f}
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}
-															  showPostWindow={true}
                                                               playerName={this.player.getName()}
+                                                              playerImgUrl={this.state.playerImgUrl}
 															  selectImage={this.selectImage.bind(this)}
 															  setLikeActive={this.setLikeActive.bind(this)}/>
-
 													</td>
 												</tr>
 											);
 					                	}
-					                	/*
 					                	else {
-					                		return(<div></div>);
+					                		return(<tr key={f.userName}></tr>);
 					                	}
-					                	*/
 					                })
 					            }
 					            {	// All posts unavailable for a comment (completed posts)
@@ -168,24 +153,22 @@ class MainPage extends Component {
 					                	if (f.completed) {
 						                	return (
 						                  		<tr key={f.userName} style={{backgroundColor: 'lightgrey'}}>
-													<td className='postContainer' onClick={this.selectPost.bind(this, f)}>
+													<td className='postContainer'>
 														<Post postInfo={f}
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}
-															  showPostWindow={true}
 															  backgroundColor={'#F0F0F0'}
                                                               playerName={this.player.getName()}
+                                                              playerImgUrl={this.state.playerImgUrl}
 															  selectImage={this.selectImage.bind(this)}
 															  setLikeActive={this.setLikeActive.bind(this)}/>
 													</td>
 												</tr>
 											);
 					                	}
-					                	/*
 					                	else {
-					                		return(<div></div>);
+					                		return(<tr key={f.userName}></tr>);
 					                	}
-					                	*/
 					                })
 					            }
 							</tbody>
@@ -209,13 +192,13 @@ class MainPage extends Component {
 					I writing text
 					</p>
 				</div>
-                {/* Pop out window for selected post */}
-				<PostWindow postInfo={this.state.currentPost}
+                {/* Pop out window for selected post */
+				/*<PostWindow postInfo={this.state.currentPost}
 							addPlayerPoints={this.addPlayerPoints.bind(this)}
 							processPlayerChoice={this.processPlayerChoice.bind(this)}
 							showWindow={this.state.showPostWindow}
 							closeWindow={this.closePostWindow.bind(this)}
-							playerName={this.player.getName()}/>
+							playerName={this.player.getName()}/>*/}
 
 				<ImageWindow showWindow={this.state.showImageWindow}
 							 srcFile={this.state.currentImage}
