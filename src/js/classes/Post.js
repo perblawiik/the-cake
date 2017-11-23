@@ -29,14 +29,15 @@ class Post extends Component {
 
     showCommentSection () {
 
-        if (this.props.showPostWindow && this.state.showComments) {
+        if (this.state.showComments) {
 
             return (
                 <div>
                     <CommentSection processPlayerChoice={this.props.processPlayerChoice.bind(this)}
                                     postInfo={this.props.postInfo}
                                     addPlayerPoints={this.props.addPlayerPoints.bind(this)}
-                                    playerName={this.props.playerName}/>
+                                    playerName={this.props.playerName}
+                                    playerImgUrl={this.props.playerImgUrl}/>
                 </div>
             );
         }

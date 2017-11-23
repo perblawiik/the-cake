@@ -1,3 +1,6 @@
+
+
+
 class Player {
 
     constructor(name) {
@@ -5,15 +8,25 @@ class Player {
         this.level = 1;
         this.trollPoints = 0;
         this.communityPoints = 100;
+        this.portrait = require('../../img/troll_1.png');
+
+        this.portraits = [
+            require('../../img/troll_2.png'),
+            require('../../img/troll_3.png'),
+            require('../../img/troll_4.png'),
+            require('../../img/troll_5.png')
+        ];
     }
 
     addPoints(trollPoints, commPoints) {
         this.trollPoints = this.trollPoints + trollPoints;
         this.communityPoints = this.communityPoints + commPoints;
 
+        // Level up when exceeding 10 points
         if(this.trollPoints >= 10) {
             this.trollPoints = this.trollPoints - 10;
-            ++this.level;
+            this.addLevel();
+            this.upgradePortrait();
         }
 
         if (this.communityPoints > 100) {
@@ -21,6 +34,16 @@ class Player {
         }
         else if (this.communityPoints < 0) {
             this.communityPoints = 0;
+        }
+    }
+
+    addLevel() {
+        ++this.level;
+    }
+
+    upgradePortrait () {
+        if ( (this.level - 2) < this.portraits.length) {
+            this.portrait = this.portraits[this.level-2];
         }
     }
 
@@ -38,6 +61,10 @@ class Player {
 
     getLevel() {
         return this.level;
+    }
+
+    getImgUrl () {
+        return this.portrait;
     }
 }
 
