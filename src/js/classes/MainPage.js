@@ -12,6 +12,8 @@ import '../../css/MainPage.css';
 // Json data
 import postData from '../../json/postsdata.json'
 
+const NUMBEROFPOSTS = 1;
+
 class MainPage extends Component {
 
 	constructor(props) {
@@ -88,7 +90,7 @@ class MainPage extends Component {
 
 		let newPosts = this.state.posts;
 
-     	if (likeActive == 0) {
+     	if (likeActive === 0) {
             newPosts[index].likeActive = '100%';
         } else {
             newPosts[index].likeActive = 0;
@@ -136,7 +138,7 @@ class MainPage extends Component {
 								{	// All posts available for a comment
 					            	this.state.posts.map((f) => {
 					            		// Only return three uncompleted posts
-					            		if (!f.completed && (postCounter < 3) ) {
+					            		if (!f.completed && (postCounter < NUMBEROFPOSTS) ) {
 					            			++postCounter;
 						                	return (
 						                  		<tr key={f.userName}>
