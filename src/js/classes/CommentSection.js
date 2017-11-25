@@ -44,6 +44,7 @@ class CommentSection extends Component {
 					temp.map((f) => {
 						return (
 							<div key={f.text}>
+                                <hr/>
 								<div className='sectionContainer'>
 					                <div className='pictureContainer'>
 					                    <img className='profilePicture' src={f.srcFile} alt='x'/>
@@ -55,8 +56,6 @@ class CommentSection extends Component {
 					                    {f.text}
 					                </p>
 				            	</div>
-				            	<br/>
-								<hr/>
 							</div>
 						);
 					})
@@ -74,6 +73,7 @@ class CommentSection extends Component {
 			case null:
                 return (
 					<div>
+                        <hr/>
                         <p className='pHeading'>Pick a comment!</p>
                         {
                             choices.map((f) => {
@@ -120,19 +120,19 @@ class CommentSection extends Component {
     		case null:
     			return( 
     				<div>
-                        <br/><hr/>
+                        <hr/>
                         <p className='pHeading'>Pick a comment!</p>
-    				{
-    					trees.map((f) => {
-	            			return (
-		            			<div key={f.comment} className='activeComments' onClick={this.setCommentTree.bind(this, f.TREE_NUMBER, null, f.trollPoints, f.communityPoints)}>
-				            		<p className='pActiveComment'>
-										{f.comment}
-									</p>
-				            	</div>
-	            			);
-                		})
-    				}
+                        {
+                            trees.map((f) => {
+                                return (
+                                    <div key={f.comment} className='activeComments' onClick={this.setCommentTree.bind(this, f.TREE_NUMBER, null, f.trollPoints, f.communityPoints)}>
+                                        <p className='pActiveComment'>
+                                            {f.comment}
+                                        </p>
+                                    </div>
+                                );
+                            })
+                        }
     				</div>
     			);
             // Return comment tree 1
