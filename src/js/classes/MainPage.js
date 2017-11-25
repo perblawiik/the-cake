@@ -26,6 +26,7 @@ class MainPage extends Component {
             playerImgUrl: props.player.getImgUrl(),
 			showImageWindow: false,
 			currentImage: null,
+            nextPostSize: '16px',
             posts: postData.posts // Contains all post data
 		};
 
@@ -104,13 +105,27 @@ class MainPage extends Component {
 	    if (!f.completed && f.treeStates.second) {
             return(
                 <div className='getNextPost' onClick={this.setPostCompleted.bind(this, f.index)}>
-                    <p>
+                    <p style={{fontSize: this.state.nextPostSize}}>
                         GET NEW POST!
                     </p>
                 </div>
             );
         }
-    }
+	}
+
+	tick () {
+
+        if (this.state.nextPostSize === "16px") {
+            this.setState({nextPostSize: "17px"});
+        }
+        else {
+            this.setState({nextPostSize: "16px"});
+        }
+	}
+
+    componentDidMount () {
+		this.intervalId = setInterval(this.tick.bind(this), 500);
+	}
 
 	render() {
 

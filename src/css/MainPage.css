@@ -65,22 +65,25 @@ img {
 
 .getNextPost {
     cursor: pointer;
-    position: relative;
-    margin: auto;
+    position: fixed;
+    left: 46%;
+    z-index: 1;
     background-color: blue;
-    width: 40%;
+    width: 150px;
     height: 24px;
-    border-radius: 6px;
+    border-radius: 2px;
     padding: 0;
+    box-shadow: 1px 2px 6px #888888
 }
 
 .getNextPost:hover {
-    font-size: 17px;
-    transition: font-size .2s;
+    background-color: rgb(100,100,255);
+    transition: background-color .2s;
 }
 
 .getNextPost > p {
     color: white;
     font-weight: bold;
     text-align: center;
+    transition: font-size .5s;
 }
