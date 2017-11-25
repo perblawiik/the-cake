@@ -14,7 +14,7 @@ const CommentTree = {
 
 class CommentSection extends Component {
 
-	setCommentTree (treeFirst, treeSecond, trollPoints, comPoints, isCompleted) {
+	setCommentTree (treeFirst, treeSecond, trollPoints, comPoints) {
 	    // Add player points
         this.props.addPlayerPoints(trollPoints, comPoints);
 		
@@ -25,7 +25,7 @@ class CommentSection extends Component {
         };
 
         // Send comment options to update post data list
-        this.props.processPlayerChoice(this.props.postInfo.index, treeStates, isCompleted);
+        this.props.processPlayerChoice(this.props.postInfo.index, treeStates);
 	}
 
 	displayFixedComments (comment, reply) {
@@ -78,7 +78,7 @@ class CommentSection extends Component {
                         {
                             choices.map((f) => {
                                 return (
-									<div key={f.comment} className='activeComments' onClick={this.setCommentTree.bind(this, tree.TREE_NUMBER, f.CHOICE_NUMBER, f.trollPoints, f.communityPoints, true)}>
+									<div key={f.comment} className='activeComments' onClick={this.setCommentTree.bind(this, tree.TREE_NUMBER, f.CHOICE_NUMBER, f.trollPoints, f.communityPoints)}>
 										<p className='pActiveComment'>
                                             {f.comment}
 										</p>
@@ -125,7 +125,7 @@ class CommentSection extends Component {
     				{
     					trees.map((f) => {
 	            			return (
-		            			<div key={f.comment} className='activeComments' onClick={this.setCommentTree.bind(this, f.TREE_NUMBER, null, f.trollPoints, f.communityPoints, false)}>
+		            			<div key={f.comment} className='activeComments' onClick={this.setCommentTree.bind(this, f.TREE_NUMBER, null, f.trollPoints, f.communityPoints)}>
 				            		<p className='pActiveComment'>
 										{f.comment}
 									</p>

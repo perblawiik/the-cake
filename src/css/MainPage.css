@@ -62,3 +62,24 @@ img {
     height: 9%;
     font-size: 40px;
 }
+
+.getNextPost {
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    background-color: blue;
+    width: 40%;
+    border-radius: 6px;
+    padding: 0;
+}
+
+.getNextPost:hover {
+    font-size: 17px;
+    transition: font-size .2s;
+}
+
+.getNextPost > p {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}

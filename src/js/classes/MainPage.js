@@ -60,11 +60,10 @@ class MainPage extends Component {
         this.setState({showImageWindow: false});
     }
 
-	processPlayerChoice(index, treeStates, isCompleted) {
+	processPlayerChoice(index, treeStates) {
 
 		// Copy the list of posts and change completed for given index to true
 		let newPosts = this.state.posts;
-		newPosts[index].completed = isCompleted;
 		newPosts[index].treeStates = treeStates;
 
 		// Update the list of posts
@@ -86,6 +85,31 @@ class MainPage extends Component {
         this.setState({
 			posts: newPosts
 		});
+    }
+
+    setPostCompleted (index) {
+
+        // Copy the list of posts and change completed for given index to true
+        let newPosts = this.state.posts;
+        newPosts[index].completed = true;
+
+        // Update the list of posts
+        this.setState({
+            posts: newPosts
+        });
+    }
+
+    getNextPost (f) {
+
+	    if (!f.completed && f.treeStates.second) {
+            return(
+                <div className='getNextPost' onClick={this.setPostCompleted.bind(this, f.index)}>
+                    <p>
+                        GET NEW POST!
+                    </p>
+                </div>
+            );
+        }
     }
 
 	render() {
@@ -116,7 +140,6 @@ class MainPage extends Component {
                             </tr>
 						</tbody>
 					</table>
-
 				</div>
 
 				<div className='newsFlowOuter'>
@@ -131,6 +154,9 @@ class MainPage extends Component {
 						                	return (
 						                  		<tr key={f.userName}>
 													<td className='postContainer'>
+                                                        {
+                                                            this.getNextPost(f)
+                                                        }
 														<Post postInfo={f}
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}
