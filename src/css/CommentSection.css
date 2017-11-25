@@ -19,6 +19,7 @@
 }
 
 .sectionContainer {
+    display: flex;
     background-color: #e0e0e0;
     position: relative;
     float: left;
@@ -53,8 +54,13 @@
 }
 
 .pictureContainer {
-    float: left;
-    height: 100%;
+    position: relative;
+    flex: 0;
+}
+
+.textContainer {
+    position: relative;
+    flex: 1;
 }
 
 .profilePicture {

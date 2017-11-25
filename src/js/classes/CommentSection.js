@@ -49,12 +49,14 @@ class CommentSection extends Component {
 					                <div className='pictureContainer'>
 					                    <img className='profilePicture' src={f.srcFile} alt='x'/>
 					                </div>
-					                <p className='pName'>
-					                    <b>{f.name}</b>
-					                </p>
-					                <p className='pComment'>
-					                    {f.text}
-					                </p>
+                                    <div className='textContainer'>
+                                        <p className='pName'>
+                                            <b>{f.name}</b>
+                                        </p>
+                                        <p className='pComment'>
+                                            {f.text}
+                                        </p>
+                                    </div>
 				            	</div>
 							</div>
 						);
@@ -78,7 +80,8 @@ class CommentSection extends Component {
                         {
                             choices.map((f) => {
                                 return (
-									<div key={f.comment} className='activeComments' onClick={this.setCommentTree.bind(this, tree.TREE_NUMBER, f.CHOICE_NUMBER, f.trollPoints, f.communityPoints)}>
+									<div key={f.comment} className='activeComments'
+										 onClick={this.setCommentTree.bind(this, tree.TREE_NUMBER, f.CHOICE_NUMBER, f.trollPoints, f.communityPoints)}>
 										<p className='pActiveComment'>
                                             {f.comment}
 										</p>

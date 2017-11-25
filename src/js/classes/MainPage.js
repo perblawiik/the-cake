@@ -26,7 +26,7 @@ class MainPage extends Component {
             playerImgUrl: props.player.getImgUrl(),
 			showImageWindow: false,
 			currentImage: null,
-            nextPostSize: '16px',
+            nextPostSize: '20px',
             posts: postData.posts // Contains all post data
 		};
 
@@ -115,11 +115,11 @@ class MainPage extends Component {
 
 	tick () {
 
-        if (this.state.nextPostSize === "16px") {
-            this.setState({nextPostSize: "17px"});
+        if (this.state.nextPostSize === "20px") {
+            this.setState({nextPostSize: "21px"});
         }
         else {
-            this.setState({nextPostSize: "16px"});
+            this.setState({nextPostSize: "20px"});
         }
 	}
 
