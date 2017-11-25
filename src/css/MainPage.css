@@ -64,27 +64,55 @@ img {
 }
 
 .getNextPost {
-    cursor: pointer;
     position: fixed;
     left: 39.6%;
     z-index: 1;
     background-color: #156abb;
     width: 401px;
-    height: 44px;
+    height: 60px;
     border-radius: 2px;
     padding: 0;
     box-shadow: 1px 4px 5px 1px #888888
 }
 
-.getNextPost:hover {
-    background-color: #1682bb;
-    transition: background-color .2s;
-}
-
 .getNextPost > p {
-    margin-top: 5px;
+    margin-left: 30px;
+    margin-top: 15px;
     color: white;
     font-weight: bold;
-    text-align: center;
     transition: font-size .5s;
+    border-radius: 3px;
+    float: left;
 }
+
+.getNextPost > div {
+    background-color: white;
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border-bottom: 3px solid #696969;
+    border-right: 1px solid #696969;
+    border-left: 1px solid #696969;
+    border-radius: 2px;
+    box-shadow: 1px 2px 6px #565656
+}
+
+.getNextPost > div:hover {
+    font-size: 19px;
+    transition: font-size .3s;
+}
+
+.getNextPost > div:active {
+    border: none;
+}
+
+.getNextPost > div > p {
+    text-align: center;
+    font-weight: bold;
+    color: #156abb;
+}
+

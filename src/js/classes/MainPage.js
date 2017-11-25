@@ -26,7 +26,7 @@ class MainPage extends Component {
             playerImgUrl: props.player.getImgUrl(),
 			showImageWindow: false,
 			currentImage: null,
-            nextPostSize: '20px',
+            nextPostSize: '19px',
             posts: postData.posts // Contains all post data
 		};
 
@@ -104,10 +104,13 @@ class MainPage extends Component {
 
 	    if (!f.completed && f.treeStates.second) {
             return(
-                <div className='getNextPost' onClick={this.setPostCompleted.bind(this, f.index)}>
+                <div className='getNextPost'>
                     <p style={{fontSize: this.state.nextPostSize}}>
-                        GET NEW POST!
+                        New post available!
                     </p>
+					<div onClick={this.setPostCompleted.bind(this, f.index)}>
+						<p> GET POST </p>
+					</div>
                 </div>
             );
         }
@@ -115,11 +118,11 @@ class MainPage extends Component {
 
 	tick () {
 
-        if (this.state.nextPostSize === "20px") {
-            this.setState({nextPostSize: "21px"});
+        if (this.state.nextPostSize === "19px") {
+            this.setState({nextPostSize: "20px"});
         }
         else {
-            this.setState({nextPostSize: "20px"});
+            this.setState({nextPostSize: "19px"});
         }
 	}
 
