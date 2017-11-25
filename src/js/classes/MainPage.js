@@ -26,6 +26,7 @@ class MainPage extends Component {
             playerImgUrl: props.player.getImgUrl(),
 			showImageWindow: false,
 			currentImage: null,
+            nextPostSize: '16px',
             posts: postData.posts // Contains all post data
 		};
 
@@ -60,11 +61,10 @@ class MainPage extends Component {
         this.setState({showImageWindow: false});
     }
 
-	processPlayerChoice(index, treeStates, isCompleted) {
+	processPlayerChoice(index, treeStates) {
 
 		// Copy the list of posts and change completed for given index to true
 		let newPosts = this.state.posts;
-		newPosts[index].completed = isCompleted;
 		newPosts[index].treeStates = treeStates;
 
 		// Update the list of posts
@@ -87,6 +87,45 @@ class MainPage extends Component {
 			posts: newPosts
 		});
     }
+
+    setPostCompleted (index) {
+
+        // Copy the list of posts and change completed for given index to true
+        let newPosts = this.state.posts;
+        newPosts[index].completed = true;
+
+        // Update the list of posts
+        this.setState({
+            posts: newPosts
+        });
+    }
+
+    getNextPost (f) {
+
+	    if (!f.completed && f.treeStates.second) {
+            return(
+                <div className='getNextPost' onClick={this.setPostCompleted.bind(this, f.index)}>
+                    <p style={{fontSize: this.state.nextPostSize}}>
+                        GET NEW POST!
+                    </p>
+                </div>
+            );
+        }
+	}
+
+	tick () {
+
+        if (this.state.nextPostSize === "16px") {
+            this.setState({nextPostSize: "17px"});
+        }
+        else {
+            this.setState({nextPostSize: "16px"});
+        }
+	}
+
+    componentDidMount () {
+		this.intervalId = setInterval(this.tick.bind(this), 500);
+	}
 
 	render() {
 
@@ -116,7 +155,6 @@ class MainPage extends Component {
                             </tr>
 						</tbody>
 					</table>
-
 				</div>
 
 				<div className='newsFlowOuter'>
@@ -131,6 +169,9 @@ class MainPage extends Component {
 						                	return (
 						                  		<tr key={f.userName}>
 													<td className='postContainer'>
+                                                        {
+                                                            this.getNextPost(f)
+                                                        }
 														<Post postInfo={f}
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}
