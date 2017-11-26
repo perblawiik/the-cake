@@ -235,16 +235,15 @@ class MainPage extends Component {
 					<b>Welcome fellow troll to the Bookface.</b>
 					</p>
 					<p>
-					We are an coalition of trolls bent on trolling the normie residens of the world wide webb for our amusment and we have recruteted you to be a part of this glorious endevour.
+					    We are an coalition of trolls bent on trolling the normie residents of the world wide web for our amusement and we have recruited you to be a part of this glorious endeavour.
 					</p>
+                    <br/>
 					<p>
-					Your task as a troll is to look at the post of the normies here and comment in a 'trolle' way but be carfull not to me to obvious in your atempts to wreak havoc. 
+					    Your task as a troll is to look at the post of the normies here and comment in a 'trollie' way but be careful not to be to obvious in your attempts to wreak havoc.
 					</p>
+                    <br/>
 					<p>
-					We have modified your Bookface page to keep track of how succeful of a troll you are and how the normies view your action.
-					</p>
-					<p>
-					I writing text
+					    We have modified your Bookface page to keep track of how successful of a troll you are and how the normies view your action.
 					</p>
 				</div>
                 {/* Pop out window for selected post */

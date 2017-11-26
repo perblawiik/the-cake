@@ -81,28 +81,27 @@ class PlayerInfo extends Component {
 
         return(
             <div className='playerInfoContainer'>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div className = 'blank'></div>
-                            </td>
-                            <td>
-                                <img className = 'profilePic' src={this.props.playerStats.imgUrl} alt='logo'/>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p className='playerName'> {this.props.playerStats.name} </p>
-                <p> Level: {this.props.playerStats.level} </p>
-                <p> Troll Points: {this.props.playerStats.trollPoints} </p>
+
+                <div className='profilePicContainer'>
+                    <img className = 'profilePic' src={this.props.playerStats.imgUrl} alt='logo'/>
+                </div>
+
+                <p className='playerName'>
+                    {this.props.playerStats.name}
+                </p>
+                <p>
+                    Level: {this.props.playerStats.level}
+                </p>
+                <p>
+                    Troll Points: {this.props.playerStats.trollPoints}
+                </p>
                 <div className = 'barContainer'>
                     <div className = 'trollBar' style={{width: trollBarLength}}>
                     </div>
                 </div>
-                <p> Community Status: {this.props.playerStats.comPoints} </p>
+                <p>
+                    Community Status: {this.props.playerStats.comPoints}
+                </p>
                 <div className = 'barContainer'>
                     <div className = 'communityStatus' style={{width: communityBarLength, backgroundColor: this.communityBarColor}}>
                     </div>
