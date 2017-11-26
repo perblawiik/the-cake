@@ -15,31 +15,51 @@ class PlayerInfo extends Component {
         super(props);
 
         this.state = {
-            comBarColor: 'red'
-        }
+            comBarColor: 'red',
+            intervalId: null,
+        };
     }
 
     addPoints(trollP, commP) {
         this.props.addPlayerPoints(trollP, commP);
     }
 
-    tick () {
+    animate () {
 
-        // Do nothing if community status is above 20 (WARNING_TRIGGER)
-        if (this.props.playerStats.comPoints <= WARNING_TRIGGER) {
-            if(this.state.comBarColor === 'red') {
-                this.setState({comBarColor: 'white'});
-            }
-            else {
-                this.setState({comBarColor: 'red'});
-            }
+        // Switch between color red and white
+        if(this.state.comBarColor === 'red') {
+            this.setState({comBarColor: 'white'});
+        }
+        else {
+            this.setState({comBarColor: 'red'});
         }
     }
 
-    componentDidMount () {
+    componentDidUpdate() {
 
-        // Call the tick function every 500 ms
-        this.intervalId = setInterval(this.tick.bind(this), TICK_MS);
+        this.communityBarWarning();
+    }
+
+    communityBarWarning () {
+        // Check if community points is lower than WARNING_TRIGGER
+        if (this.props.playerStats.comPoints <= WARNING_TRIGGER) {
+
+            // If no interval is active, activate it
+            if (!this.state.intervalId) {
+                // Call the animate function in a frequency based on const TICK_MS
+                let id = setInterval(this.animate.bind(this), TICK_MS);
+                this.setState({intervalId: id});
+            }
+        }
+        else {
+            // If there is an active interval, but the community point is higher than WARNING_TRIGGER
+            // Deactivate interval.
+            if (this.state.intervalId) {
+                // Call the tick function every 500 ms
+                clearInterval(this.state.intervalId);
+                this.setState({intervalId: null});
+            }
+        }
     }
 
     render() {

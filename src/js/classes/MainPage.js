@@ -27,6 +27,7 @@ class MainPage extends Component {
 			showImageWindow: false,
 			currentImage: null,
             nextPostSize: '19px',
+			intervalId: null,
             posts: postData.posts // Contains all post data
 		};
 
@@ -103,6 +104,13 @@ class MainPage extends Component {
     getNextPost (f) {
 
 	    if (!f.completed && f.treeStates.second) {
+
+	    	// Check if animation interval is active
+	    	if (!this.state.intervalId) {
+	    		let id = setInterval(this.animate.bind(this), 500);
+	    		this.setState({intervalId: id});
+			}
+
             return(
                 <div className='getNextPost'>
                     <p style={{fontSize: this.state.nextPostSize}}>
@@ -114,9 +122,16 @@ class MainPage extends Component {
                 </div>
             );
         }
+        else {
+	    	// If animation interval is active, deactivate it.
+            if (this.state.intervalId) {
+            	clearInterval(this.state.intervalId);
+                this.setState({intervalId: null});
+            }
+		}
 	}
 
-	tick () {
+	animate () {
 
         if (this.state.nextPostSize === "19px") {
             this.setState({nextPostSize: "20px"});
@@ -124,10 +139,6 @@ class MainPage extends Component {
         else {
             this.setState({nextPostSize: "19px"});
         }
-	}
-
-    componentDidMount () {
-		this.intervalId = setInterval(this.tick.bind(this), 500);
 	}
 
 	render() {
