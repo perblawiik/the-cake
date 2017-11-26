@@ -40,9 +40,15 @@
     top: 22.5%;
     bottom: 9%;
     left: 72.5%;
-    right: 7.5%;
+    right: 7%;
     overflow: hidden;
+    overflow-y: scroll;
     border-radius: 4px;
+}
+
+.ruleBox > p {
+    margin-left: 10px;
+    margin-right: 8px;
 }
 
 table {
