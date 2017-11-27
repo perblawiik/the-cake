@@ -111,14 +111,16 @@ class MainPage extends Component {
 	    		this.setState({intervalId: id});
 			}
 
-            return(
-                <div className='getNextPost'>
-                    <p style={{fontSize: this.state.nextPostSize}}>
-                        New post available!
-                    </p>
-					<div onClick={this.setPostCompleted.bind(this, f.index)}>
-						<p> GET POST </p>
-					</div>
+            return (
+            	<div className='nextPostContainer'>
+	                <div className='getNextPost'>
+	                    <p style={{fontSize: this.state.nextPostSize}}>
+	                        New post available!
+	                    </p>
+						<div onClick={this.setPostCompleted.bind(this, f.index)}>
+							<p> GET POST </p>
+						</div>
+	                </div>
                 </div>
             );
         }
@@ -232,7 +234,7 @@ class MainPage extends Component {
 				</div>
 				<div className="ruleBox" >
 					<p>
-					<b>Welcome fellow troll to the Bookface.</b>
+						<b>Welcome fellow troll to the Bookface.</b>
 					</p>
 					<p>
 					    We are an coalition of trolls bent on trolling the normie residents of the world wide web for our amusement and we have recruited you to be a part of this glorious endeavour.

@@ -69,9 +69,16 @@ img {
     font-size: 40px;
 }
 
+.nextPostContainer {
+    position: absolute;
+    margin-top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .getNextPost {
     position: fixed;
-    left: 39.6%;
     z-index: 1;
     background-color: #156abb;
     width: 401px;
