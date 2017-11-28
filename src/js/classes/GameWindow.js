@@ -7,6 +7,9 @@ import MainPage from './MainPage';
 import Player from './Player';
 import GameOver from './GameOver';
 
+// Json data
+import postData from '../../json/postsdata.json'
+
 // Css
 import '../../css/GameWindow.css';
 
@@ -14,7 +17,8 @@ import '../../css/GameWindow.css';
 const GameState = {
     LOGIN_PAGE: 0,
     MAIN_PAGE: 1,
-    GAME_OVER: 2
+    GAME_OVER: 2,
+    TUTORIAL: 3
 };
 
 class GameWindow extends Component {
@@ -26,7 +30,8 @@ class GameWindow extends Component {
         // OBS! You can create any variable that you need in this object.
         this.state = {
             // gameState is set to LOGIN_PAGE by default (always start game on the Login Page)
-            gameState: GameState.LOGIN_PAGE
+            gameState: GameState.LOGIN_PAGE,
+            postData: postData.posts
         };
 
         // Initiate the player as null
@@ -43,6 +48,11 @@ class GameWindow extends Component {
         if (!this.player) {
             this.player = new Player(name);
         }
+    }
+
+    resetGame() {
+        this.player = null;
+        this.setGameState(GameState.LOGIN_PAGE);
     }
 
     render() {
@@ -66,7 +76,7 @@ class GameWindow extends Component {
                 return (
                     <div className='windowStyle'>
                         <BrowserField pageInfo={'game-over'} setGameState={this.setGameState.bind(this)} otherGameState={GameState.LOGIN_PAGE} />
-                        <GameOver/>
+                        <GameOver resetGame={this.resetGame.bind(this)}/>
                     </div>
                 );
             default:
