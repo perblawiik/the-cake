@@ -150,8 +150,9 @@ class MainPage extends Component {
 	}
 
 	componentDidUpdate() {
+		// If community status is zero, switch to game over
 		if (this.state.comPoints === 0) {
-			this.props.setGameState(2);
+			this.props.setGameState(GameState.GAME_OVER);
 		}
 	}
 
