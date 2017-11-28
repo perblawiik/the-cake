@@ -8,9 +8,6 @@ import Player from './Player';
 import GameOver from './GameOver';
 import Tutorial from './Tutorial';
 
-// Json data
-import postData from '../../json/postsdata.json'
-
 // Css
 import '../../css/GameWindow.css';
 
@@ -32,7 +29,6 @@ class GameWindow extends Component {
         this.state = {
             // gameState is set to LOGIN_PAGE by default (always start game on the Login Page)
             gameState: GameState.LOGIN_PAGE,
-            postData: postData.posts
         };
 
         // Initiate the player as null
