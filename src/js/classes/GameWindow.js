@@ -5,6 +5,7 @@ import LoginPage from './LoginPage.js';
 import BrowserField from './BrowserField';
 import MainPage from './MainPage';
 import Player from './Player';
+import GameOver from './GameOver';
 
 // Css
 import '../../css/GameWindow.css';
@@ -12,7 +13,8 @@ import '../../css/GameWindow.css';
 // Global GameState object. Used for setting return value in GameWindow class
 const GameState = {
     LOGIN_PAGE: 0,
-    MAIN_PAGE: 1
+    MAIN_PAGE: 1,
+    GAME_OVER: 2
 };
 
 class GameWindow extends Component {
@@ -57,7 +59,14 @@ class GameWindow extends Component {
                 return (
                     <div className='windowStyle'>
                         <BrowserField pageInfo={'home'} setGameState={this.setGameState.bind(this)} otherGameState={GameState.LOGIN_PAGE} />
-                        <MainPage player={this.player}/>
+                        <MainPage player={this.player} setGameState={this.setGameState.bind(this)}/>
+                    </div>
+                );
+            case GameState.GAME_OVER:
+                return (
+                    <div className='windowStyle'>
+                        <BrowserField pageInfo={'game-over'} setGameState={this.setGameState.bind(this)} otherGameState={GameState.LOGIN_PAGE} />
+                        <GameOver/>
                     </div>
                 );
             default:
