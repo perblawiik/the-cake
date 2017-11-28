@@ -34,7 +34,8 @@ class MainPage extends Component {
 			currentImage: null,
             nextPostSize: '19px',
 			intervalId: null,
-            posts: postData.posts // Contains all post data
+            posts: postData.posts,
+			currentPost: null
 		};
 
 		// Instance of player
@@ -101,21 +102,21 @@ class MainPage extends Component {
         let newPosts = this.state.posts;
         newPosts[index].completed = true;
 
+        let nextPostIndex = index;
+        if (newPosts.length > index+1) {
+            nextPostIndex = index+1;
+		}
+
         // Update the list of posts
         this.setState({
-            posts: newPosts
+            posts: newPosts,
+			currentPost: newPosts[nextPostIndex]
         });
     }
 
     getNextPost (f) {
 
 	    if (!f.completed && f.treeStates.second) {
-
-	    	// Check if animation interval is active
-	    	if (!this.state.intervalId) {
-	    		let id = setInterval(this.animate.bind(this), 500);
-	    		this.setState({intervalId: id});
-			}
 
             return (
             	<div className='nextPostContainer'>
@@ -130,13 +131,6 @@ class MainPage extends Component {
                 </div>
             );
         }
-        else {
-	    	// If animation interval is active, deactivate it.
-            if (this.state.intervalId) {
-            	clearInterval(this.state.intervalId);
-                this.setState({intervalId: null});
-            }
-		}
 	}
 
 	animate () {
@@ -149,11 +143,58 @@ class MainPage extends Component {
         }
 	}
 
+	resetPosts() {
+
+		let result = this.state.posts;
+
+        for (let i = 0; i < result.length; ++i) {
+            result[i].completed = false;
+            result[i].likeActive = 0;
+            result[i].treeStates.first = null;
+            result[i].treeStates.second = null;
+		}
+
+		this.setState({posts: result});
+	}
+
 	componentDidUpdate() {
+
+		// Set animation interval for next post
+        if (!this.state.currentPost.completed && this.state.currentPost.treeStates.second) {
+            // Check if animation interval is active
+            if (!this.state.intervalId) {
+                let id = setInterval(this.animate.bind(this), 500);
+                this.setState({intervalId: id});
+            }
+        }
+        else {
+            // If animation interval is active, deactivate it.
+            if (this.state.intervalId) {
+                clearInterval(this.state.intervalId);
+                this.setState({intervalId: null});
+            }
+		}
+
 		// If community status is zero, switch to game over
 		if (this.state.comPoints === 0) {
+        	// Reset all progress
+        	this.resetPosts();
+            // Set game state to Game Over
 			this.props.setGameState(GameState.GAME_OVER);
 		}
+	}
+
+	componentDidMount() {
+		// Set current post to first index in the array
+		this.setState({
+			currentPost: this.state.posts[0],
+		});
+	}
+
+	componentWillUnmount() {
+        // Clear interval
+        clearInterval(this.state.intervalId);
+        this.setState({intervalId: null});
 	}
 
 	render() {

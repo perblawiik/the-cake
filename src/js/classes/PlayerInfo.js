@@ -40,6 +40,13 @@ class PlayerInfo extends Component {
         this.communityBarWarning();
     }
 
+    componentWillUnmount() {
+
+        // Clear the interval
+        clearInterval(this.state.intervalId);
+        this.setState({intervalId: null});
+    }
+
     communityBarWarning () {
         // Check if community points is lower than WARNING_TRIGGER
         if (this.props.playerStats.comPoints <= WARNING_TRIGGER) {
@@ -55,7 +62,7 @@ class PlayerInfo extends Component {
             // If there is an active interval, but the community point is higher than WARNING_TRIGGER
             // Deactivate interval.
             if (this.state.intervalId) {
-                // Call the tick function every 500 ms
+                // Clear the interval
                 clearInterval(this.state.intervalId);
                 this.setState({intervalId: null});
             }
