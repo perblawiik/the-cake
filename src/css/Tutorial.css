@@ -1,0 +1,22 @@
+
+.tutorialDiv
+{
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+}
+
+
+.anonymousPicture
+{
+    position: relative;
+    width: 100%;
+}
+
+.youKnowStuff
+{
+    position: relative;
+    width: 50%;
+}

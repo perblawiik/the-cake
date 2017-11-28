@@ -6,6 +6,7 @@ import BrowserField from './BrowserField';
 import MainPage from './MainPage';
 import Player from './Player';
 import GameOver from './GameOver';
+import Tutorial from './Tutorial';
 
 // Css
 import '../../css/GameWindow.css';
@@ -14,7 +15,8 @@ import '../../css/GameWindow.css';
 const GameState = {
     LOGIN_PAGE: 0,
     MAIN_PAGE: 1,
-    GAME_OVER: 2
+    GAME_OVER: 2,
+    TUTORIAL: 3
 };
 
 class GameWindow extends Component {
@@ -67,6 +69,13 @@ class GameWindow extends Component {
                     <div className='windowStyle'>
                         <BrowserField pageInfo={'game-over'} setGameState={this.setGameState.bind(this)} otherGameState={GameState.LOGIN_PAGE} />
                         <GameOver/>
+                    </div>
+                );
+            case GameState.TUTORIAL:
+                return (
+                    <div className='windowStyle'>
+                        <BrowserField pageInfo={'we-have-taken-over'} setGameState={this.setGameState.bind(this)} otherGameState={GameState.LOGIN_PAGE} />
+                        <Tutorial/>
                     </div>
                 );
             default:
