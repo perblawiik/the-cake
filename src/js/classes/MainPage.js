@@ -12,6 +12,12 @@ import '../../css/MainPage.css';
 // Json data
 import postData from '../../json/postsdata.json'
 
+// Global GameState object. Used for setting return value in GameWindow class
+const GameState = {
+    LOGIN_PAGE: 0,
+    MAIN_PAGE: 1,
+    GAME_OVER: 2
+};
 const NUMBER_OF_POSTS = 1;
 
 class MainPage extends Component {
@@ -141,6 +147,12 @@ class MainPage extends Component {
         else {
             this.setState({nextPostSize: "19px"});
         }
+	}
+
+	componentDidUpdate() {
+		if (this.state.comPoints === 0) {
+			this.props.setGameState(2);
+		}
 	}
 
 	render() {
