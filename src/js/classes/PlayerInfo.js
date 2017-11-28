@@ -15,36 +15,54 @@ class PlayerInfo extends Component {
         super(props);
 
         this.state = {
-            comBarColor: 'red'
-        }
+            comBarColor: 'red',
+            intervalId: null,
+        };
     }
 
     addPoints(trollP, commP) {
         this.props.addPlayerPoints(trollP, commP);
     }
 
-    tick () {
+    animate () {
 
-        // Do nothing if community status is above 20 (WARNING_TRIGGER)
+        // Switch between color red and white
+        if(this.state.comBarColor === 'red') {
+            this.setState({comBarColor: 'white'});
+        }
+        else {
+            this.setState({comBarColor: 'red'});
+        }
+    }
+
+    componentDidUpdate() {
+
+        this.communityBarWarning();
+    }
+
+    communityBarWarning () {
+        // Check if community points is lower than WARNING_TRIGGER
         if (this.props.playerStats.comPoints <= WARNING_TRIGGER) {
-            if(this.state.comBarColor === 'red') {
-                this.setState({comBarColor: 'white'});
+
+            // If no interval is active, activate it
+            if (!this.state.intervalId) {
+                // Call the animate function in a frequency based on const TICK_MS
+                let id = setInterval(this.animate.bind(this), TICK_MS);
+                this.setState({intervalId: id});
             }
-            else {
-                this.setState({comBarColor: 'red'});
+        }
+        else {
+            // If there is an active interval, but the community point is higher than WARNING_TRIGGER
+            // Deactivate interval.
+            if (this.state.intervalId) {
+                // Call the tick function every 500 ms
+                clearInterval(this.state.intervalId);
+                this.setState({intervalId: null});
             }
         }
     }
 
-    componentDidMount () {
-
-        // Call the tick function every 500 ms
-        this.intervalId = setInterval(this.tick.bind(this), TICK_MS);
-    }
-
     render() {
-
-        const playerImageUrl = require('../../img/troll.png');
 
         // Set bar length based on troll points and community points
         const trollBarLength = this.props.playerStats.trollPoints * 10 + '%';
@@ -63,28 +81,27 @@ class PlayerInfo extends Component {
 
         return(
             <div className='playerInfoContainer'>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div className = 'blank'></div>
-                            </td>
-                            <td>
-                                <img className = 'profilePic' src={playerImageUrl} alt='logo'/>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p className='playerName'> {this.props.playerStats.name} </p>
-                <p> Level: {this.props.playerStats.level} </p>
-                <p> Troll Points: {this.props.playerStats.trollPoints} </p>
+
+                <div className='profilePicContainer'>
+                    <img className = 'profilePic' src={this.props.playerStats.imgUrl} alt='logo'/>
+                </div>
+
+                <p className='playerName'>
+                    {this.props.playerStats.name}
+                </p>
+                <p>
+                    Level: {this.props.playerStats.level}
+                </p>
+                <p>
+                    Troll Points: {this.props.playerStats.trollPoints}
+                </p>
                 <div className = 'barContainer'>
                     <div className = 'trollBar' style={{width: trollBarLength}}>
                     </div>
                 </div>
-                <p> Community Status: {this.props.playerStats.comPoints} </p>
+                <p>
+                    Community Status: {this.props.playerStats.comPoints}
+                </p>
                 <div className = 'barContainer'>
                     <div className = 'communityStatus' style={{width: communityBarLength, backgroundColor: this.communityBarColor}}>
                     </div>

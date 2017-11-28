@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // Javascript Classes
 import Post from './Post';
-import PostWindow from './PostWindow';
+//import PostWindow from './PostWindow';
 import PlayerInfo from './PlayerInfo';
 import ImageWindow from './ImageWindow';
 
@@ -12,7 +12,7 @@ import '../../css/MainPage.css';
 // Json data
 import postData from '../../json/postsdata.json'
 
-const NUMBEROFPOSTS = 1;
+const NUMBER_OF_POSTS = 1;
 
 class MainPage extends Component {
 
@@ -23,10 +23,11 @@ class MainPage extends Component {
             trollPoints: props.player.getTrollPoints(),
             comPoints: props.player.getCommunityPoints(),
             playerLevel: props.player.getLevel(),
-            currentPost: null,
-            showPostWindow: false,
+            playerImgUrl: props.player.getImgUrl(),
 			showImageWindow: false,
 			currentImage: null,
+            nextPostSize: '19px',
+			intervalId: null,
             posts: postData.posts // Contains all post data
 		};
 
@@ -43,16 +44,9 @@ class MainPage extends Component {
         this.setState({
             comPoints: this.player.getCommunityPoints(),
             trollPoints: this.player.getTrollPoints(),
-            playerLevel: this.player.getLevel()
+            playerLevel: this.player.getLevel(),
+            playerImgUrl: this.player.getImgUrl()
         });
-	}
-
-	selectPost(post) {
-
-		this.setState({
-			currentPost: post,
-			showPostWindow: false
-		});
 	}
 
 	selectImage(srcFile) {
@@ -63,21 +57,15 @@ class MainPage extends Component {
         });
 	}
 
-	closePostWindow() {
-
-		this.setState({showPostWindow: false});
-	}
-
     closeImageWindow() {
 
         this.setState({showImageWindow: false});
     }
 
-	processPlayerChoice(index, treeStates, isCompleted) {
+	processPlayerChoice(index, treeStates) {
 
 		// Copy the list of posts and change completed for given index to true
 		let newPosts = this.state.posts;
-		newPosts[index].completed = isCompleted;
 		newPosts[index].treeStates = treeStates;
 
 		// Update the list of posts
@@ -101,6 +89,60 @@ class MainPage extends Component {
 		});
     }
 
+    setPostCompleted (index) {
+
+        // Copy the list of posts and change completed for given index to true
+        let newPosts = this.state.posts;
+        newPosts[index].completed = true;
+
+        // Update the list of posts
+        this.setState({
+            posts: newPosts
+        });
+    }
+
+    getNextPost (f) {
+
+	    if (!f.completed && f.treeStates.second) {
+
+	    	// Check if animation interval is active
+	    	if (!this.state.intervalId) {
+	    		let id = setInterval(this.animate.bind(this), 500);
+	    		this.setState({intervalId: id});
+			}
+
+            return (
+            	<div className='nextPostContainer'>
+	                <div className='getNextPost'>
+	                    <p style={{fontSize: this.state.nextPostSize}}>
+	                        New post available!
+	                    </p>
+						<div onClick={this.setPostCompleted.bind(this, f.index)}>
+							<p> GET POST </p>
+						</div>
+	                </div>
+                </div>
+            );
+        }
+        else {
+	    	// If animation interval is active, deactivate it.
+            if (this.state.intervalId) {
+            	clearInterval(this.state.intervalId);
+                this.setState({intervalId: null});
+            }
+		}
+	}
+
+	animate () {
+
+        if (this.state.nextPostSize === "19px") {
+            this.setState({nextPostSize: "20px"});
+        }
+        else {
+            this.setState({nextPostSize: "19px"});
+        }
+	}
+
 	render() {
 
 		// An object containing all player stats that goes into PlayerInfo class
@@ -108,7 +150,8 @@ class MainPage extends Component {
 			name: this.player.getName(),
 			trollPoints: this.state.trollPoints,
             comPoints: this.state.comPoints,
-            level: this.state.playerLevel
+            level: this.state.playerLevel,
+            imgUrl: this.state.playerImgUrl
         };
 
 		// Counter for limited posts
@@ -122,13 +165,12 @@ class MainPage extends Component {
 				<div className = 'blueBar'>
 					<table className = 'bookfaceTable'>
 						<tbody>
-						<tr className = 'bookfaceTable'>
-							<td className = 'bookfaceTable'> <p className= 'bookfaceTitle'>Bookface</p> </td>
-							<td className = 'bookfaceTable'> <img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/> </td>
-						</tr>
+                            <tr className = 'bookfaceTable'>
+                                <td className = 'bookfaceTable'> <p className= 'bookfaceTitle'>Bookface</p> </td>
+                                <td className = 'bookfaceTable'> <img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/> </td>
+                            </tr>
 						</tbody>
 					</table>
-
 				</div>
 
 				<div className='newsFlowOuter'>
@@ -138,28 +180,28 @@ class MainPage extends Component {
 								{	// All posts available for a comment
 					            	this.state.posts.map((f) => {
 					            		// Only return three uncompleted posts
-					            		if (!f.completed && (postCounter < NUMBEROFPOSTS) ) {
+					            		if (!f.completed && (postCounter < NUMBER_OF_POSTS) ) {
 					            			++postCounter;
 						                	return (
 						                  		<tr key={f.userName}>
-													<td className='postContainer' onClick={this.selectPost.bind(this, f)}>
+													<td className='postContainer'>
+                                                        {
+                                                            this.getNextPost(f)
+                                                        }
 														<Post postInfo={f}
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}
-															  showPostWindow={true}
                                                               playerName={this.player.getName()}
+                                                              playerImgUrl={this.state.playerImgUrl}
 															  selectImage={this.selectImage.bind(this)}
 															  setLikeActive={this.setLikeActive.bind(this)}/>
-
 													</td>
 												</tr>
 											);
 					                	}
-					                	/*
 					                	else {
-					                		return(<div></div>);
+					                		return(<tr key={f.userName}></tr>);
 					                	}
-					                	*/
 					                })
 					            }
 					            {	// All posts unavailable for a comment (completed posts)
@@ -168,24 +210,22 @@ class MainPage extends Component {
 					                	if (f.completed) {
 						                	return (
 						                  		<tr key={f.userName} style={{backgroundColor: 'lightgrey'}}>
-													<td className='postContainer' onClick={this.selectPost.bind(this, f)}>
+													<td className='postContainer'>
 														<Post postInfo={f}
 															  addPlayerPoints={this.addPlayerPoints.bind(this)}
 															  processPlayerChoice={this.processPlayerChoice.bind(this)}
-															  showPostWindow={true}
 															  backgroundColor={'#F0F0F0'}
                                                               playerName={this.player.getName()}
+                                                              playerImgUrl={this.state.playerImgUrl}
 															  selectImage={this.selectImage.bind(this)}
 															  setLikeActive={this.setLikeActive.bind(this)}/>
 													</td>
 												</tr>
 											);
 					                	}
-					                	/*
 					                	else {
-					                		return(<div></div>);
+					                		return(<tr key={f.userName}></tr>);
 					                	}
-					                	*/
 					                })
 					            }
 							</tbody>
@@ -194,28 +234,27 @@ class MainPage extends Component {
 				</div>
 				<div className="ruleBox" >
 					<p>
-					<b>Welcome fellow troll to the Bookface.</b>
+						<b>Welcome fellow troll to the Bookface.</b>
 					</p>
 					<p>
-					We are an coalition of trolls bent on trolling the normie residens of the world wide webb for our amusment and we have recruteted you to be a part of this glorious endevour.
+					    We are an coalition of trolls bent on trolling the normie residents of the world wide web for our amusement and we have recruited you to be a part of this glorious endeavour.
 					</p>
+                    <br/>
 					<p>
-					Your task as a troll is to look at the post of the normies here and comment in a 'trolle' way but be carfull not to me to obvious in your atempts to wreak havoc. 
+					    Your task as a troll is to look at the post of the normies here and comment in a 'trollie' way but be careful not to be to obvious in your attempts to wreak havoc.
 					</p>
+                    <br/>
 					<p>
-					We have modified your Bookface page to keep track of how succeful of a troll you are and how the normies view your action.
-					</p>
-					<p>
-					I writing text
+					    We have modified your Bookface page to keep track of how successful of a troll you are and how the normies view your action.
 					</p>
 				</div>
-                {/* Pop out window for selected post */}
-				<PostWindow postInfo={this.state.currentPost}
+                {/* Pop out window for selected post */
+				/*<PostWindow postInfo={this.state.currentPost}
 							addPlayerPoints={this.addPlayerPoints.bind(this)}
 							processPlayerChoice={this.processPlayerChoice.bind(this)}
 							showWindow={this.state.showPostWindow}
 							closeWindow={this.closePostWindow.bind(this)}
-							playerName={this.player.getName()}/>
+							playerName={this.player.getName()}/>*/}
 
 				<ImageWindow showWindow={this.state.showImageWindow}
 							 srcFile={this.state.currentImage}

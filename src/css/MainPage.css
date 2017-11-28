@@ -40,9 +40,15 @@
     top: 22.5%;
     bottom: 9%;
     left: 72.5%;
-    right: 7.5%;
+    right: 7%;
     overflow: hidden;
+    overflow-y: scroll;
     border-radius: 4px;
+}
+
+.ruleBox > p {
+    margin-left: 10px;
+    margin-right: 8px;
 }
 
 table {
@@ -62,3 +68,67 @@ img {
     height: 9%;
     font-size: 40px;
 }
+
+.nextPostContainer {
+    position: absolute;
+    margin-top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.getNextPost {
+    position: fixed;
+    z-index: 1;
+    background-color: #156abb;
+    width: 401px;
+    height: 60px;
+    border-radius: 2px;
+    padding: 0;
+    box-shadow: 1px 4px 5px 1px #888888
+}
+
+.getNextPost > p {
+    margin-left: 30px;
+    margin-top: 15px;
+    color: white;
+    font-weight: bold;
+    transition: font-size .5s;
+    border-radius: 3px;
+    float: left;
+}
+
+.getNextPost > div {
+    background-color: #f0f0f0;
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-top: 1px solid white;
+    border-bottom: 3px solid #696969;
+    border-right: 1px solid #696969;
+    border-left: 1px solid #696969;
+    border-radius: 2px;
+    box-shadow: 1px 2px 6px #565656
+}
+
+.getNextPost > div:hover {
+    font-size: 17px;
+    background-color: white;
+    transition: font-size .3s, background-color .3s;
+}
+
+.getNextPost > div:active {
+    border: none;
+}
+
+.getNextPost > div > p {
+    margin-top: 2px;
+    text-align: center;
+    font-weight: bold;
+    color: #0d0d0d;
+}
+

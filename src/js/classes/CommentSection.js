@@ -14,10 +14,10 @@ const CommentTree = {
 
 class CommentSection extends Component {
 
-	setCommentTree (treeFirst, treeSecond, trollPoints, comPoints, isCompleted) {
+	setCommentTree (treeFirst, treeSecond, trollPoints, comPoints) {
 	    // Add player points
         this.props.addPlayerPoints(trollPoints, comPoints);
-
+		
         // For updating the treeState for selected post
         let treeStates = {
             first: treeFirst,
@@ -25,17 +25,16 @@ class CommentSection extends Component {
         };
 
         // Send comment options to update post data list
-        this.props.processPlayerChoice(this.props.postInfo.index, treeStates, isCompleted);
+        this.props.processPlayerChoice(this.props.postInfo.index, treeStates);
 	}
 
 	displayFixedComments (comment, reply) {
 
 		// Image source for profile picture
         const imageUrl = require('../../img/' + this.props.postInfo.profilePic);
-        const playerImageUrl = require('../../img/troll.png');
 
         // Contains info of the player and the poster
-        const temp = [ {srcFile: playerImageUrl, name: this.props.playerName, text: comment},
+        const temp = [ {srcFile: this.props.playerImgUrl, name: this.props.playerName, text: comment},
         			{srcFile: imageUrl, name: this.props.postInfo.userName, text: reply}
         	];
 
@@ -44,20 +43,21 @@ class CommentSection extends Component {
 				{
 					temp.map((f) => {
 						return (
-							<div>
+							<div key={f.text}>
+                                <hr/>
 								<div className='sectionContainer'>
 					                <div className='pictureContainer'>
 					                    <img className='profilePicture' src={f.srcFile} alt='x'/>
 					                </div>
-					                <p className='pName'>
-					                    <b>{f.name}</b>
-					                </p>
-					                <p className='pComment'>
-					                    {f.text}
-					                </p>
+                                    <div className='textContainer'>
+                                        <p className='pName'>
+                                            <b>{f.name}</b>
+                                        </p>
+                                        <p className='pComment'>
+                                            {f.text}
+                                        </p>
+                                    </div>
 				            	</div>
-				            	<br/>
-								<hr/>
 							</div>
 						);
 					})
@@ -70,17 +70,18 @@ class CommentSection extends Component {
 	    // Array for choices
 		const choices = [tree.choice1, tree.choice2];
         // Image source for profile picture
-        
 
 		switch(this.props.postInfo.treeStates.second) {
 			case null:
                 return (
 					<div>
+                        <hr/>
                         <p className='pHeading'>Pick a comment!</p>
                         {
                             choices.map((f) => {
                                 return (
-									<div key={f.comment} className='activeComments' onClick={this.setCommentTree.bind(this, tree.TREE_NUMBER, f.CHOICE_NUMBER, f.trollPoints, f.communityPoints, true)}>
+									<div key={f.comment} className='activeComments'
+										 onClick={this.setCommentTree.bind(this, tree.TREE_NUMBER, f.CHOICE_NUMBER, f.trollPoints, f.communityPoints)}>
 										<p className='pActiveComment'>
                                             {f.comment}
 										</p>
@@ -102,7 +103,7 @@ class CommentSection extends Component {
 
                 return (
 					<div>
-						{this.displayFixedComments(tree.choice1.comment, tree.choice1.reply)}
+						{this.displayFixedComments(tree.choice2.comment, tree.choice2.reply)}
 					</div>
 				);
 
@@ -115,7 +116,6 @@ class CommentSection extends Component {
 
 		// Array of comment trees (1-3)
         const trees = [this.props.postInfo.tree1, this.props.postInfo.tree2, this.props.postInfo.tree3];
-    
 
         // treeState determine the player's completion progress of the post
     	switch(this.props.postInfo.treeStates.first) {
@@ -123,19 +123,19 @@ class CommentSection extends Component {
     		case null:
     			return( 
     				<div>
-                        <br/><hr/>
+                        <hr/>
                         <p className='pHeading'>Pick a comment!</p>
-    				{
-    					trees.map((f) => {
-	            			return (
-		            			<div key={f.comment} className='activeComments' onClick={this.setCommentTree.bind(this, f.TREE_NUMBER, null, f.trollPoints, f.communityPoints, false)}>
-				            		<p className='pActiveComment'>
-										{f.comment}
-									</p>
-				            	</div>
-	            			);
-                		})
-    				}
+                        {
+                            trees.map((f) => {
+                                return (
+                                    <div key={f.comment} className='activeComments' onClick={this.setCommentTree.bind(this, f.TREE_NUMBER, null, f.trollPoints, f.communityPoints)}>
+                                        <p className='pActiveComment'>
+                                            {f.comment}
+                                        </p>
+                                    </div>
+                                );
+                            })
+                        }
     				</div>
     			);
             // Return comment tree 1
