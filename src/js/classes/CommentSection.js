@@ -12,6 +12,7 @@ const CommentTree = {
 	CHOICE2: 2
 };
 
+
 class CommentSection extends Component {
 
 	setCommentTree (treeFirst, treeSecond, trollPoints, comPoints) {
@@ -28,14 +29,29 @@ class CommentSection extends Component {
         this.props.processPlayerChoice(this.props.postInfo.index, treeStates);
 	}
 
-	displayFixedComments (comment, reply) {
+    displaypic(pic, x){
+
+        if(pic){
+            let picUrl = require('../../img/' + pic)
+            if(x === 1)
+            {
+                return(<img className='postedPic' style={{height: '100px', width: '100px'}} src={picUrl} alt='x'/>)
+            }
+            else
+            {
+                return(<img className='postedPic' style={{height: '50px', width: '50px'}} src={picUrl} alt='x'/>)
+            }
+        }
+    }
+
+	displayFixedComments (choice) {
 
 		// Image source for profile picture
         const imageUrl = require('../../img/' + this.props.postInfo.profilePic);
 
         // Contains info of the player and the poster
-        const temp = [ {srcFile: this.props.playerImgUrl, name: this.props.playerName, text: comment},
-        			{srcFile: imageUrl, name: this.props.postInfo.userName, text: reply}
+        const temp = [ {srcFile: this.props.playerImgUrl, name: this.props.playerName, text: choice.comment, postPic: choice.pic},
+        			{srcFile: imageUrl, name: this.props.postInfo.userName, text: choice.reply ,postPic: null}
         	];
 
 		return (
@@ -56,6 +72,10 @@ class CommentSection extends Component {
                                         <p className='pComment'>
                                             {f.text}
                                         </p>
+                                        <div>
+                                            {this.displaypic(f.postPic,1 )}
+                                        </div>
+                                        
                                     </div>
 				            	</div>
 							</div>
@@ -84,7 +104,11 @@ class CommentSection extends Component {
 										 onClick={this.setCommentTree.bind(this, tree.TREE_NUMBER, f.CHOICE_NUMBER, f.trollPoints, f.communityPoints)}>
 										<p className='pActiveComment'>
                                             {f.comment}
+                                           
 										</p>
+                                        <div>
+                                            {this.displaypic(f.pic,0)}
+                                        </div>
 									</div>
                                 );
                             })
@@ -95,7 +119,7 @@ class CommentSection extends Component {
 
 				return (
 					<div>
-						{this.displayFixedComments(tree.choice1.comment, tree.choice1.reply)}
+						{this.displayFixedComments(tree.choice1)}
 					</div>
 				);
 
@@ -103,7 +127,7 @@ class CommentSection extends Component {
 
                 return (
 					<div>
-						{this.displayFixedComments(tree.choice2.comment, tree.choice2.reply)}
+						{this.displayFixedComments(tree.choice2)}
 					</div>
 				);
 
@@ -132,6 +156,9 @@ class CommentSection extends Component {
                                         <p className='pActiveComment'>
                                             {f.comment}
                                         </p>
+                                        <div>
+                                            {this.displaypic(f.pic,0)}
+                                        </div>
                                     </div>
                                 );
                             })
@@ -142,7 +169,7 @@ class CommentSection extends Component {
 	        case CommentTree.TREE1:
 	        	return(
 					<div>
-						{ this.displayFixedComments(trees[0].comment, trees[0].reply) }
+						{ this.displayFixedComments(trees[0]) }
 						{ this.checkChoices(trees[0]) }
 	        		</div>
 	        	);
@@ -150,7 +177,7 @@ class CommentSection extends Component {
 	        case CommentTree.TREE2:
 	        	return(
                     <div>
-                        { this.displayFixedComments(trees[1].comment, trees[1].reply) }
+                        { this.displayFixedComments(trees[1]) }
                         { this.checkChoices(trees[1]) }
 					</div>
 	        	);
@@ -158,7 +185,7 @@ class CommentSection extends Component {
 	        case CommentTree.TREE3:
 	        	return(
                     <div>
-                        { this.displayFixedComments(trees[2].comment, trees[2].reply) }
+                        { this.displayFixedComments(trees[2]) }
                         { this.checkChoices(trees[2]) }
 					</div>
 	        	);

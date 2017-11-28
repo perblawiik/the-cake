@@ -69,6 +69,10 @@
     height: 40px;
 }
 
+.postedPic {
+    margin: 5px;
+}
+
 hr {
     margin: 0;
     padding: 0;
