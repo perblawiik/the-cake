@@ -17,23 +17,23 @@
                     "comment": "IN YOUR ASS",
                     "pic": null,
                     "reply": "That was not a kind thing to say!",
-                    "trollPoints": 3,
-                    "communityPoints": 0,
+                    "trollPoints": 1,
+                    "communityPoints": -20,
                     "choice1": {
                         "CHOICE_NUMBER": 1,
                         "comment": "Sorry, not sorry",
                         "pic": null,
                         "reply": "I thought you americans were nice people :CCCCCC",
-                        "trollPoints": 2,
-                        "communityPoints": 0
+                        "trollPoints": 0,
+                        "communityPoints": -5
                     },
                     "choice2": {
                         "CHOICE_NUMBER": 2,
                         "comment": "omg sorry I meant to say “yes, in your apartment”",
                         "pic": null,
                         "reply": "Ah! Easy mistake to make! Have a good one C:",
-                        "trollPoints": 0,
-                        "communityPoints": -5
+                        "trollPoints": 2,
+                        "communityPoints": 10
                     }
                 },
                 "tree2": {
@@ -41,14 +41,14 @@
                     "comment": "Yes",
                     "pic": null,
                     "reply": "Could you specify were? :)",
-                    "trollPoints": 0,
-                    "communityPoints": 3,
+                    "trollPoints": 4,
+                    "communityPoints": 5,
                     "choice1": {
                         "CHOICE_NUMBER": 1,
                         "comment": "Yes",
                         "pic": null,
                         "reply": "I can see that this conversation isnt going anywere....",
-                        "trollPoints": 2,
+                        "trollPoints": 4,
                         "communityPoints": 0
                     },
                     "choice2": {
@@ -56,31 +56,31 @@
                         "comment": "Downtown in the intersection between Baker street and Plumber row",
                         "pic": null,
                         "reply": "Of thank you! I will check it out",
-                        "trollPoints": 0,
-                        "communityPoints": -5
+                        "trollPoints": 2,
+                        "communityPoints": 10
                     }
                 },
                 "tree3": {
                     "TREE_NUMBER": 3,
-                    "comment": "I made a picture of you and me *shows pic of us together*",
+                    "comment": "I made a picture of you and me",
                     "pic": "troll.png",
                     "reply": "Wow.. that is a quite literall approach…",
-                    "trollPoints": 1,
-                    "communityPoints": -2,
+                    "trollPoints": 3,
+                    "communityPoints": -5,
                     "choice1": {
                         "CHOICE_NUMBER": 1,
-                        "comment": "You can come home to me, we can make the laundry spin around ;D *pic*",
+                        "comment": "You can come home to me, we can make the laundry spin around ;D",
                         "pic": "troll.png",
-                        "reply": "replymissing",
+                        "reply": "...",
                         "trollPoints": 2,
-                        "communityPoints": 0
+                        "communityPoints": -10
                     },
                     "choice2": {
                         "CHOICE_NUMBER": 2,
-                        "comment": "Tree3 - Choice2 - Comment !",
+                        "comment": "You like it? I have more.",
                         "pic": "troll.png",
-                        "reply": "Tree3 - Choice2 - Reply !",
-                        "trollPoints": 0,
+                        "reply": "Pleas do not contact me again.",
+                        "trollPoints": 1,
                         "communityPoints": -5
                     }
                 }
@@ -101,14 +101,14 @@
                     "comment": "Wow, what a beautiful cat you have!",
                     "reply": "oh I KNOW :)",
                     "pic": null,
-                    "trollPoints": 3,
-                    "communityPoints": 0,
+                    "trollPoints": 0,
+                    "communityPoints": 20,
                     "choice1": {
                         "CHOICE_NUMBER": 1,
                         "comment": "Yeah she is like, 10 times as cute as you are!",
                         "pic": null,
                         "reply": "Hey what?",
-                        "trollPoints": 2,
+                        "trollPoints": 3,
                         "communityPoints": 0
                     },
                     "choice2": {
@@ -117,7 +117,7 @@
                         "pic": null,
                         "reply": "<3",
                         "trollPoints": 0,
-                        "communityPoints": -5
+                        "communityPoints": 10
                     }
                 },
                 "tree2": {
@@ -125,23 +125,23 @@
                     "comment": "Almost as cute as my mop! <3",
                     "pic": null,
                     "reply": "Wh-what the fu-fuck? HOW DARE YOU LIKE MY CAT TO A MOP???!!?!?!?!?",
-                    "trollPoints": 0,
-                    "communityPoints": 3,
+                    "trollPoints": 4,
+                    "communityPoints": -10,
                     "choice1": {
                         "CHOICE_NUMBER": 1,
                         "comment": "*photoshop of mop whit cat-ears*",
                         "pic": "troll.png",
                         "reply": "WHAT HAVE YOUI DOENE TOU MAY PRIETCIUOUAES!!!!",
-                        "trollPoints": 2,
-                        "communityPoints": 0
+                        "trollPoints": 4,
+                        "communityPoints": -20
                     },
                     "choice2": {
                         "CHOICE_NUMBER": 2,
                         "comment": "Cuite mop! ^^",
                         "pic": null,
                         "reply": "I WILL HAVE MY HUSBAND CONTACT YOUR MOM YOU TWAT",
-                        "trollPoints": 0,
-                        "communityPoints": -5
+                        "trollPoints": 3,
+                        "communityPoints": -10
                     }
                 },
                 "tree3": {
@@ -149,15 +149,15 @@
                     "comment": "Oh she sure looks delicious!",
                     "pic": null,
                     "reply": "haha yea she is sweehehet",
-                    "trollPoints": 1,
-                    "communityPoints": -2,
+                    "trollPoints": 3,
+                    "communityPoints": 0,
                     "choice1": {
                         "CHOICE_NUMBER": 1,
                         "comment": "like for real I would eat that. Munch munch time for lunch.",
                         "pic": null,
                         "reply": "You make me sick. You will die alone >8(",
-                        "trollPoints": 2,
-                        "communityPoints": 0
+                        "trollPoints": 4,
+                        "communityPoints": -5
                     },
                     "choice2": {
                         "CHOICE_NUMBER": 2,
@@ -165,7 +165,7 @@
                         "pic": null,
                         "reply": "<3",
                         "trollPoints": 0,
-                        "communityPoints": -5
+                        "communityPoints": 10
                     }
                 }
             },
@@ -185,23 +185,23 @@
                     "comment": "I ship it <3",
                     "pic": null,
                     "reply": "Yeah I think there was a ship in the movie actually! Have you watched it too?",
-                    "trollPoints": 3,
+                    "trollPoints": 4,
                     "communityPoints": 0,
                     "choice1": {
                         "CHOICE_NUMBER": 1,
                         "comment": "Yes! I loved the part where the mum didn’t understand the slang used by the protagonist!",
                         "pic": null,
                         "reply": "Huh.. I cant seem to recall that sceen",
-                        "trollPoints": 2,
-                        "communityPoints": 0
+                        "trollPoints": 3,
+                        "communityPoints": -1
                     },
                     "choice2": {
                         "CHOICE_NUMBER": 2,
                         "comment": "I wrote a fic on it if anyone whants to read :3 ",
                         "pic": null,
                         "reply": "I WILL HAVE MY GRANDMA THROW BOTTLES ON YOUR DEAD BODY YOU DIRTY COMMUNIST SCUM",
-                        "trollPoints": 0,
-                        "communityPoints": -5
+                        "trollPoints": 4,
+                        "communityPoints": -20
                     }
                 },
                 "tree2": {
@@ -210,45 +210,45 @@
                     "pic": null,
                     "reply": "My son adooooored it! THe scene with the man of spiders really got me the fright though haha",
                     "trollPoints": 0,
-                    "communityPoints": 3,
+                    "communityPoints": 5,
                     "choice1": {
                         "CHOICE_NUMBER": 1,
                         "comment": "*picture of spider*",
                         "pic": "troll.png",
                         "reply": "NoOO gET ThaT AwAY from MEE",
-                        "trollPoints": 2,
-                        "communityPoints": 0
+                        "trollPoints": 3,
+                        "communityPoints": -15
                     },
                     "choice2": {
                         "CHOICE_NUMBER": 2,
                         "comment": "I have heard that you are 273% more likely to smoke weed if you like the Avengers movie.",
                         "pic": null,
                         "reply": "WHAT!? I will have to take a talking with my son about that",
-                        "trollPoints": 0,
-                        "communityPoints": -5
+                        "trollPoints": 4,
+                        "communityPoints": 0
                     }
                 },
                 "tree3": {
                     "TREE_NUMBER": 3,
-                    "comment": "Tree3 - Comment !",
+                    "comment": "#crazymom #akwardmon #nerdymom",
                     "pic": null,
-                    "reply": "Tree3 - Reply !",
-                    "trollPoints": 1,
-                    "communityPoints": -2,
+                    "reply": "Please do not reply to my posts",
+                    "trollPoints": 3,
+                    "communityPoints": -5,
                     "choice1": {
                         "CHOICE_NUMBER": 1,
-                        "comment": "Tree3 - Choice1 - Comment !",
+                        "comment": "#never",
                         "pic": null,
-                        "reply": "Tree3 - Choice1 - Reply !",
-                        "trollPoints": 2,
-                        "communityPoints": 0
+                        "reply": "I will call the police.",
+                        "trollPoints": 4,
+                        "communityPoints": -5
                     },
                     "choice2": {
                         "CHOICE_NUMBER": 2,
-                        "comment": "Tree3 - Choice2 - Comment !",
+                        "comment": "Oh I am sorry, wrong mom",
                         "pic": null,
-                        "reply": "Tree3 - Choice2 - Reply !",
-                        "trollPoints": 0,
+                        "reply": "You should respect mothers",
+                        "trollPoints": 2,
                         "communityPoints": -5
                     }
                 }
@@ -270,14 +270,14 @@
                     "pic": null,
                     "reply": "Thank you <user>, I like your face too!",
                     "trollPoints": 3,
-                    "communityPoints": 0,
+                    "communityPoints": 10,
                     "choice1": {
                         "CHOICE_NUMBER": 1,
                         "comment": "There are a lot of interesting thing I can do with your face!",
                         "pic": null,
                         "reply": "...",
-                        "trollPoints": 2,
-                        "communityPoints": 0
+                        "trollPoints": 3,
+                        "communityPoints": -2
                     },
                     "choice2": {
                         "CHOICE_NUMBER": 2,
@@ -285,7 +285,7 @@
                         "pic": null,
                         "reply": "<3",
                         "trollPoints": 0,
-                        "communityPoints": -5
+                        "communityPoints": 20
                     }
                 },
                 "tree2": {
@@ -294,7 +294,7 @@
                     "pic": null,
                     "reply": "INSTAKILL",
                     "trollPoints": 0,
-                    "communityPoints": 3,
+                    "communityPoints": -1000,
                     "choice1": {
                         "CHOICE_NUMBER": 1,
                         "comment": "comment Nothing",
@@ -305,9 +305,9 @@
                     },
                     "choice2": {
                         "CHOICE_NUMBER": 2,
-                        "comment": "Cuite mop! ^^",
+                        "comment": "comment Nothing",
                         "pic": "troll.png",
-                        "reply": "I WILL HAVE MY HUSBAND CONTACT YOUR MOM YOU TWAT",
+                        "reply": "reply nothing",
                         "trollPoints": 0,
                         "communityPoints": -5
                     }
@@ -317,13 +317,13 @@
                     "comment": "It is easy to comment",
                     "pic": null,
                     "reply": "Yes! Our developers have worked tirelessly to make the commenting experience as satesfactory as possible, making the procces of sharing your life both easy and fun!",
-                    "trollPoints": 1,
-                    "communityPoints": -2,
+                    "trollPoints": 0,
+                    "communityPoints": 13,
                     "choice1": {
                         "CHOICE_NUMBER": 1,
                         "comment": "Sorry forgot the /s",
                         "pic": "troll.png",
-                        "reply": "Haha",
+                        "reply": "Huh... I can not find any word in there that should have an s...",
                         "trollPoints": 2,
                         "communityPoints": 0
                     },
@@ -332,8 +332,260 @@
                         "comment": "oMG SENPAJ NOTICED ME! ",
                         "pic": "troll.png",
                         "reply": "Away with you to the dark cave you came from, weeb!",
+                        "trollPoints": 5,
+                        "communityPoints": -30
+                    }
+                }
+            },
+            {
+                "index": 4,  
+                "completed": false,
+                "likeActive": 0,
+                "treeStates": {
+                    "first": null,
+                    "second": null
+                },
+                "userName": "Franc de la Pomme de Terre",
+                "profilePic": "franc.png",
+                "text": "MEEERDE there is so much snow! JE HATE IT! >:( ",
+                "tree1": {
+                    "TREE_NUMBER": 1,
+                    "comment": "Wow big mood",
+                    "pic": null,
+                    "reply": "I DARE VOUS! FIGHT MOI! 1v1 MOI MID VOUS TUMBLR ABERRATION!",
+                    "trollPoints": 3,
+                    "communityPoints": 0,
+                    "choice1": {
+                        "CHOICE_NUMBER": 1,
+                        "comment": "Have you considered anger management? :)",
+                        "pic": null,
+                        "reply": "va te faire enculer >:(",
+                        "trollPoints": 2,
+                        "communityPoints": 6
+                    },
+                    "choice2": {
+                        "CHOICE_NUMBER": 2,
+                        "comment": "I BLOODY ASS WILL!!",
+                        "pic": null,
+                        "reply": "hon hon hon VOUS WILL FEEL LE PAIN!",
                         "trollPoints": 0,
                         "communityPoints": -5
+                    }
+                },
+                "tree2": {
+                    "TREE_NUMBER": 2,
+                    "comment": "I thought you liked that white powder ;D",
+                    "pic": null,
+                    "reply": "WOW! THere is a big difference between cocaine and snow! Cocain actually brings joy to life!",
+                    "trollPoints": 4,
+                    "communityPoints": -1,
+                    "choice1": {
+                        "CHOICE_NUMBER": 1,
+                        "comment": "I just called the police. NO DRUGS ALLOWED!",
+                        "pic": null,
+                        "reply": "WHAT. JE WILL MURDER YOU YOU crétin",
+                        "trollPoints": 4,
+                        "communityPoints": 25
+                    },
+                    "choice2": {
+                        "CHOICE_NUMBER": 2,
+                        "comment": "True",
+                        "pic": "troll.png",
+                        "reply": "Yeah, wanna come over and sniff some sometime?",
+                        "trollPoints": 0,
+                        "communityPoints": 0
+                    }
+                },
+                "tree3": {
+                    "TREE_NUMBER": 3,
+                    "comment": "I know, snow sucks!",
+                    "pic": null,
+                    "reply": "Ou comment! Je wish me could kill le snow >:(",
+                    "trollPoints": 0,
+                    "communityPoints": 7,
+                    "choice1": {
+                        "CHOICE_NUMBER": 1,
+                        "comment": "I’m rooting for you!",
+                        "pic": null,
+                        "reply": "Thank you frère",
+                        "trollPoints": 1,
+                        "communityPoints": 5
+                    },
+                    "choice2": {
+                        "CHOICE_NUMBER": 2,
+                        "comment": "It almost sucks as much as you!",
+                        "pic": null,
+                        "reply": "Branleur",
+                        "trollPoints": 0,
+                        "communityPoints": -5
+                    }
+                }
+            },
+            {
+                "index": 5,  
+                "completed": false,
+                "likeActive": 0,
+                "treeStates": {
+                    "first": null,
+                    "second": null
+                },
+                "userName": "Spike “the flash” Thompsson",
+                "profilePic": "memelord.png",
+                "text": "GIrls are so stupid! Like I bought this girl a drink and she didn’t want to fuck me! What an ungrateful bitch.",
+                "tree1": {
+                    "TREE_NUMBER": 1,
+                    "comment": "Yeah that’s like so weird! It is almost as the is a human being!",
+                    "pic": null,
+                    "reply": "What do you mean with that???",
+                    "trollPoints": 4,
+                    "communityPoints": 10,
+                    "choice1": {
+                        "CHOICE_NUMBER": 1,
+                        "comment": "Girls wanting to be treated with respect, what a wild concept",
+                        "pic": null,
+                        "reply": "Fucking wanker",
+                        "trollPoints": 4,
+                        "communityPoints": 10
+                    },
+                    "choice2": {
+                        "CHOICE_NUMBER": 2,
+                        "comment": "Chill dude I agree like you definitely deserves all the bitches",
+                        "pic": null,
+                        "reply": "YEAH! THat’s what I say all the time!  ;D",
+                        "trollPoints": 0,
+                        "communityPoints": -12
+                    }
+                },
+                "tree2": {
+                    "TREE_NUMBER": 2,
+                    "comment": "EN GARDE FUCKBOY!!!",
+                    "pic": null,
+                    "reply": "?",
+                    "trollPoints": 4,
+                    "communityPoints": 0,
+                    "choice1": {
+                        "CHOICE_NUMBER": 1,
+                        "comment": "I CHALLANGE THEE TO A DUEL TIL DEATH, WANKLORD!",
+                        "pic": null,
+                        "reply": "Go kill yourself",
+                        "trollPoints": 3,
+                        "communityPoints": 0
+                    },
+                    "choice2": {
+                        "CHOICE_NUMBER": 2,
+                        "comment": "Maybe stop being a fuckboy, ok?",
+                        "pic": null,
+                        "reply": "...",
+                        "trollPoints": 1,
+                        "communityPoints": 15
+                    }
+                },
+                "tree3": {
+                    "TREE_NUMBER": 3,
+                    "comment": "Well i’m not surprised",
+                    "pic": null,
+                    "reply": "What the fuck?? Any girl should be grateful that I even looked at her",
+                    "trollPoints": 3,
+                    "communityPoints": 0,
+                    "choice1": {
+                        "CHOICE_NUMBER": 1,
+                        "comment": "Well, as a professional dude-liker I have to say that you are pretty bottom tier. Sorry to break your bubble :/",
+                        "pic": null,
+                        "reply": "I hope your wifi dies you whore",
+                        "trollPoints": 4,
+                        "communityPoints": 2
+                    },
+                    "choice2": {
+                        "CHOICE_NUMBER": 2,
+                        "comment": "If you have that mentality I can assure you that you’ll never lose your virginity.",
+                        "pic": null,
+                        "reply": "I AM NOT A FUCKING VIRGIN. I HAVE FUCKED LIKE 30 BICHES JUST IN THE LAST MONTH YOU GAYLORD",
+                        "trollPoints": 3,
+                        "communityPoints": 0
+                    }
+                }
+            },
+            {
+                "index": 6,  
+                "completed": false,
+                "likeActive": 0,
+                "treeStates": {
+                    "first": null,
+                    "second": null
+                },
+                "userName": "Pontelina Pontare",
+                "profilePic": "Foo Barsson.png",
+                "text": "7-days going on my raw food diet! #healthy #diet",
+                "tree1": {
+                    "TREE_NUMBER": 1,
+                    "comment": "Wow you are so healthy! What do you eat?",
+                    "pic": null,
+                    "reply": "Well most days I take a raw cabbage for breakfast and a single paprika for lunch! Yum! No dinner though, haha",
+                    "trollPoints": 0,
+                    "communityPoints": 10,
+                    "choice1": {
+                        "CHOICE_NUMBER": 1,
+                        "comment": "Oooo Cabbage, I heard that cabbage can make you fat if you’re not careful",
+                        "pic": null,
+                        "reply": "Seriously?? I will have a word with Buzzfeed about this! >:(",
+                        "trollPoints": 3,
+                        "communityPoints": 0
+                    },
+                    "choice2": {
+                        "CHOICE_NUMBER": 2,
+                        "comment": "Yeah who needs dinner anyway right!",
+                        "pic": null,
+                        "reply": "Dinner is soooo overrated! Eating before you go to bed only feeds the toxins in your body.",
+                        "trollPoints": 2,
+                        "communityPoints": 0
+                    }
+                },
+                "tree2": {
+                    "TREE_NUMBER": 2,
+                    "comment": "Have you read about Kard Kimdashians new diet? It is like literally ONLY mayonnaise and she has lost like 50 pounds in 2 weeks!",
+                    "pic": null,
+                    "reply": "Wow! Well if she does it must work! I will definitely try it!",
+                    "trollPoints": 4,
+                    "communityPoints": 4,
+                    "choice1": {
+                        "CHOICE_NUMBER": 1,
+                        "comment": "You have to make sure that it is gluten free though, many companies can get away with not saying there is gluten in their mayonnaise by including pine cones.",
+                        "pic": null,
+                        "reply": "Oh No GLUTEN! I will definitely ask for the gluten free alternative",
+                        "trollPoints": 4,
+                        "communityPoints": 0
+                    },
+                    "choice2": {
+                        "CHOICE_NUMBER": 2,
+                        "comment": "Does it hurt being as manipulated as you are?",
+                        "pic": null,
+                        "reply": "huh?",
+                        "trollPoints": 2,
+                        "communityPoints": -5
+                    }
+                },
+                "tree3": {
+                    "TREE_NUMBER": 3,
+                    "comment": "Wow you must be skin and bones already!",
+                    "pic": null,
+                    "reply": "Nah im still fat :/",
+                    "trollPoints": 2,
+                    "communityPoints": -2,
+                    "choice1": {
+                        "CHOICE_NUMBER": 1,
+                        "comment": "I just think that you should know that I think you are really beautiful just as you are. If you want to diet, it is your choice, but don’t feel preassured to do it! You don’t have to be skinny to be beautiful!",
+                        "pic": null,
+                        "reply": "Thank you, that ment a lot to me :)",
+                        "trollPoints": 0,
+                        "communityPoints": 40
+                    },
+                    "choice2": {
+                        "CHOICE_NUMBER": 2,
+                        "comment": "True",
+                        "pic": null,
+                        "reply": "How dare you!",
+                        "trollPoints": 3,
+                        "communityPoints": -27
                     }
                 }
             }
