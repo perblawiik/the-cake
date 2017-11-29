@@ -113,11 +113,12 @@ class PlayerInfo extends Component {
                     <div className = 'communityStatus' style={{width: communityBarLength, backgroundColor: this.communityBarColor}}>
                     </div>
                 </div>
+                {/**/}
                 <button onClick={this.addPoints.bind(this, 1, 0)}>Add Troll Points</button>
                 <br/>
                 <button onClick={this.addPoints.bind(this, 0, 5)}>Add Community Points</button>
                 <br/>
-                <button onClick={this.addPoints.bind(this, 0, -5)}>Subtract Community Points</button>
+                <button onClick={this.addPoints.bind(this, 0, -20)}>Subtract Community Points</button>
             </div>
         );
     }

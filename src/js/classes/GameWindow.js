@@ -58,28 +58,28 @@ class GameWindow extends Component {
             case GameState.LOGIN_PAGE:
                 return(
                     <div className='windowStyle'>
-                        <BrowserField pageInfo={''} setGameState={this.setGameState.bind(this)} otherGameState={GameState.MAIN_PAGE} />
+                        <BrowserField pageInfo={''}/>
                         <LoginPage createPlayer={this.createPlayer.bind(this)} setGameState={this.setGameState.bind(this)}/>
                     </div>
                 );
             case GameState.MAIN_PAGE:
                 return (
                     <div className='windowStyle'>
-                        <BrowserField pageInfo={'home'} setGameState={this.setGameState.bind(this)} otherGameState={GameState.LOGIN_PAGE} />
+                        <BrowserField pageInfo={'main'}/>
                         <MainPage player={this.player} setGameState={this.setGameState.bind(this)}/>
                     </div>
                 );
             case GameState.GAME_OVER:
                 return (
                     <div className='windowStyle'>
-                        <BrowserField pageInfo={'game-over'} setGameState={this.setGameState.bind(this)} otherGameState={GameState.LOGIN_PAGE} />
+                        <BrowserField pageInfo={'game-over'}/>
                         <GameOver resetGame={this.resetGame.bind(this)}/>
                     </div>
                 );
             case GameState.TUTORIAL:
                 return (
                     <div className='windowStyle'>
-                        <BrowserField pageInfo={'we-have-taken-over'} setGameState={this.setGameState.bind(this)} otherGameState={GameState.LOGIN_PAGE} />
+                        <BrowserField pageInfo={'we-have-taken-over'}/>
                         <Tutorial/>
                     </div>
                 );
