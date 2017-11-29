@@ -100,7 +100,7 @@ class PlayerInfo extends Component {
                     Level: {this.props.playerStats.level}
                 </p>
                 <p>
-                    Troll Points: {this.props.playerStats.trollPoints}
+                    Troll Points: {this.props.playerStats.trollPoints+10*this.props.playerStats.level-10} / {10*this.props.playerStats.level}
                 </p>
                 <div className = 'barContainer'>
                     <div className = 'trollBar' style={{width: trollBarLength}}>
