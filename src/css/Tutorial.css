@@ -11,12 +11,61 @@ width: 100%;
 
 .anonymousPicture
 {
+	display: flex;
+	flex-direction: column-reverse;
     position: relative;
-    width: 100%;
+    top: 100px;
+    width: 800px;
+    height: 400px;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+
+#first {
+	background: url("../img/tutorial_1.PNG");
+  	background-size: 100% 100%;
+}
+
+#second {
+	background: url("../img/tutorial_2.png") no-repeat;
+  	background-size: 100% 75%;
 }
 
 .youKnowStuff
 {
     position: relative;
     width: 50%;
+}
+
+.tutorialPic {
+	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+}
+
+.pageButton {
+	margin-left: 100px;
+	margin-right: 100px;
+    height: 70px;
+    width: 200px;
+    color: white;
+    background-color: #0000FF;
+    font-family: Kalam;
+    font-size: 30px;
+}
+
+.pageButton:hover {
+	background-color: #4444FF;
+	cursor: pointer;
+}
+
+.navigationBar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 100px;
+	width: 100%;
 }
