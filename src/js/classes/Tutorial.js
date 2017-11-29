@@ -37,8 +37,16 @@ class Tutorial extends Component {
                     <div className= 'tutorialDiv'>
                         <div className = 'anonymousPicture' id='first'>
                             <div className='navigationBar'>
-                            <button className='pageButton' onClick={this.completeTutorial.bind(this)}>SKIP</button>
-                            <button className='pageButton' onClick={this.setPage.bind(this, Page.SECOND)}>NEXT</button>
+                                <button className='pageButton' onClick={this.completeTutorial.bind(this)}>SKIP</button>
+                                <button className='pageButton' onClick={this.setPage.bind(this, Page.SECOND)}>NEXT</button>
+                            </div>
+                            <div className='introTextBG'>
+                                <p>
+                                    Welcome fellow troll to the Bookface. <br/>
+                                    We are an coalition of trolls bent on trolling the normie residents of the world wide web for our amusement and we have recruited you to be a part of this glorious endeavour.<br/>
+                                    Your task as a troll is to look at the post of the normies here and comment in a 'trollie' way but be careful not to be to obvious in your attempts to wreak havoc.<br/>
+                                   We have modified your Bookface page to keep track of how successful of a troll you are and how the normies view your action.
+                                </p>
                             </div>
                         </div>
                     </div>
