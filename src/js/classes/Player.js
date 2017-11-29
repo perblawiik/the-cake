@@ -14,7 +14,8 @@ class Player {
             require('../../img/troll_2.png'),
             require('../../img/troll_3.png'),
             require('../../img/troll_4.png'),
-            require('../../img/troll_5.png')
+            require('../../img/troll_5.png'),
+            require('../../img/troll_6.png')
         ];
     }
 
