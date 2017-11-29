@@ -52,7 +52,7 @@ class GameOver extends Component {
                 <div className='centerDiv'>
                     <div className='gameOverMessage'>
                         <p>
-                            Your reckless behaviour and distasteful comments has united the facebook community against you.
+                            Your reckless behaviour and distasteful comments has united the bookface community against you.
                             The admins have therefore used their almighty authority to ban your account forever.
                         </p>
                     </div>

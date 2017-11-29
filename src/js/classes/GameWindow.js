@@ -28,7 +28,7 @@ class GameWindow extends Component {
         // OBS! You can create any variable that you need in this object.
         this.state = {
             // gameState is set to LOGIN_PAGE by default (always start game on the Login Page)
-            gameState: GameState.LOGIN_PAGE,
+            gameState: GameState.LOGIN_PAGE
         };
 
         // Initiate the player as null
@@ -80,7 +80,7 @@ class GameWindow extends Component {
                 return (
                     <div className='windowStyle'>
                         <BrowserField pageInfo={'we-have-taken-over'}/>
-                        <Tutorial/>
+                        <Tutorial setGameState={this.setGameState.bind(this)} mainPage={GameState.MAIN_PAGE}/>
                     </div>
                 );
             default:
