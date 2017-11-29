@@ -16,8 +16,11 @@ import postData from '../../json/postsdata.json'
 const GameState = {
     LOGIN_PAGE: 0,
     MAIN_PAGE: 1,
-    GAME_OVER: 2
+    GAME_OVER: 2,
+    TUTORIAL: 3,
+    VICTORY_SCREEN: 4
 };
+
 const NUMBER_OF_POSTS = 1;
 
 class MainPage extends Component {
@@ -182,12 +185,27 @@ class MainPage extends Component {
             // Set game state to Game Over
 			this.props.setGameState(GameState.GAME_OVER);
 		}
+
+		// Check if all posts are completed
+		if (this.state.lastPost.completed && 
+			this.state.lastPost.treeStates.second) {
+
+			this.resetPosts();
+			this.props.setGameState(GameState.VICTORY_SCREEN);
+		}
+
 	}
 
 	componentDidMount() {
+
+		let lastIndex = this.state.posts.length - 1;
+
+		console.log(lastIndex);
+
 		// Set current post to first index in the array
 		this.setState({
 			currentPost: this.state.posts[0],
+			lastPost: this.state.posts[lastIndex]
 		});
 	}
 
