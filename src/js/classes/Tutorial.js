@@ -7,7 +7,7 @@ const Page = {
     SECOND: 2,
     THIRD: 3,
     FOURTH: 4
-}
+};
 
 class Tutorial extends Component {
 

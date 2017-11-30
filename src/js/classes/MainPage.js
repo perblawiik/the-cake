@@ -186,14 +186,11 @@ class MainPage extends Component {
 			this.props.setGameState(GameState.GAME_OVER);
 		}
 
-		// Check if all posts are completed
-		if (this.state.lastPost.completed && 
-			this.state.lastPost.treeStates.second) {
-
+		// Check if last post is completed
+		if (this.state.lastPost.completed) {
 			this.resetPosts();
 			this.props.setGameState(GameState.VICTORY_SCREEN);
 		}
-
 	}
 
 	componentDidMount() {
