@@ -33,16 +33,6 @@ class LoginPage extends Component {
     }
 
     render() {
-        var submitClasses;
-        if (document.getElementById('playername') === null || document.getElementById('playername').value === '')
-        {
-            submitClasses = 'substyle, noName';
-        }
-        else
-        {
-            submitClasses = 'substyle';
-        }
-
         return(
             /*Div with title of page*/
             <div className='mainWindowContainer'>
