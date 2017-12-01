@@ -28,15 +28,15 @@
 }
 
 #second {
-	background: url("../img/tutorial_2.png") no-repeat;
-	background-color: white;
-  	background-size: 100% 82%;
-}
-
-#third {
 	background: url("../img/tutorial_3.PNG") no-repeat center top;
 	background-color: white;
   	background-size: 90% 82%;
+}
+
+#third {
+	background: url("../img/tutorial_2.png") no-repeat;
+	background-color: white;
+  	background-size: 100% 82%;
 }
 
 .youKnowStuff
