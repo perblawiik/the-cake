@@ -33,8 +33,6 @@ class MainPage extends Component {
             comPoints: props.player.getCommunityPoints(),
             playerLevel: props.player.getLevel(),
             playerImgUrl: props.player.getImgUrl(),
-			showImageWindow: false,
-			currentImage: null,
             nextPostSize: '19px',
 			intervalId: null,
             posts: postData.posts,
@@ -212,6 +210,9 @@ class MainPage extends Component {
 
 	render() {
 
+		// Used for display the old posts
+		var mapReverse = require('map-reverse');
+
 		// An object containing all player stats that goes into PlayerInfo class
 		const playerStats = {
 			name: this.player.getName(),
@@ -285,7 +286,7 @@ class MainPage extends Component {
 					                })
 					            }
 					            {	// All posts unavailable for a comment (completed posts)
-					                this.state.posts.map((f) => {
+					                mapReverse(this.state.posts, (f) => {
 					                	// Only return completed posts
 					                	if (f.completed) {
 						                	return (
