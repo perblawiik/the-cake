@@ -32,7 +32,6 @@ class GameWindow extends Component {
             // gameState is set to LOGIN_PAGE by default (always start game on the Login Page)
             gameState: GameState.LOGIN_PAGE
         };
-
         // Initiate the player as null
         this.player = null;
     }

@@ -107,7 +107,7 @@ class PlayerInfo extends Component {
                     </div>
                 </div>
                 <p>
-                    Community Status: {this.props.playerStats.comPoints}
+                    Community Status: {this.props.playerStats.comPoints} / 100
                 </p>
                 <div className = 'barContainer'>
                     <div className = 'communityStatus' style={{width: communityBarLength, backgroundColor: this.communityBarColor}}>

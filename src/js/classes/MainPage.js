@@ -186,21 +186,16 @@ class MainPage extends Component {
 			this.props.setGameState(GameState.GAME_OVER);
 		}
 
-		// Check if all posts are completed
-		if (this.state.lastPost.completed && 
-			this.state.lastPost.treeStates.second) {
-
+		// Check if last post is completed
+		if (this.state.lastPost.completed) {
 			this.resetPosts();
 			this.props.setGameState(GameState.VICTORY_SCREEN);
 		}
-
 	}
 
 	componentDidMount() {
 
 		let lastIndex = this.state.posts.length - 1;
-
-		console.log(lastIndex);
 
 		// Set current post to first index in the array
 		this.setState({
@@ -238,11 +233,24 @@ class MainPage extends Component {
 					<table className = 'bookfaceTable'>
 						<tbody>
                             <tr className = 'bookfaceTable'>
-                                <td className = 'bookfaceTable'> <p className= 'bookfaceTitle'>Bookface</p> </td>
-                                <td className = 'bookfaceTable'> <img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/> </td>
+                                <td className = 'bookfaceTable'> 
+                                	<p className= 'bookfaceTitle'>
+                                		Bookface
+                                	</p> 
+                                </td>
+                                <td className = 'bookfaceTable'> 
+                                	<img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/> 
+                                </td>
                             </tr>
 						</tbody>
 					</table>
+					<div className='helpButtonContainer'>
+						<button className='helpButton' onClick={this.props.setGameState.bind(this, GameState.TUTORIAL)}>
+							<p>
+								?
+							</p>
+						</button>
+					</div>
 				</div>
 
 				<div className='newsFlowOuter'>

@@ -18,7 +18,7 @@ class LoginPage extends Component {
         else
         {
             this.props.createPlayer(name);
-            this.props.setGameState(3);
+            this.props.setGameState(1);
         }
     }
     _handleKeyPress(target) {
