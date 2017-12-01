@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Audio from './Audio';
+
 // Css
 import '../../css/PlayerInfo.css';
 
@@ -17,6 +19,7 @@ class PlayerInfo extends Component {
         this.state = {
             comBarColor: 'red',
             intervalId: null,
+            playLevelUp: true
         };
     }
 
@@ -69,7 +72,14 @@ class PlayerInfo extends Component {
         }
     }
 
+    levelUpEvent() {
+        let audio = require('simple-audio');
+        audio.playSound('levelUp');
+    }
+
     render() {
+
+        let audioSrc = require('../../audio/trololol.mp3');
 
         // Set bar length based on troll points and community points
         const trollBarLength = this.props.playerStats.trollPoints * 10 + '%';
@@ -88,6 +98,8 @@ class PlayerInfo extends Component {
 
         return(
             <div className='playerInfoContainer'>
+
+                <Audio active={this.state.playLevelUp} srcFile={audioSrc}/>
 
                 <div className='profilePicContainer'>
                     <img className = 'profilePic' src={this.props.playerStats.imgUrl} alt='logo'/>

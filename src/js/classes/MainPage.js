@@ -113,7 +113,7 @@ class MainPage extends Component {
             posts: newPosts,
 			currentPost: newPosts[nextPostIndex]
         });
-		
+
         // Scroll to the top of the news flow
         let postDiv = document.getElementById("newsFlowScroll");
         postDiv.scrollTop = 0;
