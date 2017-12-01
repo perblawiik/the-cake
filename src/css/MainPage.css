@@ -133,3 +133,38 @@ img {
     color: #0d0d0d;
 }
 
+
+.helpButtonContainer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top:0;
+    right: 0;
+    height: 100%;
+    width: 50px;
+}
+
+.helpButton {
+    background-color: white;
+    cursor: pointer;
+    font-size: 22px;
+    color: blue;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    right: 0;
+    top: 0;
+    border: 1px solid grey;
+    border-radius: 50%;
+}
+
+.helpButton > p {
+    text-align: center;
+    font-weight: bold;
+}
+.helpButton:hover {
+    font-size: 28px;
+    background-color: blue;
+    color: white;
+    border: none;
+}

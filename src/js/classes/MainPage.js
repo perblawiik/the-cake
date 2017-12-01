@@ -197,8 +197,6 @@ class MainPage extends Component {
 
 		let lastIndex = this.state.posts.length - 1;
 
-		console.log(lastIndex);
-
 		// Set current post to first index in the array
 		this.setState({
 			currentPost: this.state.posts[0],
@@ -235,11 +233,24 @@ class MainPage extends Component {
 					<table className = 'bookfaceTable'>
 						<tbody>
                             <tr className = 'bookfaceTable'>
-                                <td className = 'bookfaceTable'> <p className= 'bookfaceTitle'>Bookface</p> </td>
-                                <td className = 'bookfaceTable'> <img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/> </td>
+                                <td className = 'bookfaceTable'> 
+                                	<p className= 'bookfaceTitle'>
+                                		Bookface
+                                	</p> 
+                                </td>
+                                <td className = 'bookfaceTable'> 
+                                	<img className = 'bookfaceLogo' src = {require('../../img/bookface_logo_white.svg')} alt='logo'/> 
+                                </td>
                             </tr>
 						</tbody>
 					</table>
+					<div className='helpButtonContainer'>
+						<button className='helpButton' onClick={this.props.setGameState.bind(this, GameState.TUTORIAL)}>
+							<p>
+								?
+							</p>
+						</button>
+					</div>
 				</div>
 
 				<div className='newsFlowOuter'>
