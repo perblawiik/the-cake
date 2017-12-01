@@ -5,12 +5,15 @@ import '../../css/LoginPage.css';
 
 class LoginPage extends Component {
 
+    constructor(props){
+        super(props);
+        this.state = {welcomePic: require('../../img/WelcomePicture.png')};
+    }    
     readSubmitButton(){
 
         let name = document.getElementById('playername').value;
-
         if(name === ''){
-            window.alert('Type a user name');
+            this.setState({welcomePic: require('../../img/WelcomePicture_2.png')});
         }
         else
         {
@@ -19,8 +22,13 @@ class LoginPage extends Component {
         }
     }
     _handleKeyPress(target) {
+        //If enter is pressed.
         if (target.charCode === 13) {
             document.getElementById('theButton').click();
+        }
+        else 
+        {
+
         }
     }
 
@@ -55,7 +63,7 @@ class LoginPage extends Component {
                     <h2>
                         Hello and welcome to Bookface!
                     </h2>
-                    <img className='welcomePic' src={require('../../img/WelcomePicture.png')} alt='x'/>
+                    <img className='welcomePic' src={this.state.welcomePic} alt='x'/>
                     <h2>
                          You love us. We own you.
                     </h2>
@@ -70,11 +78,11 @@ class LoginPage extends Component {
 
                     <div className = 'inputBox' style={{order: '2'}}>
                         <label>
-                            <input id = 'playername' placeholder='User name' type="text" name="name" className='namestyle' onKeyPress={this._handleKeyPress}/>
+                            <input id = 'playername' placeholder='User name' type="text" name="name" className='namestyle' onKeyPress={this._handleKeyPress} maxlength='12' />
                         </label>
                     </div>
 
-                    <button id= 'theButton'value="Submit" className={'substyle'} onClick={this.readSubmitButton.bind(this)} style={{order: '6'}}>
+                    <button id= 'theButton' value='Submit' className={'substyle'} onClick={this.readSubmitButton.bind(this)} style={{order: '6'}}>
                         Join Bookface!
                     </button>
                 </div>
