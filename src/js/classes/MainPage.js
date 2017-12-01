@@ -113,6 +113,10 @@ class MainPage extends Component {
             posts: newPosts,
 			currentPost: newPosts[nextPostIndex]
         });
+
+        // Scroll to the top of the news flow
+        let postDiv = document.getElementById("newsFlowScroll");
+        postDiv.scrollTop = 0;
     }
 
     getNextPost (f) {
@@ -211,7 +215,7 @@ class MainPage extends Component {
 	render() {
 
 		// Used for display the old posts
-		var mapReverse = require('map-reverse');
+		let mapReverse = require('map-reverse');
 
 		// An object containing all player stats that goes into PlayerInfo class
 		const playerStats = {
@@ -255,7 +259,7 @@ class MainPage extends Component {
 				</div>
 
 				<div className='newsFlowOuter'>
-					<div className='newsFlowInner'>
+					<div className='newsFlowInner' id='newsFlowScroll'>
 						<table>
 							<tbody className='tableStyle'>
 								{	// All posts available for a comment

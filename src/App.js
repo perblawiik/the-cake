@@ -10,7 +10,7 @@ class App extends Component {
 
     return (
       <div>
-      	<h1 style={{fontSize: '52px', color: 'black', textAlign: 'center'}}>Troll Simulator</h1>
+      	<h1 className='titleStyle'>Troll Simulator</h1>
         <GameWindow/>
       </div>
     );
