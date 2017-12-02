@@ -72,11 +72,6 @@ class PlayerInfo extends Component {
         }
     }
 
-    levelUpEvent() {
-        let audio = require('simple-audio');
-        audio.playSound('levelUp');
-    }
-
     render() {
 
         let audioSrc = require('../../audio/trololol.mp3');
