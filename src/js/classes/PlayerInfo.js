@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import Audio from './Audio';
-
 // Css
 import '../../css/PlayerInfo.css';
 
@@ -11,6 +9,10 @@ const WARNING_TRIGGER = 20;
 // Milliseconds per tick
 const TICK_MS = 500;
 
+const NUMBER_OF_CHANGES = 6;
+const DEFAULT_SIZE = '17px';
+const DEFAULT_WEIGHT = 400;
+
 class PlayerInfo extends Component {
 
     constructor(props) {
@@ -19,15 +21,15 @@ class PlayerInfo extends Component {
         this.state = {
             comBarColor: 'red',
             intervalId: null,
-            playLevelUp: true
+            intervalId2: null,
+            lastLevel: this.props.playerStats.level,
+            animationCounter: 0,
+            levelFontSize: DEFAULT_SIZE,
+            levelFontWeight: DEFAULT_WEIGHT
         };
     }
 
-    addPoints(trollP, commP) {
-        this.props.addPlayerPoints(trollP, commP);
-    }
-
-    animate () {
+    switchCommunityBarColors () {
 
         // Switch between color red and white
         if(this.state.comBarColor === 'red') {
@@ -38,16 +40,35 @@ class PlayerInfo extends Component {
         }
     }
 
-    componentDidUpdate() {
+    changeLevelUpSize() {
 
-        this.communityBarWarning();
-    }
+        if (this.state.animationCounter < NUMBER_OF_CHANGES) {
 
-    componentWillUnmount() {
+            if (this.state.levelFontSize === DEFAULT_SIZE) {
+                this.setState({
+                    levelFontSize: '20px',
+                    levelFontWeight: 700
+                });
+            }
+            else {
+                this.setState({
+                    levelFontSize: DEFAULT_SIZE,
+                    levelFontWeight: DEFAULT_WEIGHT
+                });
+            }
 
-        // Clear the interval
-        clearInterval(this.state.intervalId);
-        this.setState({intervalId: null});
+            this.setState({animationCounter: this.state.animationCounter + 1});
+        }
+        else {
+            clearInterval(this.state.intervalId2);
+            this.setState({
+                intervalId2: null,
+                animationCounter: 0,
+                levelFontSize: '17px',
+                levelFontWeight: DEFAULT_WEIGHT
+            });
+            this.forceUpdate();
+        }
     }
 
     communityBarWarning () {
@@ -57,7 +78,7 @@ class PlayerInfo extends Component {
             // If no interval is active, activate it
             if (!this.state.intervalId) {
                 // Call the animate function in a frequency based on const TICK_MS
-                let id = setInterval(this.animate.bind(this), TICK_MS);
+                let id = setInterval(this.switchCommunityBarColors.bind(this), TICK_MS);
                 this.setState({intervalId: id});
             }
         }
@@ -73,13 +94,36 @@ class PlayerInfo extends Component {
     }
 
     levelUpEvent() {
-        let audio = require('simple-audio');
-        audio.playSound('levelUp');
+
+        if (this.state.lastLevel < this.props.playerStats.level) {
+            // Play level up sound
+            let sound = document.getElementById("levelUpSound");
+            sound.play();
+
+            // Set animation effect
+            let id = setInterval(this.changeLevelUpSize.bind(this), TICK_MS);
+            this.setState({intervalId2: id});
+
+            // Update to current level
+            this.setState({lastLevel: this.props.playerStats.level});
+        }
+    }
+
+    componentDidUpdate() {
+
+        this.communityBarWarning();
+
+        this.levelUpEvent();
+    }
+
+    componentWillUnmount() {
+
+        // Clear the interval
+        clearInterval(this.state.intervalId);
+        this.setState({intervalId: null});
     }
 
     render() {
-
-        let audioSrc = require('../../audio/trololol.mp3');
 
         // Set bar length based on troll points and community points
         const trollBarLength = this.props.playerStats.trollPoints * 10 + '%';
@@ -99,8 +143,6 @@ class PlayerInfo extends Component {
         return(
             <div className='playerInfoContainer'>
 
-                <Audio active={this.state.playLevelUp} srcFile={audioSrc}/>
-
                 <div className='profilePicContainer'>
                     <img className = 'profilePic' src={this.props.playerStats.imgUrl} alt='logo'/>
                 </div>
@@ -108,9 +150,12 @@ class PlayerInfo extends Component {
                 <p className='playerName'>
                     {this.props.playerStats.name}
                 </p>
-                <p>
-                    Level: {this.props.playerStats.level}
-                </p>
+
+                <div style={{height: '30px'}}>
+                    <p style={{fontSize: this.state.levelFontSize, fontWeight: this.state.levelFontWeight, transition: 'font-size .6s, font-weight 1s'}}>
+                        Level: {this.props.playerStats.level}
+                    </p>
+                </div>
                 <p>
                     Troll Points: {this.props.playerStats.trollPoints+10*this.props.playerStats.level-10} / {10*this.props.playerStats.level}
                 </p>
