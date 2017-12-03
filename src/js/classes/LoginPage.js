@@ -68,7 +68,7 @@ class LoginPage extends Component {
 
                     <div className = 'inputBox' style={{order: '2'}}>
                         <label>
-                            <input id = 'playername' placeholder='User name' type="text" name="name" className='namestyle' onKeyPress={this._handleKeyPress} maxlength='12' />
+                            <input id = 'playername' placeholder='User name' type="text" name="name" className='namestyle' onKeyPress={this._handleKeyPress} maxLength='12' />
                         </label>
                     </div>
 

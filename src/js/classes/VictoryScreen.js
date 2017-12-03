@@ -8,7 +8,7 @@ class VictoryScreen extends Component {
 		return (
 			<div className='gameOverContainer'>
 				<p className='gameOverText'>
-					CONRATULATIONS!
+					CONGRATULATIONS!
 				</p>
 				<br/>
                 <div className='centerDiv'>
