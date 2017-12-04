@@ -43,6 +43,13 @@ class Post extends Component {
         }
     }
 
+    displayPostPic(pic){
+        if(pic){
+            let picUrl = require('../../img/' + pic)
+            return(<img className='postedPic' style={{height: '100px', width: '100px'}} src={picUrl} alt='x'/>)
+        }
+    }
+
     render() {
         
         const imageUrl = require('../../img/' + this.props.postInfo.profilePic);
@@ -67,6 +74,9 @@ class Post extends Component {
                                 <p className='postText'>
                                     {this.props.postInfo.text}
                                 </p>
+
+                                {this.displayPostPic(this.props.postInfo.pic)}
+
                             </td>
                         </tr>
                     </tbody>
