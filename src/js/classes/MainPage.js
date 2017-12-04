@@ -212,6 +212,66 @@ class MainPage extends Component {
         this.setState({intervalId: null});
 	}
 
+	message1(){
+		if(this.state.playerLevel > 1){
+			return(
+				<div>
+					<p>
+						You showed them.
+					</p>
+				</div>
+				)
+		}
+	}
+
+	message2(){
+		if(this.state.playerLevel > 2){
+			return(
+				<div>
+					<p>
+						Haha, That was funny! :)
+					</p>
+				</div>
+				)
+		}
+	}
+
+	message3(){
+		if(this.state.playerLevel > 2){
+			return(
+				<div>
+					<p>
+						You are doing great.
+					</p>
+				</div>
+				)
+		}
+	}
+
+	message4(){
+		if(this.state.playerLevel > 2){
+			return(
+				<div>
+					<p>
+						If only real life was like this.
+					</p>
+				</div>
+				)
+		}
+	}
+
+	message5(){
+		if(this.state.playerLevel > 2){
+			return(
+				<div>
+					<p>
+						You are a master.
+					</p>
+				</div>
+				)
+		}
+	}
+
 	render() {
 
 		// Used for display the old posts
@@ -318,20 +378,13 @@ class MainPage extends Component {
 					</div>
 				</div>
 				<div className="ruleBox" >
-					<p>
-						<b>Welcome fellow troll to the Bookface.</b>
-					</p>
-					<p>
-					    We are an coalition of trolls bent on trolling the normie residents of the world wide web for our amusement and we have recruited you to be a part of this glorious endeavour.
-					</p>
-                    <br/>
-					<p>
-					    Your task as a troll is to look at the post of the normies here and comment in a 'trollie' way but be careful not to be to obvious in your attempts to wreak havoc.
-					</p>
-                    <br/>
-					<p>
-					    We have modified your Bookface page to keep track of how successful of a troll you are and how the normies view your action.
-					</p>
+					<div className='trollHQ'><p>Message from troll HQ </p></div>
+
+					{this.message1()}
+					{this.message2()}
+					{this.message3()}
+					{this.message4()}
+					{this.message5()}
 				</div>
                 {/* Pop out window for selected post */
 				/*<PostWindow postInfo={this.state.currentPost}
