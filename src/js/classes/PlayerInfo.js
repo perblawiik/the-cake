@@ -67,7 +67,6 @@ class PlayerInfo extends Component {
                 levelFontSize: '17px',
                 levelFontWeight: DEFAULT_WEIGHT
             });
-            this.forceUpdate();
         }
     }
 

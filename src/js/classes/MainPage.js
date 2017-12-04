@@ -168,6 +168,7 @@ class MainPage extends Component {
         if (!this.state.currentPost.completed && this.state.currentPost.treeStates.second) {
             // Check if animation interval is active
             if (!this.state.intervalId) {
+            	console.log('random')
                 let id = setInterval(this.animate.bind(this), 500);
                 this.setState({intervalId: id});
             }
@@ -213,64 +214,50 @@ class MainPage extends Component {
 	}
 
 	message1(){
-		if(this.state.playerLevel > 1){
-			return(
-				<div>
-					<p>
-						You showed them.
-					</p>
-				</div>
-				)
-		}
+
+		let messages = ['Let the trolling begin!','You showed them.','Haha, That was funny','You are doing great.','If only real life was like this.','You are a master'];
+		let counter = 0;
+
+		return(<div>
+			{
+				messages.map((f) =>{
+				counter++;
+				if(this.state.playerLevel > counter-1){
+					return(
+						<div key={counter}>
+
+						<table>
+							<tbody>
+								<tr className='trollHQProfileSec'>
+									<td className='trollHQProfileLogo'>
+										<img className='trollHQProfilePic' src = {require('../../img/trollHQ.jpg')}/>
+									</td>
+									<td className='userName'>
+		                                <p>
+											TrollHQ
+										</p>
+		                            </td>
+								</tr>
+								<tr className='trollHQMessCont'>
+									<td colSpan='2'>
+										<p>
+											{f}
+										</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+						);
+				} else {
+					return(<div key = {counter}></div>)
+				}
+				})
+			}
+		</div>);
 	}
 
-	message2(){
-		if(this.state.playerLevel > 2){
-			return(
-				<div>
-					<p>
-						Haha, That was funny! :)
-					</p>
-				</div>
-				)
-		}
-	}
 
-	message3(){
-		if(this.state.playerLevel > 2){
-			return(
-				<div>
-					<p>
-						You are doing great.
-					</p>
-				</div>
-				)
-		}
-	}
-
-	message4(){
-		if(this.state.playerLevel > 2){
-			return(
-				<div>
-					<p>
-						If only real life was like this.
-					</p>
-				</div>
-				)
-		}
-	}
-
-	message5(){
-		if(this.state.playerLevel > 2){
-			return(
-				<div>
-					<p>
-						You are a master.
-					</p>
-				</div>
-				)
-		}
-	}
 
 	render() {
 
@@ -381,10 +368,7 @@ class MainPage extends Component {
 					<div className='trollHQ'><p>Message from troll HQ </p></div>
 
 					{this.message1()}
-					{this.message2()}
-					{this.message3()}
-					{this.message4()}
-					{this.message5()}
+
 				</div>
                 {/* Pop out window for selected post */
 				/*<PostWindow postInfo={this.state.currentPost}
