@@ -12,6 +12,7 @@
                 "userName": "Klas Kent",
                 "profilePic": "Dork Borksson.png",
                 "text": "Oh my, new to America! Can’t wait to get to see the face of all your books, haha! :) Anyone know any nearby laundromats?",
+                "pic": null,
                 "tree1": {
                     "TREE_NUMBER": 1,
                     "comment": "IN YOUR ASS",
@@ -63,14 +64,14 @@
                 "tree3": {
                     "TREE_NUMBER": 3,
                     "comment": "I made a picture of you and me",
-                    "pic": "troll.png",
+                    "pic": "BookFaceLove.png",
                     "reply": "Wow.. that is a quite literall approach…",
                     "trollPoints": 3,
                     "communityPoints": -5,
                     "choice1": {
                         "CHOICE_NUMBER": 1,
                         "comment": "You can come home to me, we can make the laundry spin around ;D",
-                        "pic": "troll.png",
+                        "pic": "MakingTheClothesRumble.png",
                         "reply": "...",
                         "trollPoints": 2,
                         "communityPoints": -10
@@ -78,7 +79,7 @@
                     "choice2": {
                         "CHOICE_NUMBER": 2,
                         "comment": "You like it? I have more.",
-                        "pic": "troll.png",
+                        "pic": null,
                         "reply": "Pleas do not contact me again.",
                         "trollPoints": 1,
                         "communityPoints": -5
@@ -96,6 +97,7 @@
                 "userName": "Anthonita Westberg",
                 "profilePic": "Bork Dorksson.png",
                 "text": "Isn’t my cat just such a cutiepie :3 I love her soooo much",
+                "pic": "CatWomansCat",
                 "tree1": {
                     "TREE_NUMBER": 1,
                     "comment": "Wow, what a beautiful cat you have!",
@@ -129,8 +131,8 @@
                     "communityPoints": -10,
                     "choice1": {
                         "CHOICE_NUMBER": 1,
-                        "comment": "*photoshop of mop whit cat-ears*",
-                        "pic": "troll.png",
+                        "comment": "*photoshop picture*",
+                        "pic": "CatWomansMopCat.png",
                         "reply": "WHAT HAVE YOUI DOENE TOU MAY PRIETCIUOUAES!!!!",
                         "trollPoints": 4,
                         "communityPoints": -20
@@ -180,6 +182,7 @@
                 "userName": "Suzan Threblanch’e",
                 "profilePic": "ms Mom.png",
                 "text": "Out to the mall and watching the new avengers movie with my son! #cinema #motherandsontime",
+                "pic": "GoingToTheCinema",
                 "tree1": {
                     "TREE_NUMBER": 1,
                     "comment": "I ship it <3",
@@ -214,7 +217,7 @@
                     "choice1": {
                         "CHOICE_NUMBER": 1,
                         "comment": "*picture of spider*",
-                        "pic": "troll.png",
+                        "pic": "ScarySpider.png",
                         "reply": "NoOO gET ThaT AwAY from MEE",
                         "trollPoints": 3,
                         "communityPoints": -15
@@ -264,6 +267,7 @@
                 "userName": "Zarc Muckerberg",
                 "profilePic": "Foo Barsson.png",
                 "text": "Im so glad that everyone is loving our new site, the bookface! What is your favorite feature so far?",
+                "pic": null,
                 "tree1": {
                     "TREE_NUMBER": 1,
                     "comment": "Your face :)",
@@ -322,7 +326,7 @@
                     "choice1": {
                         "CHOICE_NUMBER": 1,
                         "comment": "Sorry forgot the /s",
-                        "pic": "troll.png",
+                        "pic": null,
                         "reply": "Huh... I can not find any word in there that should have an s...",
                         "trollPoints": 2,
                         "communityPoints": 0
@@ -330,7 +334,7 @@
                     "choice2": {
                         "CHOICE_NUMBER": 2,
                         "comment": "oMG SENPAJ NOTICED ME! ",
-                        "pic": "troll.png",
+                        "pic": null,
                         "reply": "Away with you to the dark cave you came from, weeb!",
                         "trollPoints": 5,
                         "communityPoints": -30
@@ -390,7 +394,7 @@
                     "choice2": {
                         "CHOICE_NUMBER": 2,
                         "comment": "True",
-                        "pic": "troll.png",
+                        "pic": null,
                         "reply": "Yeah, wanna come over and sniff some sometime?",
                         "trollPoints": 0,
                         "communityPoints": 0
@@ -432,6 +436,7 @@
                 "userName": "Spike “the flash” Thompsson",
                 "profilePic": "memelord.png",
                 "text": "GIrls are so stupid! Like I bought this girl a drink and she didn’t want to fuck me! What an ungrateful bitch.",
+                "pic": null,
                 "tree1": {
                     "TREE_NUMBER": 1,
                     "comment": "Yeah that’s like so weird! It is almost as the is a human being!",
@@ -516,6 +521,7 @@
                 "userName": "Pontelina Pontare",
                 "profilePic": "Pontelina.png",
                 "text": "7-days going on my raw food diet! #healthy #diet",
+                "pic": null,
                 "tree1": {
                     "TREE_NUMBER": 1,
                     "comment": "Wow you are so healthy! What do you eat?",
