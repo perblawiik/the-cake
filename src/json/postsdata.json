@@ -117,7 +117,7 @@
                         "CHOICE_NUMBER": 2,
                         "comment": "Love cats.",
                         "pic": null,
-                        "reply": "<3",
+                        "reply": "<3 ",
                         "trollPoints": 0,
                         "communityPoints": 10
                     }
@@ -165,7 +165,7 @@
                         "CHOICE_NUMBER": 2,
                         "comment": "wow so sweet",
                         "pic": null,
-                        "reply": "<3",
+                        "reply": "<3  ",
                         "trollPoints": 0,
                         "communityPoints": 10
                     }
@@ -285,9 +285,9 @@
                     },
                     "choice2": {
                         "CHOICE_NUMBER": 2,
-                        "comment": "<3",
+                        "comment": " <3",
                         "pic": null,
-                        "reply": "<3",
+                        "reply": " <3 ",
                         "trollPoints": 0,
                         "communityPoints": 20
                     }

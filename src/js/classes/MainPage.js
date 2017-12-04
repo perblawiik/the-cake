@@ -99,6 +99,10 @@ class MainPage extends Component {
 
     setPostCompleted (index) {
 
+		// Sound effect
+		let sound = document.getElementById('nextPostSound');
+		sound.play();
+
         // Copy the list of posts and change completed for given index to true
         let newPosts = this.state.posts;
         newPosts[index].completed = true;
