@@ -1,12 +1,22 @@
 
 import React, { Component } from 'react';
 
+import Audio from './Audio';
+
 class VictoryScreen extends Component {
+
+	componentDidMount() {
+		let sound = document.getElementById('victoryClap');
+		sound.play();
+	}
 
 	render() {
 
+		const winningSrc = require('../../audio/shia_labeouf_clapping.mp3');
+
 		return (
 			<div className='gameOverContainer'>
+				<Audio idTag={'victoryClap'} srcFile={winningSrc} volume={1}/>
 				<p className='gameOverText'>
 					CONGRATULATIONS!
 				</p>

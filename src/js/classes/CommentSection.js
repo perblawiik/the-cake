@@ -12,10 +12,13 @@ const CommentTree = {
 	CHOICE2: 2
 };
 
-
 class CommentSection extends Component {
 
 	setCommentTree (treeFirst, treeSecond, trollPoints, comPoints) {
+        // Sound effect
+        let sound = document.getElementById('sendSound');
+        sound.play();
+
 	    // Add player points
         this.props.addPlayerPoints(trollPoints, comPoints);
 		
