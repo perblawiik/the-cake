@@ -230,7 +230,7 @@ class MainPage extends Component {
 							<tbody>
 								<tr className='trollHQProfileSec'>
 									<td className='trollHQProfileLogo'>
-										<img className='trollHQProfilePic' src = {require('../../img/trollHQ.jpg')}/>
+										<img className='trollHQProfilePic' src = {require('../../img/trollHQ.jpg')} alt='x'/>
 									</td>
 									<td className='userName'>
 		                                <p>
