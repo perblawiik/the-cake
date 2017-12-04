@@ -58,6 +58,9 @@ td {
 	overflow: hidden;
 }
 
+.postedPic {
+	margin: 5px;
+}
 
 /* On all p? should we make specific?*/
 p{
