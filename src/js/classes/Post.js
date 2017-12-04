@@ -46,7 +46,7 @@ class Post extends Component {
     displayPostPic(pic){
         if(pic){
             let picUrl = require('../../img/' + pic)
-            return(<img className='postedPic' style={{height: '100px', width: '100px'}} src={picUrl} alt='x'/>)
+            return(<img className='postedPic' style={{width: '380px'}} src={picUrl} alt='x'/>)
         }
     }
 

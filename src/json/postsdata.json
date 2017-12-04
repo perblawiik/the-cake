@@ -72,7 +72,7 @@
                         "CHOICE_NUMBER": 1,
                         "comment": "You can come home to me, we can make the laundry spin around ;D",
                         "pic": "MakingTheClothesRumble.png",
-                        "reply": "...",
+                        "reply": "... ",
                         "trollPoints": 2,
                         "communityPoints": -10
                     },
@@ -301,17 +301,17 @@
                     "communityPoints": -1000,
                     "choice1": {
                         "CHOICE_NUMBER": 1,
-                        "comment": "comment Nothing",
+                        "comment": "no comment1",
                         "pic": "troll.png",
-                        "reply": "reply nothing",
+                        "reply": "no reply1",
                         "trollPoints": 2,
                         "communityPoints": 0
                     },
                     "choice2": {
                         "CHOICE_NUMBER": 2,
-                        "comment": "comment Nothing",
+                        "comment": "no comment2",
                         "pic": "troll.png",
-                        "reply": "reply nothing",
+                        "reply": "no reply2",
                         "trollPoints": 0,
                         "communityPoints": -5
                     }
