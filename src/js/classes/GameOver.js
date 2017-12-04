@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Audio from './Audio';
+
 // Css
 import '../../css/GameOver.css';
 
@@ -32,6 +34,9 @@ class GameOver extends Component {
         this.setState({
             intervalId: id
         });
+
+        let sound = document.getElementById('gameOverSound');
+        sound.play();
     }
 
     componentWillUnmount () {
@@ -43,8 +48,11 @@ class GameOver extends Component {
 
 	render() {
 
+        const losingSrc = require('../../audio/losing_sound.mp3');
+
 		return (
 			<div className='gameOverContainer' style={{backgroundColor: this.state.color}}>
+                <Audio idTag={'gameOverSound'} srcFile={losingSrc} volume={1}/>
 				<p className='gameOverText'>
 					GAME OVER LOSER !
 				</p>
