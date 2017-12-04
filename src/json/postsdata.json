@@ -97,7 +97,7 @@
                 "userName": "Anthonita Westberg",
                 "profilePic": "Bork Dorksson.png",
                 "text": "Isn’t my cat just such a cutiepie :3 I love her soooo much",
-                "pic": "CatWomansCat",
+                "pic": "CatWomansCat.png",
                 "tree1": {
                     "TREE_NUMBER": 1,
                     "comment": "Wow, what a beautiful cat you have!",
@@ -182,7 +182,7 @@
                 "userName": "Suzan Threblanch’e",
                 "profilePic": "ms Mom.png",
                 "text": "Out to the mall and watching the new avengers movie with my son! #cinema #motherandsontime",
-                "pic": "GoingToTheCinema",
+                "pic": "GoingToTheCinema.png",
                 "tree1": {
                     "TREE_NUMBER": 1,
                     "comment": "I ship it <3",
@@ -352,6 +352,7 @@
                 "userName": "Franc de la Pomme de Terre",
                 "profilePic": "franc.png",
                 "text": "MEEERDE there is so much snow! JE HATE IT! >:( ",
+                "pic": null,
                 "tree1": {
                     "TREE_NUMBER": 1,
                     "comment": "Wow big mood",
