@@ -72,7 +72,7 @@ class PlayerInfo extends Component {
 
     communityBarWarning () {
         // Check if community points is lower than WARNING_TRIGGER
-        if (this.props.playerStats.comPoints <= WARNING_TRIGGER) {
+        if (this.props.playerStats.comPoints <= WARNING_TRIGGER && this.props.playerStats.comPoints > 0) {
 
             // If no interval is active, activate it
             if (!this.state.intervalId) {
@@ -100,8 +100,10 @@ class PlayerInfo extends Component {
             sound.play();
 
             // Set animation effect
-            let id = setInterval(this.changeLevelUpSize.bind(this), TICK_MS);
-            this.setState({intervalId2: id});
+            if (!this.state.intervalId2) {
+                let id = setInterval(this.changeLevelUpSize.bind(this), TICK_MS);
+                this.setState({intervalId2: id});
+            }
 
             // Update to current level
             this.setState({lastLevel: this.props.playerStats.level});
@@ -117,9 +119,13 @@ class PlayerInfo extends Component {
 
     componentWillUnmount() {
 
-        // Clear the interval
+        // Clear the intervals
         clearInterval(this.state.intervalId);
-        this.setState({intervalId: null});
+        clearInterval(this.state.intervalId2);
+        this.setState({
+            intervalId: null,
+            intervalId2: null
+        });
     }
 
     render() {

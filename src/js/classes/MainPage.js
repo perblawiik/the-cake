@@ -172,7 +172,6 @@ class MainPage extends Component {
         if (!this.state.currentPost.completed && this.state.currentPost.treeStates.second) {
             // Check if animation interval is active
             if (!this.state.intervalId) {
-            	console.log('random')
                 let id = setInterval(this.animate.bind(this), 500);
                 this.setState({intervalId: id});
             }
