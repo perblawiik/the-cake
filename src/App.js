@@ -11,7 +11,7 @@ class App extends Component {
     render() {
 
         const lvlUpSrc = require('./audio/trololol.mp3');
-        const sendSrc = require('./audio/send.mp3');
+        const sendSrc = require('./audio/blupp.mp3');
         const recieveSrc = require('./audio/recieve.mp3');
 
         return (
