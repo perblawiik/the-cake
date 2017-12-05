@@ -48,11 +48,11 @@ class GameOver extends Component {
 
 	render() {
 
-        const losingSrc = require('../../audio/losing_sound.mp3');
+        const losingSrc = require('../../audio/wah_wah_wah.mp3');
 
 		return (
 			<div className='gameOverContainer' style={{backgroundColor: this.state.color}}>
-                <Audio idTag={'gameOverSound'} srcFile={losingSrc} volume={1}/>
+                <Audio idTag={'gameOverSound'} srcFile={losingSrc} volume={.5}/>
 				<p className='gameOverText'>
 					GAME OVER LOSER !
 				</p>

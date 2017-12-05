@@ -38,11 +38,11 @@ class CommentSection extends Component {
             let picUrl = require('../../img/' + pic)
             if(x === 1)
             {
-                return(<img className='postedPic' style={{height: '100px', width: '100px'}} src={picUrl} alt='x'/>)
+                return(<img className='postedPic' style={{height: '100px', width: '150px'}} src={picUrl} alt='x'/>)
             }
             else
             {
-                return(<img className='postedPic' style={{height: '50px', width: '50px'}} src={picUrl} alt='x'/>)
+                return(<img className='postedPic' style={{height: '50px', width: '75px'}} src={picUrl} alt='x'/>)
             }
         }
     }
