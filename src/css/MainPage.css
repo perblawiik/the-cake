@@ -6,26 +6,17 @@
     display: block;
 }
 
-.newsFlowOuter {
-    position: absolute;
-    margin: auto;
-    top: 22.5%;
-    bottom: 5%;
-    left: 12.5%;
-    right: 12.5%;
-    width: 400px;
-    overflow: hidden;
-    border-radius: 4px;
-}
-
 .newsFlowInner {
     background-color: white;
     position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 5%;
-    width: 450px;
+    width: 420px;
     overflow-y: scroll;
+    margin: auto;
+    top: 22.5%;
+    bottom: 10%;
+    left: 12.5%;
+    right: 12.5%;
+    border-radius: 4px;
 }
 
 .postContainer {
@@ -39,7 +30,7 @@
     margin: auto;
     background-color: white;
     top: 22.5%;
-    bottom: 9%;
+    bottom: 10%;
     left: 72.5%;
     right: 7%;
     overflow: hidden;
