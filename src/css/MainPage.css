@@ -25,6 +25,7 @@
     top: 0;
     bottom: 5%;
     width: 450px;
+    overflow-y: scroll;
 }
 
 .postContainer {
@@ -42,7 +43,7 @@
     left: 72.5%;
     right: 7%;
     overflow: hidden;
-    overflow-y: scroll;
+
     border-radius: 4px;
 }
 
