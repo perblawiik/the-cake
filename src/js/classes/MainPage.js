@@ -307,7 +307,7 @@ class MainPage extends Component {
 					</div>
 				</div>
 
-				<div className='newsFlowOuter'>
+				
 					<div className='newsFlowInner' id='newsFlowScroll'>
 						<table>
 							<tbody className='tableStyle'>
@@ -365,7 +365,7 @@ class MainPage extends Component {
 							</tbody>
 						</table>
 					</div>
-				</div>
+				
 				<div className="ruleBox" >
 					<div className='trollHQ'><p>Message from troll HQ </p></div>
 
