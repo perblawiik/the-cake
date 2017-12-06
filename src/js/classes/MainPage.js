@@ -228,28 +228,27 @@ class MainPage extends Component {
 				if(this.state.playerLevel > counter-1){
 					return(
 						<div key={counter}>
+							
+							
 
-						<table>
-							<tbody>
-								<tr className='trollHQProfileSec'>
-									<td className='trollHQProfileLogo'>
-										<img className='trollHQProfilePic' src = {require('../../img/trollHQ.jpg')} alt='x'/>
-									</td>
-									<td className='userName'>
-		                                <p>
-											TrollHQ
-										</p>
-		                            </td>
-								</tr>
-								<tr className='trollHQMessCont'>
-									<td colSpan='2'>
-										<p>
-											{f}
-										</p>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+							<hr/>
+								<div className='trollHQProfileSec'>
+					                <div className= 'trollHQProfilePiccontainer'>
+					                    <img className='trollHQProfilePic' src = {require('../../img/trollHQ.jpg')} alt='x'/>
+					                </div>
+
+                                    <div className='userName'>
+                                        <p className= 'HQName'>
+                                            TrollHQ
+                                        </p>
+                                        <p className='trollHQMessCont'>
+                                            {f}
+                                        </p>
+                                        
+                                        
+                                    </div>
+				            	</div>
+
 						</div>
 						);
 				} else {
