@@ -218,12 +218,18 @@ class MainPage extends Component {
 
 	message1(){
 
-		let messages = ['Let the trolling begin!','You showed them.','Haha, That was funny','You are doing great.','If only real life was like this.','You are a master'];
+		let messages = ['Go forth, our prodigy, and show the world what you can do!',
+						'You are proving more sinister than we anticipated.',
+						'You will teach them the meaning of Trolling.',
+						'You just want to watch the world burn!',
+						'All shall tremble before you',
+						'You are truly a master.'];
 		let counter = 0;
 
-		return(<div>
+
+		return(<div className='messageContainer'>
 			{
-				messages.map((f) =>{
+                messages.map((f) =>{
 				counter++;
 				if(this.state.playerLevel > counter-1){
 					return(
@@ -238,10 +244,10 @@ class MainPage extends Component {
 					                </div>
 
                                     <div className='HQuserName'>
-                                        <p className= 'HQName'>
+                                        {/*<p className= 'HQName'>
                                             TrollHQ
-                                        </p>
-                                        <p className='trollHQMessCont'>
+                                        </p>*/}
+                                        <p className='trollHQMessage'>
                                             {f}
                                         </p>
                                         
