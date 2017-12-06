@@ -237,7 +237,7 @@ class MainPage extends Component {
 					                    <img className='trollHQProfilePic' src = {require('../../img/trollHQ.jpg')} alt='x'/>
 					                </div>
 
-                                    <div className='userName'>
+                                    <div className='HQuserName'>
                                         <p className= 'HQName'>
                                             TrollHQ
                                         </p>
